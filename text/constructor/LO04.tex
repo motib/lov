@@ -1,0 +1,21 @@
+\subsection{Invoking an overloaded constructor from within a constructor}\label{con.04}
+
+\textbf{Concept} Constructors can be \emph{overloaded} like other methods. A method is overloaded when there is more than one method with the same name; the parameter signature is used to decide which method to call. For constructors, overloading is usually done when some of the fields of an object can be initialized with default values, although we want to retain 
+the possibility of explicitly supplying all the initial values. In such cases, it is convenient to invoke one constructor from within another in order to avoid duplicating code. Invoking the method \texttt{this} within one constructor calls another constructor
+with the appropriate parameter signature.
+
+\prg{Constructor04}\prgl{constructor}{Constructor04}
+
+The website charges a uniform price per second for all songs, except for special offers. We define two constructors, one that specifies a price for special offers and another that uses a default price for ordinary songs.
+\begin{itemize}
+\item The value of the static constant \texttt{DEFAULT\_PRICE} is set as soon as the class is loaded and is displayed in the Constant area.
+\item The variable \texttt{song1} is allocated and contains the null value.
+\item Memory is allocated for the \emph{four} fields of the object and default values are assigned to the fields. 
+\item The constructor is called with \emph{two} actual parameters; the call is resolved so that it is the second constructor that is executed. 
+\item The two parameters, together with the default price, are immediately used to call the 
+first constructor that has three parameters. The method name \texttt{this} means: call a
+constructor from \emph{this} class. This constructor initializes the first three fields from the parameters, and the value of the fourth field is computed by calling the method \texttt{computePrice}.
+\item The constructor returns a reference to the object, which is stored in the variable \texttt{song1}.
+\end{itemize}
+
+\textbf{Exercise}  Modify the class to include a constructor with one parameter, the name, and with a default song length of three minutes. Can this constructor call the two-parameter constructor which in turn calls the three-parameter constructor? Can a constructor call \emph{two} other constructors, one after another?

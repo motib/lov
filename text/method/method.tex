@@ -1,0 +1,39 @@
+\section{Learning Objects for Methods}\label{s.method}
+
+\textbf{Concept} \emph{Methods} are the simplest construct for abstraction
+in Java. A method starts with a declaration that defines its \emph{signature}:
+the name of the method, the number and types of the \emph{formal parameters} 
+and the \emph{return type}.
+The body of the method consists of local variable declarations and of statements.
+A method is \emph{called} or \emph{invoked} by writing the name of the method
+followed by a list of values, called \emph{actual parameters}, one for
+each formal parameter. A method can return a value or it can be declared
+as \texttt{void} if no value is returned.
+
+\begin{center}
+\begin{tabular}{|c|l|l|c|}
+\hline
+LO & Topic  & Java Files (.java) & Prerequisites \\\hline
+\ref{method.01} &  A void method          & Method01 &\\\hline
+\ref{method.02} &  A method returning a value & Method02 &\\\hline
+\ref{method.03} &  Calling one method from another & Method03 &1, 2\\\hline
+\ref{method.04} &  Recursion & Method04 &2\\\hline
+\ref{method.05} &  Calling methods on an object & Method05 &2, *\\\hline
+\ref{method.06} &  Calling a method on the same object & Method06 &5, *\\\hline
+\ref{method.07} &  Objects as parameters & Method07 &5, *\\\hline
+\ref{method.08} &  Returning objects & Method08 &7, *\\\hline
+\ref{method.09} &  Returning locally instantiated objects & Method09 &8, *\\\hline
+\end{tabular}
+\end{center}
+* This LO assumes knowledge of the declaration of
+classes and the instantiation of objects.
+
+\input{method/LO01}
+\input{method/LO02}
+\input{method/LO03}
+\input{method/LO04}
+\input{method/LO05}
+\input{method/LO06}
+\input{method/LO07}
+\input{method/LO08}
+\input{method/LO09}

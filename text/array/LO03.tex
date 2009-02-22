@@ -1,0 +1,28 @@
+\subsection{Passing arrays as parameters}\label{array.03}
+
+\textbf{Concept} An array is an object. Since the array variable itself 
+contains a reference, it can be passed as an actual paramter to a method
+and the reference is used to initialize the formal parameter.
+
+\prg{Array03}\prgl{array}{Array03}
+
+This program passes an array as a parameter to a method 
+that reverses the elements of the array.
+\begin{itemize}
+\item Initially, the variable \texttt{fib} of type integer array is 
+allocated. As part of the same statement, the array object is created with 
+its seven fields having the values in the initializer; the reference to 
+the object is returned and stored in the variable \texttt{fib}.
+\item The array (that is, a \emph{reference} to the array) is passed as a parameter to the method \texttt{reverse}. There are now two arrows pointing to the array: the reference from the \texttt{main} method and the reference from the parameter \texttt{a} of the method \texttt{reverse}.
+\item The method scans the first half of the array, exchanging each element with the corresponding one in the second half. Variables \texttt{i} and \texttt{j} contain the indices of the two elements that are exchanged.
+\item Upon return from the method, the variable \texttt{fib} still 
+contains a reference to the array, which has had its sequence of values 
+reversed.
+\end{itemize}
+
+\textbf{Exercise} Instead of declaring the variable \texttt{j} outside the for-loop,
+declare it just inside the for-loop as follows:
+\begin{quote}
+\texttt{int j = a.length-i-1;}
+\end{quote}
+Trace the execution and explain what happens.

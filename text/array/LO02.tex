@@ -1,0 +1,19 @@
+\subsection{Array initializers}\label{array.02}
+
+\textbf{Concept} An array object can be created implicitly by giving a list of values 
+within braces.
+
+\prg{Array02}\prgl{array}{Array02}
+
+The program initializes an array with values of the fibonacci sequence.
+\begin{itemize}
+\item Initially, the variable \texttt{fib} of type integer array (denoted \texttt{int[]}) is allocated. 
+\item \emph{As part of the same statement}, the array object is created and 
+its seven fields contain the values from the initializer.
+\item Only then is the reference to the object returned and stored in the variable \texttt{fib}.
+\end{itemize}
+
+\textbf{Exercise} Can an element of an array initializer be the value of
+an expression containing variables previously declared? Modify this program
+accordingly and try to compile and run it. Explain what happens.
+ 

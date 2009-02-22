@@ -1,0 +1,62 @@
+\subsection{What are constructors for?}\label{con.01}
+
+\textbf{Concept} An object is created by allocating memory for its fields. The fields are given the default values for their types. A reference to the object is returned and assigned to a variable; the reference can be used to access the fields and methods of the object.
+
+\prg{Constructor01A}
+\prgl{constructor}{Constructor01A}
+
+If a constructor is not explicitly declared a default constructor is called.
+\begin{itemize}
+\item The variable \texttt{song1} is allocated and contains the null value.
+\item Memory is allocated for the fields of the object; this is displayed in the Instance and Array Area. Default values are assigned to the three fields.
+\item The default constructor is called 
+but does nothing except return a reference to the object.
+\item The reference is stored in the variable \texttt{song1}.
+\item The reference in \texttt{song1} is used to assign values to the fields of the object.
+\item The reference in \texttt{song1} is used to call the method \texttt{computePrice} on the object; the method computes and returns the price, 
+which is assigned to the variable \texttt{price}.
+\end{itemize}
+
+\bigskip
+
+\textbf{Concept} An explicit constructor method can be declared and used 
+to initialize each object. 
+The constructor method is identified by a special syntax: the name of the method is the same as the name of the class and \emph{there is no return type} (because the value returned is of the type of the class itself).
+
+\prg{Constructor01B}
+\prgl{constructor}{Constructor01B}
+
+This program is the same as the previous one except that the assignment of nondefault values to the fields of the object is moved to an explicit constructor.
+\begin{itemize}
+\item The variable \texttt{song1} is allocated and contains the null value.
+\item Memory is allocated for the fields of the object; this is displayed in the Instance and Array Area. Default values are assigned to the three fields.
+\item The constructor is called and assigns values to the three fields; 
+then it returns a reference to the object.
+\item The reference is stored in the variable \texttt{song1}.
+\item The reference in \texttt{song1} is used to call the method \texttt{computePrice} on the object; the method computes and returns the price,
+which is assigned to the variable \texttt{price}.
+\end{itemize}
+
+\textbf{Exercise} Add the creation of a second object \texttt{song2} to the
+program and verify that it is initialized to the same values.
+
+\bigskip
+
+\textbf{Concept} Of course, it is highly unlikely that all objects created from a class will be initialized with the same values. A constructor can have formal parameters like any other method and is called with actual parameters.
+
+\prg{Constructor01C}\prgl{constructor}{Constructor01C}
+
+This program is the same as the previous one except that the constructor has formal parameters and the actual parameters passed to the constructor are assigned to the fields of the object.
+\begin{itemize}
+\item The variable \texttt{song1} is allocated and contains the null value.
+\item Memory is allocated for the fields of the object; this is displayed in the Instance and Array Area. Default values are assigned to the three fields.
+\item The constructor is called with three actual parameters; these values are assigned to the formal parameters of the constructor method.
+\item The values of the formal parameters are assigned to the three fields; then the constructor returns a reference to the object.
+\item The reference is stored in the variable \texttt{song1}.
+\item The reference in \texttt{song1} is used to call the method \texttt{computePrice} on the object; the method computes and returns the price,
+which is assigned to the variable \texttt{price}.
+\end{itemize}
+
+\textbf{Exercise}  Modify the class so that the second parameter passes
+the number of minutes; the value of the field \texttt{seconds} will have
+to be computed in the constructor.

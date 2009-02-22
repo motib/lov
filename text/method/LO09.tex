@@ -1,0 +1,39 @@
+\subsection{Returning locally instantiated objects}\label{method.09}
+
+\textbf{Concept} When a method terminates, its activation record is deallocated.
+However, if an object has been instantiated \emph{within the method},
+a reference to the object can be returned to the calling method.
+
+\prg{Method09}
+\prgl{method}{Method09}
+
+This program computes the cost of a song as the product of its length
+in seconds and the price per second. A class \texttt{Song} is defined
+to encapsulate the field \texttt{seconds} and the method \texttt{computePrice}.
+The method \texttt{double} in the \texttt{main} method receives a reference
+to an object of class \texttt{Song} as a parameter and returns a reference
+to an new object of class \texttt{Song} whose field \texttt{seconds} is twice as large.
+
+\begin{itemize}
+\item Two objects of class Song are instantiated and references to them
+are assigned to the variables \texttt{song1} and \texttt{song2}.
+\item The method \texttt{doubleSong} is called with an actual parameter
+that is a reference \texttt{song1} to an object of class \texttt{Song}.
+The actual parameter is used to initialize the formal
+parameter; check that \texttt{song1} and \texttt{s1} reference the same object.
+\item \emph{Within the method}, the \texttt{seconds} field of the object referenced
+by \texttt{s1} is used to instantiate a new object whose reference is assigned
+to the variable \texttt{d} of class \texttt{Song}.
+\item The method returns the reference to the object contained in \texttt{d};
+although \texttt{d} disappears when the activation record is deallocated,
+the object still exists as does the reference that is returned.
+\item The returned reference is assigned to the variable \texttt{longSong};
+check that \texttt{song1} and \texttt{longSong} reference \emph{different} objects!
+\end{itemize}
+
+\textbf{Exercise} Replace the last line of the program by:
+\begin{quote}
+\texttt{song1 = doubleSong(song1);}
+\end{quote}
+and explain precisely what happens.
+

@@ -1,0 +1,30 @@
+\subsection{General for statements}\label{control.07}
+
+\textbf{Concept} Arbitrary expressions can be given for the initial value of the \texttt{for} statement, the exit condition, and the modification of the control variable.
+
+\prg{Control07}
+\prgl{control}{Control07}
+
+This program computes the sum of multiples of three that are less
+than the square root of \texttt{N}.
+
+\begin{itemize}
+\item The constant \texttt{N} and the variable \texttt{sum} are allocated and initialized.
+\item The control variable \texttt{i} is allocated and initialized.
+\item The expression \texttt{i < Math.sqrt(N)} is evaluated and evaluates to true.
+\jel{} displays \texttt{Entering the for loop}.
+\item The loop body is executed. 
+\item The control variable is incremented by three as specified in the third part of the
+\texttt{for} statement.
+\item The previous three steps are repeated until the expression evaluates to false;
+this causes the loop to be exited. \jel{} displays \texttt{Continuing the for loop}
+as long as the expression evaluates to true, and \texttt{Exiting the for loop} when
+it evaluates to false.
+\item The final value of \texttt{sum} is printed. 
+\item \textbf{Important}: when the loop is exited, the control variable is
+deallocated and no longer exists.
+\end{itemize}
+
+\textbf{Exercise} Is \texttt{for (;;;)} legal? If so, what does it mean?
+
+\textbf{Exercise} Modify the program so that the square root is computed only once.

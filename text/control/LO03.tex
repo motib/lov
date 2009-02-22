@@ -1,0 +1,35 @@
+\subsection{While loops}\label{control.03}
+
+\textbf{Concept} A loop enables the execution of a statement (including a block
+of statements within braces) an arbitrary number of times.
+This statement is called the \emph{loop body}.
+In a while loop, an expression is evaluated \emph{before} each
+execution of the loop body,
+and loop body is executed if and only if the expression evaluates to true.
+
+\prg{Control03}
+\prgl{control}{Control03}
+
+This program prints all factorials less than \texttt{LIMIT = 100}, namely,
+$1!=1$, $2!=2$, $3!=6$, $4!=24$.
+\begin{itemize}
+\item The static constant and the two variables are allocated and initialized.
+\item Then, and each time the keyword \texttt{while} is reached, the expression
+is evaluated. If it is true, execution proceeds with the loop body, and
+\jel{} displays \texttt{Entering the while loop} the first time
+and \texttt{Continuing the while loop} on subsequent occasions.
+\item The statements of the loop body are executed. 
+They print the value of the current factorial, increment the counter
+and compute the new factorial; then, control returns to the while-expression.
+\item If and when the expression evaluates to false, execution
+proceeds with the statement following the loop body.
+\jel{} displays \texttt{Exiting the while loop}.
+\end{itemize}
+
+\textbf{Exercise} According to a formula by Euler,
+\begin{displaymath}
+\frac{1}{1^{2}} + \frac{1}{2^{2}} + \frac{1}{3^{2}} + \frac{1}{4^{2}} + \cdots 
+= \frac{\pi^{2}}{6}    
+\end{displaymath}
+Write a program to compute the series until the difference between the two terms
+is less than 0.1.

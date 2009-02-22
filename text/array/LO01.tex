@@ -1,0 +1,52 @@
+\subsection{Array objects}\label{array.01}
+
+\textbf{Concept} An array is created in three steps: first a variable of 
+an array type is declared; then the array is allocated; finally, the 
+elements of the array are given values. The syntax for accessing an array 
+\texttt{a} is \texttt{a[i]}, and the field \texttt{a.length} gives the 
+length of the array, so that if we modify the program by changing the size 
+of the array the rest of the program need not change.
+
+\prg{Array01A}
+\prgl{array}{Array01A}
+
+The program creates an array in the three steps described above.
+
+\begin{itemize}
+\item Initially, the variable \texttt{fib} of type integer array (denoted 
+\texttt{int[]}) is allocated and contains the null value.
+\item \texttt{new fib[7]} creates an array object with its seven fields having the default 
+integer value zero; then the reference to the object is returned and 
+stored in the variable \texttt{fib}.
+\item The length field of the array is displayed above the cells for the elements.
+\item A \texttt{for} loop is used to assign values to each element of the 
+array.
+\item The thin white lines show the constants and expressions that are used
+as indices into the array.
+\item \emph{Automatic dereferencing}: 
+Although expressions like \texttt{fib[i-2]} seem to indicate that 
+\texttt{fib} is being indexed, \texttt{fib} contains a reference to an array;
+an implicit operation of dereferencing is carried out to obtain the
+array itself from the reference and the index \texttt{[i-2]} is then
+applied to that array.
+\end{itemize}
+
+\textbf{Concept} It is possible to combine the first two steps in creating an array: 
+declaring the array field and allocating the array object.
+
+\prg{Array01B}
+\prgl{array}{Array01B}
+
+This program combines the declaration of the
+array field with its allocator. We have used the constant \texttt{SIZE} to 
+specify the size of the array; this makes it easier to modify 
+the program; nevertheless, \texttt{fib.length} is still used in the 
+executable statements.
+\begin{itemize}
+  \item Initially, the static variable \texttt{SIZE} is created in the constant
+  area and given its value.
+  \item The execution of the program is as before.
+\end{itemize}
+
+\textbf{Exercise} Modify the program so that the fibonacci sequence appears in
+reverse order.

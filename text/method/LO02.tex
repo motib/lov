@@ -1,0 +1,33 @@
+\subsection{A method returning a value}\label{method.02}
+
+\textbf{Concept} When a method that is declared with a return type is called,
+it allocates memory for its parameters and local variables, executes
+its statements and then returns a value of the type. 
+The call is a statement constructed
+from the name of the method followed by a list of actual parameters;
+the call is an expression and can appear wherever an expression is allowed.
+
+\prg{Method02}
+\prgl{method}{Method02}
+
+\begin{itemize}
+\item The variables \texttt{x} and \texttt{y} are allocated and initialized;
+the variable \texttt{max} is allocated but not initialized.
+\item An assignment statement is executed: the expression on the right hand side is
+a method call including the values of the actual parameters \texttt{x} and \texttt{y}.
+\item Memory is allocated for the formal parameters of the method and the local variables.
+This is called an \emph{activation record} and is displayed by \jel{} in the upper left
+hand part of the screen labeled \texttt{Method Area}. The new activation record hides
+the previous ones which are no longer accessible.
+\item The actual parameters are used to initialize the formal parameters in the activation
+record.
+\item The statements of the method are executed.
+\item When the statement \texttt{return b} is executed, the value of \texttt{b} is used
+for the value to be returned.
+\item The method \emph{returns} and the activation record is deallocated.
+\item The value returned becomes the value of the expression assigned to the
+variable \texttt{max}.
+\item The value of \texttt{max} is printed.
+\end{itemize}
+
+\textbf{Exercise} Write the body of the main method as one statement.

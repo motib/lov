@@ -1,0 +1,21 @@
+\subsection{Explicit default constructors}\label{con.05}
+
+\textbf{Concept} When no constructor is explicitly written in a class, a default implicit constructor with no parameters exists; this constructor does nothing. If, however, one or more explicit constructors are given, there is no longer a constructor with no parameters.
+Should you want one, you have to write it explicitly.
+
+\prg{Constructor05}
+\prgl{constructor}{Constructor05}
+
+This program includes an explicit constructor with no parameters that calls the constructor with three parameters to perform initialization.
+
+\begin{itemize}
+\item The variable \texttt{song1} is allocated and contains the null value.
+\item Memory is allocated for the \emph{four} fields of the object and default values are assigned to the fields. 
+\item The constructor is called with \emph{no} actual parameters; the call is resolved so that it is the second constructor that is executed. 
+\item Three constant values are used to call the first constructor. The method name \texttt{this} means: call a constructor from \emph{this} class. 
+This constructor initializes the first three fields from the parameters, and the value of the fourth field is computed by calling the method \texttt{computePrice}.
+\item The constructor returns a reference to the object, which is stored in the variable \texttt{song1}.
+\end{itemize}
+
+\textbf{Exercise}  Modify the class so that the constructor without parameters 
+obtains initial values from the input.

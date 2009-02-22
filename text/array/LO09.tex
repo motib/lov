@@ -1,0 +1,35 @@
+\subsection{Arrays of objects}\label{array.09}
+
+\textbf{Concept} Arrays can contain references to arbitrary objects. There is no difference between these arrays and arrays whose values are of primitive type, except that an individual element can be of any type.
+
+\prg{Array09} 
+\prgl{array}{Array09}
+
+Objects of class \texttt{Access} contain name of a bank customer and the access level permitted for that customer. This program creates two objects, assigns the their references to elements of the \texttt{Access} and then swaps the elements of the array.
+\begin{itemize}
+  \item The array \texttt{accessess} of type \texttt{Access[]} 
+  is allocated and contains null references.
+  \item An object of type \texttt{Access} are allocated and initialized by its constructor; a reference to the object is stored in the first element of the array \texttt{accessess}.
+  \item Similarly, another object is created and stored in the second element.
+  \item The array \texttt{accessess} is passed to the method \texttt{swap} along with the 
+  indices 0 and 1.
+  \item The two elements of the array are swapped. 
+  Note that after executing \texttt{a[i] = a[j]}, 
+  both elements of the array point to the second object (\texttt{Alice,4}), 
+  while a reference to the first object (\texttt{Bob,3}) is saved in the variable \texttt{temp}.
+\end{itemize}
+
+\textbf{Exercise} Modify the program so that the initialization of the array
+\texttt{accessess} is done in one statement instead of three.
+
+\textbf{Exericse} Explain what happens if the method \texttt{swap} is replaced by: 
+
+\hspace*{3em}\texttt{static void swap(Access a, Access b) \{}\\
+\hspace*{6em}\texttt{Access temp = a;}\\
+\hspace*{6em}\texttt{a = b;}\\
+\hspace*{6em}\texttt{b = temp;}\\
+\hspace*{3em}\texttt{\}}
+
+and the call by:
+
+\hspace*{3em}\texttt{swap(accesses[0], accesses[1]);}

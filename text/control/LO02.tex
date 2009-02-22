@@ -1,0 +1,37 @@
+\subsection{Conditional expressions}\label{control.02}
+
+\textbf{Concept} A conditional expression is a shorthand for an if-statement that
+assigns different values to one variable:
+\begin{quote}
+\texttt{if (expression) var = value1; else var = value2;}
+\end{quote}
+This can be rewritten more concisely as:
+\begin{quote}
+\texttt{var = (expression) ? value1 : value2;}
+\end{quote}
+The boolean-valued expression is evaluated:  
+If the result is true, \texttt{value1} is assigned to \texttt{var}; if not, \texttt{value2} is assign to \texttt{var}.
+
+\prg{Control02}
+\prgl{control}{Control02}
+
+The program computes the number of days in a month taking leap years into account.
+
+\begin{itemize}
+\item The variables are allocated and the first two, \texttt{year} and \texttt{month}, are
+given initial values.
+\item The expression \texttt{month == 2} evaluates to true, so the statement
+following the expression is executed. \jel{} will display \texttt{Choosing then-branch} to 
+emphasize this.
+\item The inner statement is an assignment statement with a conditional expression.
+The expression is evaluated
+and its result is false, so the value after the colon is assigned to the variable.
+\jel{} will display \texttt{Choosing else-branch}.
+\item The value of \texttt{days} is printed.
+\end{itemize}
+
+\textbf{Exercise} Complete the program with the correct computation
+for leap years: a year divisible by 100 is not a leap year unless it
+is divisible by 400.
+
+\textbf{Exercise} Rewrite the entire if-statement as nested conditional expressions.

@@ -1,0 +1,47 @@
+\subsection{Recursion}\label{method.04}
+
+\textbf{Concept} \emph{Recursion} occurs when method calls itself.
+There is nothing at all mysterious about recursion!
+Each call simply creates a new activation record on the stack.
+However, to ensure that the recursive calls terminate,
+eventually, some call of the method should return without
+invoking itself once again.
+
+\prg{Method04}
+\prgl{method}{Method04}
+
+The standard example of a recursive method is one
+that computes the factorial function:
+\begin{displaymath}
+n! = n\cdot{} (n-1) \cdot{} \cdots{} \cdot{} 2 \cdot{} 1 = n \cdot{} (n-1)!
+\end{displaymath}
+The recursion is terminated by defining $n!=1$ for $n\leq 1$.
+
+\begin{itemize}
+\item The \texttt{main} method calls the method \texttt{factorial}
+with the actual parameter 5. This creates an activation record with
+the formal parameter \texttt{n} initialized to 5.
+\item To compute the expression in the second return statement,
+the method \texttt{factorial} is called again, this time with the actual
+parameter equal to $5-1=4$.
+\item The sequence of recursive calls continues five times,
+each one allocating a new activation record with a new variable \texttt{n}.
+\item Finally, \texttt{factorial} is called with actual parameter 1.
+This call creates a new activation record as usual, but does not
+cause \texttt{factorial} to be invoked again. Instead,
+the value 1 is returned and the activation record is deallocated.
+Just before the method returns, select the tab \texttt{Call Tree} above the graphic display;
+the sequence of calls from \texttt{main} to the sequence of recursive calls is displayed.
+Select \texttt{Theater} to return to the animated display.
+\item The recursive sequence \emph{unfolds}: each returned value
+is used to compute a new value to be returned by that call of \texttt{factorial}.
+\item Finally, the value 120 is returned to the \texttt{main} method and printed.
+\end{itemize}
+
+\textbf{Exercise} Write a recursive method to compute the n'th Fibonacci number: 
+\begin{displaymath}
+fib(0) = 0, fib(1) = 1, fib(n) = fib(n-1) + fib(n-2) \;\;\mathit{for}\;\; n > 1.	
+\end{displaymath}
+
+
+\textbf{Exercise} Write a more efficient nonrecursive method for the same function.

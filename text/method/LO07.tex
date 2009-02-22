@@ -1,0 +1,36 @@
+\subsection{Objects as parameters}\label{method.07}
+
+\textbf{Concept} A reference to an object can be an actual parameter whose
+corresponding formal parameter is declared to be of the same class.
+As with all parameters, the \emph{value} of actual parameter is used
+to initialize the formal parameter, but since it is a reference that is
+passed, the method that is called can access fields and methods of the
+object. This is called \emph{reference semantics}.
+
+\prg{Method07}
+\prgl{method}{Method07}
+
+This program computes the cost of a song as the product of its length
+in seconds and the price per second. A class \texttt{Song} is defined
+to encapsulate the field \texttt{seconds} and the method \texttt{computePrice}.
+The method \texttt{getPrice} in the \texttt{main} method receives an object of class
+\texttt{Song} as a parameter and calls \texttt{computePrice}.
+
+\begin{itemize}
+\item Two objects of class Song are instantiated and references to them
+are assigned to the variables \texttt{song1} and \texttt{song2}.
+\item The method \texttt{getPrice} is called with two parameters:
+the first is a reference \texttt{song1} to an object of class \texttt{Song}, while the second
+is a value of type double. The actual parameters are used to initialize the formal
+parameters; check that \texttt{song1} and \texttt{s} reference the same object.
+\item Since the formal parameter \texttt{s} receives a reference to an object
+of class \texttt{Song} (in this case \texttt{song1}), it can be used to call
+the method \texttt{computePrice} declared in the class.
+\item The method returns a value that is assigned to \texttt{price1}.
+\item A second call to the method is executed exactly the same way,
+except that the actual parameter is the reference contained in \texttt{song2}.
+\item The values of \texttt{price1} and \texttt{price2} are printed.
+\end{itemize}
+
+\textbf{Exercise} Modify the program so that discount does not use the explicit
+parameter \texttt{s}.

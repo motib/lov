@@ -1,0 +1,109 @@
+\maketitle
+\thispagestyle{empty}
+
+%BEGIN LATEX
+\vfill
+%END LATEX
+
+Copyright \copyright{} 2007 by Mordechai (Moti) Ben-Ari.
+
+This work is licensed under the Creative Commons
+Attribution-Noncommercial-ShareAlike 3.0 License. 
+To view a copy of this license, 
+visit \url{http://creativecommons.org/licenses/by-nc-sa/3.0/}; 
+or, (b) send a letter to Creative Commons, 
+543 Howard Street, 5th Floor, San Francisco, California, 94105, USA.
+
+\clearpage
+
+\section*{Introduction}
+\emph{Learning objects (LOs)} are small, self-contained, reusable resources for 
+learning. The advantages of LOs include: \emph{flexibility of 
+use} (students can choose to work with LOs at their convenience) and 
+\emph{adaptability} (students can choose to work only with those LOs that 
+address topics they find difficult).
+
+LOs are usually developed using multimedia authoring tools: see
+the Codewitz project \url{http://codewitz.net/} and the LOs
+developed by the Learning Technology Research Institute 
+\url{http://www.londonmet.ac.uk/ltri/learningobjects/}.
+
+LOV takes another approach for developing LOs for introductory programming:
+the LOs are based on a visualization tool, here, the \jel{} system for animating
+introductory programs in Java.
+
+The LOs are primarily intended for self-study: to learn about a specific
+concept in Java, work through the LO for that concept.
+
+\section*{Learning objects for \jel{}}
+
+The learning objects (LOs) described here consist of text and Java 
+programs. Each LO is independent, so if you know the needed background 
+material you can go directly to any LO. The learning objects are designed
+for use with the \jel{} system for animating programs in Java:
+\begin{center}
+\url{http://cs.joensuu.fi/jeliot/}.
+\end{center}
+
+For each topic, a table is given that lists the LOs, the associated source 
+files, and the ``prerequisites'' for each LO. The prerequisites are the number
+of the LO that introduces \emph{concepts} that are assumed;
+however, there is no need to actually work through the LOs in sequence.
+
+The text for each LO starts with a description of the concept being presented 
+and an overview of the example program. It is followed by a bulleted list for 
+each program that describes what to observe as you \emph{step} through the 
+program. The text for the LO ends with a programming exercise.
+
+\vspace*{3ex}
+
+\textbf{Acknowledgements:} I would like to thank Niko Myller and Andr\'es Moreno
+for modifying \jel{} to accomodate the LOs, and Ronit Ben-Bassat Levy for suggestions
+for improving the LOs.
+
+\newpage
+
+\section*{Tips for using \jel{}}
+
+\begin{itemize}
+\item The LOs have been tested with Jeliot Version 3.7.1; please ensure that you
+are not using earlier versions.
+\item Copy the source file directories to a clean directory so that if you make 
+changes you will not modify the original files. 
+Run \jel{} and open the source file for the LO you want to work with.
+\item Learn how to use \jel{} before studying the LOs.
+In particular, learn how to use \texttt{Step}, \texttt{Pause}, \texttt{Play},
+and \texttt{Rewind} to control the animation.
+\item Select \texttt{Animation / Run Until... (ctrl-T)} and enter a line number to begin
+the animation at that line. This is very useful in two situations:
+\begin{itemize}
+	\item when you are animating a program several times and 
+	wish to skip over the initialization or other parts of the code;
+	\item when you wish to examine the final state after the last line of the
+	main method: enter the line number of the closing brace of the main method.
+\end{itemize}
+\item Select \texttt{Options / Show History View} to enable storing of each step
+of the animation; these can be viewed by selecting the \texttt{History} tab
+on the right-hand side of the display. Enabling the history may slow Jeliot down,
+especially for large programs.
+\item The programs in the LOs use standard Java 
+with two exceptions that simplify the animations:
+\begin{itemize}
+	\item None of the programs use the parameter of the \texttt{main} method.
+	Since \jel{} accepts Java programs without the formal parameter 
+	definition \texttt{String[] args}, the parameter has been commented-out in the programs.
+	You can remove the comments to compile the programs with a Java compiler.
+	
+	If you wish to run \jel{} with the parameter, you can select \texttt{Options /
+	Use Null Parameter to Call Main} to skip over the animation of the parameter.
+	\item Two of the LOs on control structures use the input statement:
+	\begin{center}
+	\texttt{input = Input.nextInt()}
+	\end{center}
+	To compile these programs with standard Java, 
+	add the following declaration to the \texttt{main} method:
+    \begin{center}
+	\texttt{java.util.Scanner Input = new java.util.Scanner(System.in);}
+    \end{center}
+\end{itemize}
+\end{itemize}

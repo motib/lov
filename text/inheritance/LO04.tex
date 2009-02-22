@@ -1,0 +1,39 @@
+\subsection{Downcasting}\label{inher.04}
+
+\textbf{Concept} A variable of the type of a class can reference an object 
+of the type of a \emph{subclass}, but this variable cannot be used to access fields 
+declared in the subclass.
+Nevertheless, the object ``remembers'' its type, even if it is assigned 
+to a variable of the type of its superclass, and the type can be ``recovered''
+by casting to a variable of the type of the subclass. 
+This is called 
+\emph{downcasting} because the cast is ``down'' the derivation hierarchy.
+
+\prg{Inheritance04}\prgl{inheritance}{Inheritance04}
+
+In this program, we take an object of the type of the 
+subclass \texttt{AParticle} and assign its reference to the variable 
+\texttt{p} of the type of the superclass \texttt{Particle}. The object's 
+actual type is recovered by downcasting from \texttt{p} to \texttt{a}.
+\begin{itemize}
+  \item The objects are created.
+  \item The value of \texttt{p.position} is stored in a variable.
+  \item The reference in the variable \texttt{a} is assigned to \texttt{p}.
+  Note that the arrows from the representation of both variables point to
+  the same object of type \texttt{AParticle}, and that the other object
+  is garbage.
+  \item When the value of \texttt{p.position} is accessed, it refers to the value that 
+  is in \texttt{a.position}.
+  \item The reference in \texttt{p} can be cast to the type \texttt{AParticle}
+  and assigned to \texttt{a}. Although \texttt{p} is declared to hold references to objects of
+  type \texttt{Particle}, the object was really of the   subclass \texttt{AParticle}.
+  \item Both the fields \texttt{position} and \texttt{spin} can be accessed 
+  through \texttt{a}.
+\end{itemize}
+
+\textbf{Exercise} What happens if you try to access \texttt{p.spin} after
+\texttt{a} has been assigned to \texttt{p}?
+
+\textbf{Exercise} Add the statement \texttt{BParticle b = (BParticle) p}
+after the assignment of \texttt{a} to \texttt{p}. Does the program compile
+successfully? Does it run successfully? Explain the results.

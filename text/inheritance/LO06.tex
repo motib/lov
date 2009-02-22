@@ -1,0 +1,40 @@
+\subsection{Abstract classes}\label{inher.06}
+
+\textbf{Concept} Very often the ``root'' of a set of derived types has no 
+meaning itself, in the sense that objects of that type would never be 
+declared. For example, in a realistic simulation program, the would be no 
+real particles that are just ``particles,'' only particles with names like 
+$\alpha$-particles and $\beta$-particles.
+An \emph{abstract} class can be declared which serves only as a root from 
+which to derive a hierarchy of subclasses. 
+It is not legal to declare \emph{objects} of an abstract class, 
+although \emph{variables} of its type may be declared and used to 
+reference objects of any type within the hierarchy. A method may also be 
+declared abstract; this indicates that it \emph{must} be overridden in 
+subclasses.
+
+\prg{Inheritance06}
+\prgl{inheritance}{Inheritance06}
+
+The follow program declares \texttt{Particle} to
+be \texttt{abstract} and no objects of that class can be declared. The
+method \texttt{newPosition} is also declared abstrct because it doesn't
+make sense to have a particle that you can't move.
+
+\textbf{Exercise} The program does not compile successfully. Why? (Note that
+in \jel{}, the problem is only found at when animating the program.)
+Modify the program so that it compiles and executes.
+
+\begin{itemize}
+  \item The objects are created and references to them assigned to 
+  elements of the array.
+  \item Method \texttt{newPosition} is invoked for the object referenced 
+  by each element of the array \texttt{p}. 
+  Check that the fields accessed are those of the object referenced by the
+  array element and that the calls are dynamically dispatched to the method
+  appropriate for the type of the object.
+\end{itemize}
+
+\textbf{Exercise} It is possible to declare a nonabsract method in an 
+abstract class. Give an example for this program, and explain why it is a 
+reasonable thing to do.

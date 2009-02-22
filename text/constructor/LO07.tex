@@ -1,0 +1,39 @@
+\subsection{Constructors with object parameters}\label{con.07}
+
+\textbf{Concept} An object can contain fields of other user-defined 
+objects, not just of primitive and predefined types. There is no 
+difference in the constructors, except that references to objects are
+passed as actual parameters and assigned to fields of the object.
+
+\prg{Constructor07}
+\prgl{constructor}{Constructor07}
+
+Two objects of type \texttt{Song} are allocated and 
+assigned to fields of another object of type 
+\texttt{SongSet} which has two fields of type \texttt{Song}.
+\begin{itemize}
+\item Execute the program until the two objects of type \texttt{Song} are 
+allocated and their references assigned to the variables \texttt{song1} and \texttt{song2}.
+(You may want to select \texttt{Animation / Run Until (ctrl-T)} to skip the 
+animation of these declarations.)
+\item A variable \texttt{set} is allocated. An object of type 
+\texttt{SongSet} is allocated with default null fields.
+\item The constructor for \texttt{SongSet} is called and the references in the two variables
+\texttt{song1} and \texttt{song2} are passed as actual parameters. These references 
+are stored in the two fields \texttt{track1} and \texttt{track2}.
+\item The reference to the object of class \texttt{SongSet} 
+is returned and stored in \texttt{set}. 
+\item The prices of the two objects are obtained and stored in the variables
+\texttt{price1} and \texttt{price2}. \texttt{set} is an object 
+of type \texttt{Songset}, while \texttt{set.track1} is an object of type 
+\texttt{Song} and thus can be used to call the method 
+\texttt{computePrice}.
+\end{itemize}
+
+\textbf{Exercise}  Modify the program so that the variables \texttt{song1} and
+\texttt{song2} are not used; instead, the constructors for the songs are
+embedded within the constructor call for \texttt{SongSet}.
+
+\textbf{Exercise}  Modify the program so the constructors for the songs are
+call within the constructor for \texttt{SongSet}. Under what circumstances
+would this be done?

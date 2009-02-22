@@ -1,0 +1,42 @@
+\subsection{A void method}\label{method.01}
+
+\textbf{Concept} When a method that is declared \texttt{void} is called,
+it allocates memory for its parameters and local variables, executes
+its statements and then returns. The call is a statement constructed
+from the name of the method followed by a list of actual parameters.
+
+\prg{Method01}
+\prgl{method}{Method01}
+
+The program computes the maximum of two integer values.
+
+\begin{itemize}
+\item The variables \texttt{x} and \texttt{y} are allocated and initialized.
+\item The method is called with the values of the actual parameters \texttt{x} and \texttt{y}.
+\item Memory is allocated for the formal parameters of the method and the local variables.
+This is called an \emph{activation record} and is displayed by \jel{} in the upper left
+hand part of the screen labeled \texttt{Method Area}. The new activation record hides
+the previous ones which are no longer accessible.
+\item The actual parameters are used to initialize the formal parameters in the activation
+record.
+\item The local variable \texttt{max} is allocated within the activation record.
+\item The statements of the method are executed.
+\item After the last statement has been executed, the method \emph{returns}
+and the activation record is deallocated.
+\item Execution continues with the statement after the method call.
+Here, the method is called again, this time with an integer literal
+as an actual parameter instead of a variable. 
+\end{itemize}
+\textbf{Note:} In a call to a static method, the name of the 
+class in which it is defined can be given as in the second call.
+Since the method is defined in the \emph{same} class as the call,
+the class name need not be given, as shown in the first call.
+
+\textbf{Exercise} Trace the execution of a call of the following method and
+explain why it doesn't swap the values of the actual parameters.
+\begin{quote}
+\texttt{void swap(int a, int b) \{}\\
+\hspace*{2em}\texttt{int temp = a; a = b; b = temp;}\\
+\texttt{\}}
+\end{quote}
+Can you write a method to swap two integer values?

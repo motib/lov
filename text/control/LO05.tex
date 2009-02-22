@@ -1,0 +1,31 @@
+\subsection{Break statements}\label{control.05}
+
+\textbf{Concept} The exit from a while loop occurs \emph{before} the loop body and
+the exit from a do-while loop occurs \emph{after} the loop body. 
+The \texttt{break} statement can
+be used to exit from an arbitrary location or locations from within the loop body.
+
+The \texttt{break} statement is useful when the expression that leads to exiting the loop cannot
+be evaluated until some statements from the loop body have been executed,
+and yet there remain statements to be executed after the expression is evaluated.
+
+\prg{Control05}
+\prgl{control}{Control05}
+
+The program sums a sequence of nonnegative integers read from the input and terminates when
+a negative value is read.
+
+\begin{itemize}
+\item The two variables are allocated and \texttt{sum} is initialized with the value zero.
+\item The \texttt{while} statement is executed with \texttt{true} as the loop expression.
+Of course, \texttt{true} will never evaluate to false, so the loop will never be exited
+at the \texttt{while}.
+\item An integer value is read from the input. If it is negative the \texttt{break} statement
+is executed and \jel{} displays \texttt{Exiting the while loop because of the break}.
+\item Otherwise, the following assignment statement is executed and
+\jel{} displays \texttt{Continuing without branching}.
+\item After the assignment statement is executed, the loop starts again.
+\end{itemize}
+
+\textbf{Exercise} Write equivalent programs using a while loop
+and a do-while loop.

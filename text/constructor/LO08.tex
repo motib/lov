@@ -1,0 +1,39 @@
+\subsection{Constructors with subclass object parameters}\label{con.08}
+
+\textbf{Concept} An object of a subclass is also an object of the type of the 
+superclass. Therefore, it can be used when an actual parameter is expected.
+
+\prg{Constructor08}
+\prgl{constructor}{Constructor08}
+
+We allocate two objects, one of type \texttt{Song} and 
+one of type \texttt{DiscountSong}, and use them as actual parameters in 
+the constructor for an object of type \texttt{SongSet} that expects two 
+parameters of type \texttt{Song}.
+\begin{itemize}
+\item Execute the program until the two objects one of type \texttt{Song} 
+the other of type \texttt{DiscountSong} are 
+allocated and their references assigned to the variables \texttt{song1} and \texttt{song2},
+respectively.
+(You may want to select \texttt{Animation / Run Until (ctrl-T)} to skip the 
+animation of these declarations.)
+\item The variable \texttt{set} is allocated, and an object of type 
+\texttt{SongSet} is allocated with default null fields.
+\item The constructor for \texttt{SongSet} is called and the references in the two variables
+\texttt{song1} and \texttt{song2} are passed as actual parameters. These references 
+are stored in the two fields \texttt{track1} and \texttt{track2}.
+\item The reference to the object of class \texttt{SongSet} 
+is returned and stored in \texttt{set}. 
+\item The prices of the two objects are obtained and stored in the variables
+\texttt{price1} and \texttt{price2}. \texttt{set} is an object 
+of type \texttt{Songset}, while \texttt{set.track1} is an object of type 
+\texttt{Song} and thus can be used to call the method 
+\texttt{computePrice} of that class. Similarly for \texttt{price2},
+except that \texttt{set.track2} is an object of type 
+\texttt{DiscountSong}; check that the method \texttt{computePrice} of this
+class is called.
+\end{itemize}
+
+\textbf{Exercise}  Can \texttt{s2} in the main method be declared to be of type
+\texttt{Song}? Explain.
+

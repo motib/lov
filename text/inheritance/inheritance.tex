@@ -1,0 +1,86 @@
+\section{Learning Objects for Inheritance}\label{s.inheritance}
+
+\textbf{Concept} \emph{Inheritance} is an important technique for 
+structuring object-oriented programs. Given a class (called a 
+\emph{superclass}) it can be extended to a \emph{subclass}. The 
+subclass inherits all the fields of the superclass and it can add 
+additional fields. The subclass inherits methods of the superclass and it can 
+add new methods or override the inherited methods with its own versions.
+
+\begin{center}
+\begin{tabular}{|c|l|l|c|}
+\hline
+LO & Topic  & Java Files (.java) & Prerequisites \\\hline
+\ref{inher.01} &  Inheriting fields                 & Inheritance01 &\\\hline
+\ref{inher.02} &  Inheriting and overriding methods & Inheritance02  & 1\\\hline
+\ref{inher.03} &  Dynamic dispatching             & Inheritance03  &  2\\\hline 
+\ref{inher.04} &  Downcasting                     & Inheritance04  &  3\\\hline
+\ref{inher.05} &  Heterogeneous data structures   & Inheritance05  &  4\\\hline
+\ref{inher.06} &  Abstract classes                & Inheritance06  &  5\\\hline
+\ref{inher.07} &  Equals                          & Inheritance07A, B, C  &  2\\\hline
+\ref{inher.08} &  Clone                           & Inheritance08  &  2\\\hline
+\ref{inher.09} &  Overloading vs. overriding      & Inheritance09  &  3\\\hline
+\end{tabular}
+\end{center}
+
+%BEGIN LATEX
+\begin{center}
+\begin{picture}(200,220)
+%\put(0,0){\framebox(200,210){}}
+\put(60,160){\framebox(80,50){\shortstack[l]{\texttt{position}\\\texttt{newPosition}}}}
+\put(0,80){\framebox(80,50){\shortstack[l]{\texttt{spin}\\\texttt{newPosition}}}}
+\put(120,80){\framebox(80,50)%
+{\shortstack[l]{\texttt{charge}\\\texttt{(inherited)}\\\hspace{1em}\texttt{newPosition}}}}
+\put(120,0){\framebox(80,50){\shortstack[l]{\texttt{strange}\\\texttt{newPosition}}}}
+\put(160,80){\vector(0,-1){30}}
+\put(80,160){\vector(-1,-1){30}}
+\put(120,160){\vector(1,-1){30}}
+\put(0,190){\makebox(60,20){\texttt{Particle}}}
+\put(-60,110){\makebox(60,20){\texttt{AParticle}}}
+\put(200,110){\makebox(60,20){\texttt{BParticle}}}
+\put(200,30){\makebox(60,20){\texttt{CParticle}}}
+\end{picture}
+\end{center}
+%END LATEX
+
+\textbf{Program} The running example is a framework for the simulation of 
+moving particles. There is a class \texttt{Particle} with a field 
+\texttt{position} that is updated by the method \texttt{newPosition}. 
+There are three subclasses:
+\begin{itemize}
+	\item \texttt{AParticle} is derived directly from \texttt{Particle} and adds the field
+	\texttt{spin}.\\The method \texttt{newPosition} is overridden.
+	\item \texttt{BParticle} is derived directly from \texttt{Particle} and adds the field
+	\texttt{charge}.\\The method \texttt{newPosition} is \emph{not} overridden.
+	\item \texttt{CParticle} is derived directly from \texttt{BParticle} and thus
+	indirectly from \texttt{AParticle}.\\It adds the field
+	\texttt{strange}; the method \texttt{newPosition} is overridden.
+\end{itemize}
+
+For each program the following initialization is performed and will not
+be explicitly mentioned for each learning object; instead, the step 
+``the objects are created'' will be listed:
+\begin{itemize}
+\item Variable are declared and assigned the null value.
+\item Memory is allocated for each object's fields and are given default
+values. For a subclass, these fields include all fields of its superclasses.
+\item In the constructors, a subclass calls \texttt{super} to initialize
+the fields declared by the superclasses and then initializes its own fields.
+\end{itemize}
+
+\textbf{Tip:} Use \texttt{Animation / Run Until ...} to skip over the animation
+of the initialization.
+
+\textbf{Tip:} Several of the LOs will ask you to check that a certain version
+of a method is called. This can be done by looking at the source code in the left panel:
+the method called is highlighted in blue.
+
+\input{inheritance/LO01}
+\input{inheritance/LO02}
+\input{inheritance/LO03}
+\input{inheritance/LO04}
+\input{inheritance/LO05}
+\input{inheritance/LO06}
+\input{inheritance/LO07}
+\input{inheritance/LO08}
+\input{inheritance/LO09}

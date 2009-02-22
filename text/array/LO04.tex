@@ -1,0 +1,24 @@
+\subsection{Returning an array from a method}\label{array.04}
+
+\textbf{Concept} An array can be allocated within a method. Although the variable 
+containing the reference to the array is local to the method, the array 
+itself is global and the reference can be returned from the method.
+
+\prg{Array04}\prgl{array}{Array04}
+
+This program passes an array as a parameter to a method that reverses the elements of the array. The array is reversed into a new array \texttt{b} that is allocated in the method \texttt{reverse}. It is then returned to the main method and assigned to \texttt{reversedFib}, a  different variable of the same array type \texttt{int[]}.
+\begin{itemize}
+\item Initially, the variable \texttt{fib} of type integer array is 
+allocated. As part of the same statement, the array object is created with 
+its seven fields having the values in the initializer; the reference to 
+the object is returned and stored in the variable \texttt{fib}.
+\item A reference to the array is passed as a parameter to the method 
+\texttt{reverse}. The formal parameter \texttt{a} contains a reference to the same array pointeed to by the actual parameter \texttt{fib}.
+\item A new array \texttt{b} of the same type and length as the parameter \texttt{a} is declared and allocated.
+\item Each iteration of the for-loop moves one element from the first half of \texttt{a} to the second half of \texttt{b} and one element from the second half of \texttt{a} to the first half of \texttt{b}. Variables \texttt{i} and \texttt{j} contain the indices of the two elements that are moved.
+\item The reference to array \texttt{b} is returned.
+Although array referenced by \texttt{b} was allocated \emph{within} the method call, it still exists after returning. 
+\item The reference that is returned is assigned to \texttt{reversedFib}.
+\end{itemize}
+
+\textbf{Exercise} The program has a bug. Fix it!

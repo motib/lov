@@ -1,0 +1,36 @@
+\subsection{If-statements}\label{control.01}
+
+\textbf{Concept} The execution of an if-statement starts with the evaluation of 
+its boolean-valued expression. If the result is true, the statement written
+after the closing parenthesis of the expression is executed; if the result is
+false, the statement written after the \texttt{else} is executed. These statements
+can be single statements or blocks of statements. In particular,
+the statements can themselves be if-statements (\emph{nested if-statements}),
+in which case the inner statement is executed the same way.
+
+\prg{Control01}
+\prgl{control}{Control01}
+
+The program computes the number of days in a month taking leap years into account.
+
+\begin{itemize}
+\item The variables are allocated and the first two, \texttt{year} and \texttt{month}, are
+given initial values.
+\item The expression \texttt{month == 2} evaluates to false, so the statement
+following the else is executed. \jel{} will display \texttt{Choosing else-branch} to 
+emphasize this.
+\item The inner statement is itself an if-statement. The expression is evaluated
+and its result is true. Note that once one of the terms of \texttt{||} (or) becomes 
+true, there is no need to evaluate the others.
+\item The assignment statement following the statement is executed.
+\jel{} will display \texttt{Choosing then-branch}. (The 
+terminology \emph{then-branch} orginates from programming
+languages that require the use of the keyword \texttt{then} between the expression
+and the statement.)
+\item The value of \texttt{days} is printed.
+\end{itemize}
+
+\textbf{Exercise} Complete the program with the correct computation
+for leap years: a year divisible by 100 is not a leap year unless it
+is also divisible by 400.
+

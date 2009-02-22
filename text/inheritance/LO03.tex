@@ -1,0 +1,40 @@
+\subsection{Dynamic dispatching}\label{inher.03}
+
+\textbf{Concept} A variable \texttt{v} of type \texttt{T} can contain a 
+reference to an object of type \texttt{T} or of the type of any subclass of 
+\texttt{T}. When invoking \texttt{v.m} for some method \texttt{m} that is 
+overridden in a subclass, it is the type of the \emph{object} currently 
+referenced by \texttt{v} (not the type of the \emph{variable} \texttt{v}) that determines which method is called. This is 
+called \emph{dynamic dispatching} because the call is dispatched at 
+runtime.
+
+\prg{Inheritance03}
+\prgl{inheritance}{Inheritance03}
+
+\begin{itemize}
+\item The objects are created.
+  \item The references to the objects are assigned one-by-one to the variable \texttt{p},
+  and then the method \texttt{newPosition} is invoked using \texttt{p}. The modified
+  value of \texttt{position} is assigned to a variable.
+  \item Check that the call on \texttt{p} invokes the method defined in class 
+  \texttt{Particle}.
+  \item After assigning \texttt{a} to \texttt{p}, check that the call invokes the
+   method defined in the class \texttt{AParticle}; this method overrides the method declared 
+  in class \texttt{Particle}. Although the type of \texttt{p} is class
+  \texttt{Particle}, it holds a reference to an object whose type is  
+  class \texttt{AParticle} so the method of that class is called.
+  \item Note that as a result of the assignment, the object of type \texttt{Particle}
+  has become garbage.
+  \item After assigning \texttt{b} to \texttt{p}, check that the call invokes the
+   method defined in the superclass \texttt{Particle}; since the method was \emph{not}
+   overridden   in \texttt{BParticle}, the method called is the one inherited from the
+   superclass.
+  \item After assigning \texttt{c} to \texttt{p}, check that the call invokes the
+   method defined in the class \texttt{CParticle}; this method overrides the method declared 
+  in class \texttt{Particle}. Although the type of \texttt{p} is class
+  \texttt{Particle}, it holds a reference to an object whose type is
+  class \texttt{CParticle} so the method of that class is called.
+  \end{itemize}
+
+\textbf{Exercise} Add an assignment of \texttt{c} to \texttt{b} and call
+\texttt{b.newPosition(10)}. What is the value now of \texttt{b.position}?

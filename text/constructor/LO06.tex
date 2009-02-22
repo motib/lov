@@ -1,0 +1,74 @@
+\subsection{Constructors for subclasses}\label{con.06}
+
+\textbf{Concept} Constructors are \emph{not} inherited. You must 
+explicitly define a constructor for a subclass (with or without 
+parameters). As its first statement, the constructor for the subclass must 
+call a constructor for the superclass using the method \texttt{super}.
+
+\prg{Constructor06A}
+\prgl{constructor}{Constructor06A}
+
+The website wants to sell certain songs at a discount.
+The subclass \texttt{DiscountSong} inherits from class 
+\texttt{Song}, adds a field \texttt{discount} and overrides 
+\texttt{computePrice} to include \texttt{discount} in the computation. 
+The constructor for the subclass calls the three-parameter constructor for 
+the superclass, passing it the three parameters that it expects. The 
+fourth parameter is used directly in the constructor \texttt{DiscountSong} 
+to initialize the field \texttt{discount}.
+\begin{itemize}
+\item The variable \texttt{song1} is allocated and contains the null value.
+\item Memory is allocated for the \emph{five} fields of the object of the subclass \texttt{DiscountSong} and default values are assigned to the fields. 
+Four fields inherited from the superclass and one field \texttt{discount} 
+added by the subclass.
+\item The constructor for the subclass \texttt{DiscountSong} is called 
+with four parameters. It calls the constructor for the superclass 
+\texttt{Song} which assigns values to three fields from the parameters and 
+the fourth by calling \texttt{computePrice}.
+\item The superclass constructor returns and then the fourth parameter of 
+the subclass constructor is assigned to the field \texttt{discount}.
+\item The reference to the subclass object is returned and assigned to a 
+variable \texttt{song1} of that type.
+\end{itemize}
+Unfortunately, this does not do what we intended, because the superclass 
+method for \texttt{computePrice} is used to compute \texttt{price} 
+instead of the method from the subclass.
+
+\textbf{Exercise} Could \texttt{song1} be declared to be of type
+\texttt{Song}? Explain your answer.
+
+\bigskip
+
+\prg{Constructor06B}
+\prgl{constructor}{Constructor06B}
+
+The problem can be solved by adding a call to 
+\texttt{computePrice} in the constructor for the subclass. 
+
+Check this by executing the code and ensuring that the discounted price is computed.
+
+The disadvantage of this solution is that we are calling 
+\texttt{computePrice} twice.
+
+\bigskip
+
+\prg{Constructor06C}
+\prgl{constructor}{Constructor06C}
+
+Normally in an object-oriented program, all the 
+fields of an object are private and an accessor method like 
+\texttt{getPrice()} is used to access the values of the fields.
+If this is done, the computation of the price can be placed in 
+the accessor for the superclass and overridden in accessor for the 
+subclass. 
+
+Check this by executing the code and ensuring that the discounted price is computed.
+
+The disadvantage of this solution is that the computation is 
+performed for each access of the field \texttt{price}.
+
+\textbf{Exercise} Develop other solutions for this problem: (a) Call
+\texttt{computePrice} explicitly after the call to the constructor; (b)
+Modify \texttt{getPrice} to compute the value of \texttt{price} on the first
+call and save it for future calls. Summarize the advantages and
+disadvantages of all the solutions for this problem.

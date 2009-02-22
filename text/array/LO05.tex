@@ -1,0 +1,24 @@
+\subsection{Array assignment can create garbage}\label{array.05}
+
+\textbf{Concept} Since an array variable contains a reference to the array itself, if 
+\texttt{null} or another value (another array of the same type) is assigned to the 
+variable, the first array may no longer be accessible. Inaccessible memory 
+is called \emph{garbage}. The Java runtime system includes a \emph{garbage 
+collector} whose task is to return garbage to the pool of memory that can 
+be allocated.
+
+\prg{Array05}\prgl{array}{Array05}
+
+An array referenced by the variable \texttt{fib} is passed as a parameter to a method that moves the values of the elements in the first half of the array \texttt{fib} into a new array \texttt{b} which is allocated in the method. The new array is returned to the main method and assigned to the variable \texttt{fib}, destroying the reference to the original array.
+
+\begin{itemize}
+\item Initially, the variable \texttt{fib} of type integer array is allocated. As part of the same statement, the array object is created with its seven fields having the values in the initializer; the reference to the object is returned and stored in the variable \texttt{fib}.
+\item A reference to the array is passed as a parameter to the method \texttt{first}. The formal parameter \texttt{a} contains a reference to the same array pointed to by the actual parameter \texttt{fib}.
+\item A new array \texttt{b} of the same type as the parameter \texttt{a} but half the length is declared and allocated.
+\item Each iteration of the for-loop moves one element from the first half of \texttt{a} to the corresponding element in the array \texttt{b}.
+\item The reference to array \texttt{b} is returned. Although array referenced by \texttt{b} was allocated \emph{within} the method call, it still exists after returning. 
+\item There are no references to the original array so it is inaccessible. \jel{} does not visualize garbage collection so the array remains visualized in the Instance and Array Area until the end of the program.
+\end{itemize}
+
+\textbf{Exercise} Modify the program so that the original array remains accessible
+in a different field.

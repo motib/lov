@@ -1,0 +1,39 @@
+\subsection{Returning objects}\label{method.08}
+
+\textbf{Concept} A return value can be a reference to an object.
+
+\prg{Method08}
+\prgl{method}{Method08}
+
+This program computes the cost of a song as the product of its length
+in seconds and the price per second. A class \texttt{Song} is defined
+to encapsulate the field \texttt{seconds} and the method \texttt{computePrice}.
+The method \texttt{longer} in the \texttt{main} method receives references
+to two objects of class \texttt{Song} as parameters and returns a reference
+to the one with the larger value of the field \texttt{seconds}.
+
+\begin{itemize}
+\item Two objects of class Song are instantiated and references to them
+are assigned to the variables \texttt{song1} and \texttt{song2}.
+\item The method \texttt{longer} is called with two parameters
+that are references to objects of class \texttt{Song}.
+The actual parameters are used to initialize the formal
+parameters; check that \texttt{song1} and \texttt{s1} reference the same object,
+as do \texttt{song2} and \texttt{s2}.
+\item Since the formal parameters \texttt{s1} and \texttt{s2} receive references to objects
+of class \texttt{Song}, they can be used to access the fields \texttt{seconds} of each object.
+\item The method returns the reference to the object whose field \texttt{seconds}
+has the larger value. The reference is assigned to the variable \texttt{longerSong};
+check that this reference is to the same object as the reference in \texttt{song1}.
+\item The reference in \texttt{longerSong} is used to call the method \texttt{computePrice}
+and the value returned is assigned to the variable \texttt{price2}.
+\item The value \texttt{price2} is printed.
+\end{itemize}
+
+\textbf{Exercise} Modify the program so that discount does not use the explicit
+parameter \texttt{s}.
+
+\textbf{Exercise} Replace the last declaration and statements of the program by one
+declaration.
+
+\textbf{Exercise} Write a method to swap two integer values.
