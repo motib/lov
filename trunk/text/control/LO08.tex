@@ -1,0 +1,30 @@
+\subsection{Continue statements}\label{control.08}
+
+\textbf{Concept} The \texttt{break} statement is used to \emph{exit} a loop
+from an arbitrary location in its body; the \texttt{continue} statement is used
+to \emph{skip} the rest of a loop body and return to evaluate the condition
+for continuing the loop.
+
+\prg{Control08}
+\prgl{control}{Control08}
+
+This program sums all the positive integers less than \texttt{N} that are
+divisible by $2$ or $3$ but not by both. For \texttt{N=10}, the result
+is $2+3+4+8+9=26$.
+\begin{itemize}
+\item The constant \texttt{N} and the variable \texttt{sum} are allocated and initialized.
+\item The \texttt{for} loop is standard and is executed for the values $0$ through $N-1$.
+\item If \texttt{i} is divisible by $2$ and also by $3$ (for example, $6$), the 
+\texttt{continue} statement is executed and the variable \texttt{sum} is not modified.
+\item If \texttt{i} is divisible neither by $2$ nor by $3$ (for example, $5$), the 
+\texttt{continue} statement is executed and the variable \texttt{sum} is not modified.
+\item In all other cases, the value of \texttt{i} is added to \texttt{sum}.
+\item The final value of \texttt{sum} is printed. 
+\end{itemize}
+
+\textbf{Exercise} Modify the program so that it explicitly checks for
+divisibility by $6$, instead of checking for divisibility by $2$ and $3$ in
+separate statements.
+
+\textbf{Exercise} Modify the program so that \texttt{continue} is not used.
+

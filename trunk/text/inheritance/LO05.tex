@@ -1,0 +1,25 @@
+\subsection{Heterogeneous data structures}\label{inher.05}
+
+\textbf{Concept} 
+A heterogeneous data structure is one that can hold elements of different types. 
+A data structure whose elements are of the type of a class can hold
+references to objects of any subclass of that class.
+
+\prg{Inheritance05}
+\prgl{inheritance}{Inheritance05}
+
+An array whose elements are of class \texttt{Particle} 
+can store references to objects of any of its subclasses.
+\begin{itemize}
+  \item The objects are created and references to them assigned to elements
+  of the elements of the array \texttt{p}.
+  \item Method \texttt{newPosition} is invoked for the object referenced 
+  by each element of the array \texttt{p}. 
+  Check that the fields accessed are those of the object referenced by the
+  array element and that the calls are dynamically dispatched to the method
+  appropriate for the type of the object.
+\end{itemize}
+
+\textbf{Exercise} Every object in Java is a subclass of the class 
+\texttt{Object}. Modify the program so that the variable \texttt{p} is of 
+type array of \texttt{Object}.

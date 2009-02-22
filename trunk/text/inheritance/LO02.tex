@@ -1,0 +1,36 @@
+\subsection{Inheriting methods}\label{inher.02}
+
+\textbf{Concept} 
+Subclasses inherit the methods of its superclasses and can add new methods 
+of its own. You can override an inherited method by writing a new method 
+with \emph{the same signature} as the inherited method.
+
+\prg{Inheritance02}
+\prgl{inheritance}{Inheritance02}
+
+This program calls the method \texttt{newPosition}, which 
+is overridden in \texttt{AParticle} and \texttt{CParticle} but not in 
+\texttt{BParticle}.
+\begin{itemize}
+  \item The objects are created.
+  \item Method \texttt{newPosition} is invoked for each object and the modified
+  value of \texttt{position} is assigned to a variable.
+  \item Check that the call on \texttt{p} calls the method defined in class 
+  \texttt{Particle}.
+  \item Check that the call on \texttt{a} calls the method defined 
+  in the class \texttt{AParticle}; this method overrides the method declared 
+  in class \texttt{Particle}.
+  \item Check that the call on \texttt{b} calls the method defined 
+  in the superclass \texttt{Particle}; since the method was \emph{not} overridden
+  in \texttt{BParticle}, the method called is the one inherited from the superclass.
+  \item Check that the call on \texttt{c} calls the method defined 
+  in the class \texttt{BParticle}; this method overrides the method declared 
+  in class \texttt{Particle}.
+\end{itemize}
+
+\textbf{Exercise} Remove the method \texttt{newPosition} from
+\texttt{CParticle}. Which method is invoked for \texttt{c.newPosition}?
+
+\textbf{Exercise} Remove the method \texttt{newPosition} from
+\texttt{CParticle} and add a method with the same signature to
+\texttt{BParticle}. Which method is invoked for \texttt{c.newPosition}?

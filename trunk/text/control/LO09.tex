@@ -1,0 +1,45 @@
+\subsection{Switch statements}\label{control.09}
+
+\textbf{Concept} A \texttt{switch} statement is a generalization of an \texttt{if} statement.
+Instead of selecting between two alternatives depending on the value 
+of a boolean-valued expression, an integer-valued expression is used and there can be
+multiple alternatives introduced by the keyword \texttt{case}.
+Since there are a very large number of 
+integer values, an alternative labeled \texttt{default} is executed when the
+value in the expression is not explicitly listed in one of the alternatives.
+
+\textbf{Important:}
+In an \texttt{if}-statement, the end of the statement (or block of statements)
+of the first alternative causes a transfer of control 
+to the end of the \texttt{if} statement, skipping over the statement (or block
+of statements) in the second (\texttt{else}) alternative. This \emph{does not} happen in
+a \texttt{switch}: control ``drops through'' from the end of one alternative to the beginning
+of the next alternative.
+A \texttt{break} statement must be used to transfer control from the end of an alternative
+to the end of the \texttt{switch} statement.
+
+\prg{Control09}
+\prgl{control}{Control09}
+
+This program computes the number of days in a month.
+\begin{itemize}
+\item The variables are allocated and the first two, \texttt{year} and \texttt{month}, are
+given initial values.
+\item The switch statement chooses a \texttt{case} depending on the value of the variable
+\texttt{month}. \jel{} displays \texttt{Entering a switch statement}.
+\item The \texttt{case} associated with \texttt{4} is selected.
+\jel{} displays \texttt{This case is selected}.
+The assignment statement assigns $30$ to \texttt{days}.
+\item The assignment statement assigns $31$ to \texttt{days}.
+\item The switch statement terminates and 
+\jel{} displays \texttt{Exiting a switch statement}.
+\item The value of \texttt{days} is printed.
+\end{itemize}
+
+\textbf{Exercise} Explain why the second assignment statement
+is executed; fix the program.
+
+\textbf{Exercise} Explain why the sequence of \texttt{case}'s for $4,6,9,11$ works.
+
+\textbf{Exercise} Modify the program so that the \texttt{case}'s for the $31$-day months
+are given explicitly and so that the days are computed correctly in leap years.

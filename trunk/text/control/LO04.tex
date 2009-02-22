@@ -1,0 +1,35 @@
+\subsection{Do-while loops}\label{control.04}
+
+\textbf{Concept} A loop enables the execution of a statement (including a block
+of statements within braces) an arbitrary number of times.
+This statement is called the \emph{loop body}.
+In a do-while loop, an expression is evaluated \emph{after} each
+execution of the loop body, and
+the loop body continues to execute if and only if the expression evaluates to true.
+
+The loop body of a do-while loop will execute at least one time.
+This type of statement is particularly appropriate for processing input,
+because you need to input data at least once before you can test it in an expression.
+
+\prg{Control04}
+\prgl{control}{Control04}
+
+The program reads interactive input until a positive number is entered.
+
+\begin{itemize}
+\item The variable \texttt{input} is allocated but not initialized.
+\item The loop body of the do-while loop is executed.
+\jel{} displays \texttt{Entering the do-while loop}.
+\item A value is read interactively into the variable \texttt{input}.
+First, enter a negative integer.
+\item The expression following the \texttt{while} is evaluated.
+Since it evaluates to true, the loop body is executed again.
+\jel{} displays \texttt{Continuing the do-while loop}.
+\item Now enter a positive value into the variable \texttt{input}.
+\item The expression following the \texttt{while} is evaluated.
+Since it evaluates to false, the execution of the do-while loop is completed.
+\jel{} displays \texttt{Exiting the do-while loop}.
+\end{itemize}
+
+\textbf{Exercise} Rewrite this program with a while loop.
+Compare it to the do-while loop.

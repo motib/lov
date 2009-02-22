@@ -1,0 +1,35 @@
+\subsection{Clone}\label{inher.08}
+
+\textbf{Concept} Assigning a variable containing a reference to another
+of the same type merely copies the 
+reference so that two fields refer to the same object. The method 
+\texttt{clone} is used to copy the content of an object into a new one. 
+\texttt{clone} is defined in class \texttt{Object} and can be
+overridden in any class definition.
+
+\prg{Inheritance08}
+\prgl{inheritance}{Inheritance09}
+
+\texttt{clone} is overridden in class \texttt{Particle}. 
+The class must implement the interface \texttt{Cloneable}, the 
+method of the superclass should be called, and we have to take into 
+account that the method might raise an exception. The method returns
+the object returned by superclass method after calling \texttt{newPosition}.
+\begin{itemize}
+\item An object of class \texttt{Particle} is allocated and its reference 
+assigned to the field \texttt{p1}. 
+\item An assignment statement copies this reference to the field \texttt{p2}. 
+Check that they have the same value.
+\item The method \texttt{newPosition} is called on \texttt{p1}, but the 
+value of \texttt{p2.position} is also changed, showing that the two fields 
+point to the same object.
+\item An object of class \texttt{Particle} is obtained by calling \texttt{p1.clone()} and its reference assigned to the field \texttt{p3}. Since \texttt{clone} returns a value of type
+\texttt{Object}, it must be cast to type \texttt{Particle} before the assignment.
+Check that the objects referenced by \texttt{p1} and \texttt{p3} have different values.
+\item Calling \texttt{p3.newPosition} changes only the field in the object
+referenced by \texttt{p3} and not the separate object referenced by \texttt{p1}.
+\end{itemize}
+
+\textbf{Exercise} The method \texttt{clone} can perform arbitrary 
+computation. Modify the program so that new objects are initialized with 
+the absolute value of the field of the object that is being cloned.

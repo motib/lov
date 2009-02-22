@@ -1,0 +1,36 @@
+\subsection{Calling methods on an object}\label{method.05}
+
+\textbf{Concept} Nonstatic methods defined in a class must be invoked
+\emph{on} an object of the class. A reference to the object becomes
+an \emph{implicit} actual parameter that initializes a formal variable called
+\texttt{this} in the method. The variable \texttt{this} need not be 
+explicitly mentioned when accessing fields of the object unless there is an ambiguity.
+
+\prg{Method05}
+\prgl{method}{Method05}
+
+This program computes the cost of a song as the product of its length
+in seconds and the price per second. A class \texttt{Song} is defined
+to encapsulate the field \texttt{seconds} and the method \texttt{computePrice}.
+
+\begin{itemize}
+\item Two objects of class Song are instantiated and references to them
+are assigned to the variables \texttt{song1} and \texttt{song2}.
+\item The method \texttt{computePrice} is called \emph{on} the object referenced by \texttt{song1}. In \jel{} this is visualized by an arrow to the object
+placed in the \texttt{Expression Evaluation Area} followed by a period and
+the method name and parameters.
+\item An activation record is allocated containing two formal parameters:
+\texttt{this} is initialized by the implicit reference and \texttt{pricePerSecond}
+is initialized from the actual parameter.
+\item The reference in the parameter \texttt{this} is used to obtain 
+the value of the field \texttt{seconds}. An expression is evaluated and
+its value returned.
+\item The activation record is deallocated and the value returned is stored in the variable \texttt{price1}.
+\item A second call to the method is executed in exactly the same way,
+except that it is called \emph{on} the object referenced by \texttt{song2}.
+\item The values of \texttt{price1} and \texttt{price2} are printed.
+\end{itemize}
+
+\textbf{Exercise} Modify the method so that the formal parameter is \emph{also} 
+named \texttt{seconds}. Yes, it can be done! 
+(Hint: read the \textbf{Concept} paragraph above.)

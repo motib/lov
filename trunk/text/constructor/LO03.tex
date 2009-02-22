@@ -1,0 +1,27 @@
+\subsection{Overloading constructors}\label{con.03}
+
+\textbf{Concept} Constructors can be \emph{overloaded} like other methods. A method is overloaded when there is more than one method with the same name; the parameter signature is used to decide which method to call. For constructors, overloading is usually done when some of the fields of an object can be initialized with default values, although we want to retain 
+the possibility of explicitly supplying all the initial values.
+
+\prg{Constructor03}\prgl{constructor}{Constructor03}
+
+The website charges a uniform price per second for all songs, except for special offers. We define two constructors, one that specifies a price for special offers and another that uses a default price for ordinary songs.
+\begin{itemize}
+\item The value of the static constant \texttt{DEFAULT\_PRICE} is set as soon as the class is loaded and is displayed in the Constant area.
+\item The variable \texttt{song1} is allocated and contains the null value.
+\item Memory is allocated for the \emph{four} fields of the object and default values are assigned to the fields. 
+\item The constructor is called with \emph{three} actual parameters; the call is resolved so that the first constructor is executed. These values are assigned to the formal parameters of the constructor method and the values of the formal parameters are assigned to the three fields. 
+\item The method \texttt{computePrice} is called; it returns a value which stored in the field \texttt{price}.
+\item The constructor returns a reference to the object, which is stored in the variable \texttt{song1}.
+\item The computation is then repeated for \texttt{song2}.
+Since the constructor is called with just two parameters (for \texttt{name} and \texttt{seconds}),
+the second constructor is executed. 
+The value of the field \texttt{pricePerSecond} is assigned from the constant, not from a parameter.
+\end{itemize}
+
+\textbf{Exercise} Modify the class to include a constructor with one parameter for the \texttt{name} and with a default song length of three minutes.
+
+\textbf{Exercise} Modify the class to include a constructor with no parameters, so that all fields receive default values. Is there any meaning to the following constructor?
+
+\hspace*{3em}\texttt{Song() \{}\\
+\hspace*{3em}\texttt{\}}

@@ -1,0 +1,39 @@
+\subsection{Counting with for statements}\label{control.06}
+
+\textbf{Concept} Although all loop structures can be programmed as \texttt{while} loops,
+one special case is directly supported: writing a loop that executes a predetermined number
+of times. The \texttt{for} statement has three parts:
+\begin{quote}
+\texttt{for (int i = 0; i < N; i++)}
+\end{quote}
+The first part declares a loop control variable and gives it an initial value.
+The second part contains the exit condition: the loop body will be executed
+as long as the expression evaluates to true. The third part describes how
+the value of the control variable is modified after executing the loop body.
+The syntax show is the conventional one for executing a loop \texttt{N} times.
+
+\prg{Control06}
+\prgl{control}{Control06}
+
+This program computes the first six factorials in a \texttt{for} loop
+and the last value is printed.
+
+\begin{itemize}
+\item The constant \texttt{N} and the variable \texttt{factorial} are allocated and initialized.
+\item The control variable \texttt{i} is allocated and initialized.
+\item The expression \texttt{i < N} is evaluated and evaluates to true.
+\jel{} displays \texttt{Entering the for loop}.
+\item The loop body is executed. 
+\item The control variable is incremented as specified in the third part of the
+\texttt{for} statement.
+\item The previous three steps are repeated until the expression evaluates to false;
+this causes the loop to be exited. \jel{} displays \texttt{Continuing the for loop}
+as long as the expression evaluates to true, and \texttt{Exiting the for loop} when
+it evaluates to false.
+\item The final value of \texttt{factorial} is printed. 
+\item \textbf{Important}: when the loop is exited, the control variable is
+deallocated and no longer exists.
+\end{itemize}
+
+\textbf{Exercise} Rewrite the program using a \texttt{while} loop.
+

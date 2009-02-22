@@ -1,0 +1,94 @@
+\subsection{Equals}\label{inher.07}
+
+\textbf{Concept} There are two concepts of equality in Java: the \emph{operator} 
+\texttt{==} compares primitives types and references, while the \emph{method}
+\texttt{equals} compares objects. The default implementation of 
+\texttt{equals} is like \texttt{==}, but it can be overridden in any class.
+
+\prg{Inheritance07A} 
+\prgl{inheritance}{Inheritance07A}
+
+\begin{itemize}
+\item Object \texttt{a1} of type \texttt{AParticle} is created.
+\item \texttt{a1} is assigned to \texttt{a2} using \texttt{==}.
+\item Object \texttt{a3} of type \texttt{AParticle} is created with the 
+same values for its fields as the object referenced by \texttt{a1}.
+\item Evaluating \texttt{a1==a2} returns \emph{true} because they both reference the same object.
+\item Evaluating \texttt{a1==a3} returns \emph{false} because they reference different objects.
+\item Strangely enough, evaluating \texttt{a1.equals(a3)} returns \emph{false}.
+Although their fields are equal, the default implementation of \texttt{equals} is
+the same as \texttt{==}!
+\end{itemize}
+
+\textbf{Exercise} Add the follow method to \texttt{AParticle} and run the
+program again. What happens now?
+\begin{verbatim}
+   public boolean equals(AParticle a) {
+        return this.position == a.position && this.spin == a.spin;
+   }
+\end{verbatim}
+
+\bigskip
+
+\prg{Inheritance07B}
+\prgl{inheritance}{Inheritance07B}
+
+Let us try to override the method \texttt{equals} in classes \texttt{BParticle}
+and \texttt{CParticle}; the method returns true if the all fields of the
+two objects are equal.
+\begin{itemize}
+\item Four objects are created: two equal objects \texttt{b1} and \texttt{b2}
+of type \texttt{BParticle} and two unequal objects \texttt{c1} and \texttt{c2}
+of type \texttt{CParticle}.
+\item As expected, \texttt{b1.equals(b2)} returns \emph{true} and \texttt{c1.equals(c2)} returns \emph{false}.
+\item \texttt{b1.equals(c1)} returns \emph{true}: since \texttt{CParticle}
+is a subclass of \texttt{BParticle}, the variable \texttt{c1} is acceptable
+as a parameter to the method \texttt{equals} declared in \texttt{BParticle}.
+\texttt{c1} \emph{is} equal to \texttt{b1}, because we are only comparing 
+the first two fields inherited from \texttt{BParticle} and these are equal.
+\end{itemize}
+
+\textbf{Exercise} Explain what happens if you try to evaluate \texttt{c1.equals(b1)}.
+
+\bigskip
+
+\prg{Inheritance07C}
+\prgl{inheritance}{Inheritance07C}
+
+It would be unusual for two objects to be considered equal if they
+are of different types, even if one type is a subclass of another.
+In fact, 
+\begin{quote}
+\texttt{public boolean equals(CParticle c)}
+\end{quote}
+does not override the method \texttt{equals} in \texttt{BParticle},
+because an overriding method must have the \emph{same signature} as the overridden
+method.
+
+The method \texttt{equals} is declared in the root class \texttt{Object} as:
+\begin{quote}
+\texttt{public boolean equals(Object obj)}
+\end{quote}
+and this is the method that must be overridden.
+This program shows the correct technique:
+\begin{itemize}
+	\item Since the parameter can now be any object, a check is first made that
+	the parameter is not \texttt{null}.
+	\item Similarly, a check is made that the parameter is of the same
+	type as this object.
+	\item Now that we know that the parameter is actually of this type,
+	it can be cast from \texttt{Object} to the type.
+	\item Only then is class-specific code performed---usually a field-by-field comparison.
+\end{itemize}
+
+Trace the execution of the program:
+\begin{itemize}
+\item Four objects are created: one object \texttt{b1} of type \texttt{BParticle} 
+and three objects \texttt{c1}, \texttt{c2} and \texttt{c3} of type \texttt{CParticle}.
+\item Clearly, comparing \texttt{c1} to \texttt{null} or \texttt{b1} returns \emph{false}.
+\item Field-by-field comparisons are used if the parameter is of type \texttt{CParticle}: \texttt{c1.equals(c2)} returns \emph{false} and \texttt{c1.equals(c3)} returns \emph{true}.
+\end{itemize}
+
+\textbf{Exercise} Move the declaration of \texttt{equals} to class
+\texttt{BParticle}, changing the code as needed. What now is the value of
+\texttt{c1.equals(b1)}? Explain.

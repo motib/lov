@@ -1,0 +1,18 @@
+\subsection{Ragged Arrays}\label{array.08}
+
+\textbf{Concept} A two-dimensional array is really an array of arrays; that is, each  element of the array contains a reference to another array. However, the two-dimensional array need not be a square matrix, and each row can have a different number of elements. By using only one index a one-dimensional array is obtained and these arrays need not all be of the same size.
+
+\prg{Array08}
+\prgl{array}{Array08}
+
+Here we create the upper-left triangle of a $3 \times 3$ matrix: row 0 of length 3, row 1 of length 2 and row 2 of length 1. Then we add the elements of the ``ragged'' array.
+\begin{itemize}
+\item The variable \texttt{matrix} is allocated, but since the size of the rows is not given, it is allocated as a one-dimensional array whose elements are references to one-dimensional arrays of integers. The default value for the elements is \texttt{null}.
+\item Three rows of different size are allocated with initializers and assigned to the elements of the array \texttt{matrix}.
+\item A reference to \texttt{matrix} is passed to the method \texttt{addElements} which adds the elements of the array and returns the value.
+  \item \texttt{matrix.length} is used to get the number of rows and 
+  \texttt{matrix[i].length} to get the number of columns in row \texttt{i}; these
+  are different for each row.
+\end{itemize}
+
+\textbf{Exercise} Simplify the allocation of the array \texttt{matrix}. First, show how the variables \texttt{row} can be eliminated. Then find out how to write an initializer for a two-dimensional array so that the array can be initialized in one declaration. (Note: initializers for two-dimensional arrays are not supported in \jel{}.)

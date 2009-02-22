@@ -1,0 +1,27 @@
+\subsection{Overloading vs. overriding}\label{inher.09}
+
+\textbf{Concept} \emph{Overloading} is the use of the same method name with a 
+\emph{different} parameter signature. \emph{Overriding} is the use in a subclass 
+of the same method name with the \emph{same} parameter signature as a method 
+of the superclass.
+
+\prg{Inheritance09}
+\prgl{inheritance}{Inheritance09}
+
+The method \texttt{newPosition(int delta)} is declared in \texttt{Particle} and
+\emph{overridden} in \texttt{AParticle}. It is also \emph{overloaded} by a method
+with the same name takes a parameter of type \texttt{double}.
+\begin{itemize}
+\item After allocating three objects \texttt{p}, \texttt{a1} and \texttt{a2}, \texttt{newPosition} is called on  each one. 
+\item \texttt{p.newPosition} calls the method declared in class 
+\texttt{Particle}.
+\item \texttt{a1.newPosition} calls the method declared 
+in class \texttt{AParticle} that overrides the method in 
+\texttt{Particle}. 
+\item \texttt{a2.newPosition} calls the overloaded method 
+because the actual parameter is of type \texttt{double}.
+\end{itemize}
+
+\textbf{Exercise} At the end of the program add an assignment \texttt{p = 
+a1}. Add the method invocations \texttt{p.newPosition(10)} and 
+\texttt{p.newPosition(10.0)} in the main method. Explain what happens.

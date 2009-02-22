@@ -1,0 +1,21 @@
+\subsection{Computation within constructors}\label{con.02}
+
+\textbf{Concept} Constructors are often used simply for assigning initial values to fields of an object; however, an arbitrary initializing computation can be carried out within the constructor.
+
+\prg{Constructor02}\prgl{constructor}{Constructor02}
+
+The price of a song will not change as long as the fields \texttt{second} and
+\texttt{pricePerSecond} do not change; to avoid recomputing the price each time it is needed,
+the class contains a field \texttt{price} whose value is computed \emph{within} the
+constructor. The method \texttt{computePrice} is declared to be \texttt{private} 
+because it is needed only by the constructor.
+\begin{itemize}
+\item The variable \texttt{song1} is allocated and contains the null value.
+\item Memory is allocated for the fields of the object and default values are assigned to the three fields.
+\item The constructor is called with three actual parameters; these values are assigned to the formal parameters of the constructor method and the values of the formal parameters are assigned to the three fields.
+\item The method \texttt{computePrice} is called; it returns a value which stored in the field \texttt{price}.
+\item The constructor returns a reference to the object, which is stored in the variable \texttt{song1}. The field \texttt{price} can be accessed to obtain the price of a song.
+\end{itemize}
+
+\textbf{Exercise}  Modify the class so that no song has a price greater than two 
+currency units.

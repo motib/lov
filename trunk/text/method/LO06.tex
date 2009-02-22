@@ -1,0 +1,69 @@
+\subsection{Calling a method on the same object}\label{method.06}
+
+\textbf{Concept} A nonstatic method defined in a class that is invoked
+\emph{on} an object of the class can invoke another such method on the same object.
+The object for the second call is the same as the one on the first call,
+namely, the only referenced by \texttt{this}.
+There is no need to explicitly write \texttt{this} and the object may be accessed implicitly.
+
+\prg{Method06A}
+\prgl{method}{Method06A}
+
+This program computes the cost of a song as the product of its length
+in seconds and the price per second. A discount is applied
+to ``long'' songs. A class \texttt{Song} is defined
+to encapsulate the field \texttt{seconds} and the methods \texttt{computePrice}
+and \texttt{discount}.
+
+\begin{itemize}
+\item Two objects of class Song are instantiated and references to them
+are assigned to the variables \texttt{song1} and \texttt{song2}.
+\item The method \texttt{computePrice} is called \emph{on} the object referenced by \texttt{song1}. In \jel{} this is visualized by an arrow to the object
+placed in the \texttt{Expression Evaluation Area} followed by a period and
+the method name and parameters.
+\item An activation record is allocated containing two formal parameters:
+\texttt{this} is initialized by the implicit reference and \texttt{pricePerSecond}
+is initialized from the actual parameter.
+\item The local variable \texttt{price} is declared and initialized by the
+expression calculated from the formal parameter \texttt{pricePerSecond} and
+the field of the object \texttt{seconds} that is implicitly accessed through \texttt{this}.
+\item The method \texttt{discount}, 
+declared in the same class, is invoked and returns a boolean value.
+A new activation is allocated for this method and deallocated when it terminates.
+The implicit actual parameter is \texttt{this} and it is used to initialize the 
+implicit formal parameter \texttt{this} of the method \texttt{discount}.
+\item The activation record for \texttt{computePrice} is deallocated 
+and the value returned is stored in the variable \texttt{price1}.
+\item A second call to the method is executed exactly the same way,
+except that it is called \emph{on} the object referenced by \texttt{song2}.
+\item The values of \texttt{price1} and \texttt{price2} are printed.
+\end{itemize}
+
+\textbf{Exercise} Modify the program so that discount does not use the explicit
+parameter \texttt{s}.
+
+\bigskip
+
+\prg{Method06B}
+\prgl{method}{Method06B}
+
+Given a call to a method \texttt{m2} within a method \texttt{m1}:
+\begin{quote}
+\texttt{void m1() \{}\\
+\hspace*{2em}\texttt{m2();}\\
+\texttt{\}}
+\end{quote}
+it is impossible to tell from the call if m2 is being implicitly called \emph{on}
+the same object or if it is a static method defined in the class.
+
+\begin{itemize}
+	\item This program is a modification of the previous one: instead of comparing
+	\texttt{s} with 300 in the method \texttt{discount}, it is compared with
+	the value returned by the method \texttt{level}. It is impossible to tell
+	from the calls alone to \texttt{discount} and \texttt{level} that the first is
+	a call on an object while the second is a call to a static method.
+\end{itemize}
+
+\textbf{Exercise} Modify the calls to \texttt{discount} and \texttt{level}
+so that it is immediately apparent which is definitely a call on an object and which
+is definitely a call to a static method.

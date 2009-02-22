@@ -1,0 +1,31 @@
+\subsection{Two-dimensional arrays}\label{array.06}
+
+\textbf{Concept} A matrix can be stored in a two-dimensional array. The syntax is 
+\texttt{int[][]} with two indices, the first for rows and the second for 
+columns. To access an element of the array, expressions for the two 
+indices must be givien.
+
+\prg{Array06}\prgl{array}{Array06}
+
+This program creates a $2 \times 2$ matrix and computes 
+the sum of its elements.
+\begin{itemize}
+  \item A two-dimensional array is allocated, the reference to it is 
+  assigned to the variable \texttt{matrix}.
+  The variable \texttt{matrix} contains one reference for each row,
+  and the rows are allocated as separate objects.
+  Note that \jel{} displays each row from top to bottom as it does for all objects!
+  \item The elements of the array are initialized to (0,1,2,3) in a nested for-loop.
+  The outside loop iterates over the rows and the inner loop iterates over the
+  columns within an array.
+  \item \texttt{matrix.length} is used to get the number of rows and 
+  \texttt{matrix[i].length} to get the number of columns in row \texttt{i}, which 
+  is the same for all rows in this program.
+  \item The reference to the array is passed as a parameter to the method 
+  \texttt{addElements}, which adds the values of all the elements.
+  \item The sum is returned from the method and assigned to the variable \texttt{sum}.
+\end{itemize}
+
+\textbf{Exercise} Modify the program perform the same computation on a $2 \times 3$
+matrix and on a $3 \times 2$ matrix.
+

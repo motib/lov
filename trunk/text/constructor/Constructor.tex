@@ -1,0 +1,30 @@
+\section{Learning Objects for Constructors}\label{s.constructors}
+
+\textbf{Concept} The process of creating an object involves allocating memory for the object and assigning the reference to this block of memory to a variable. \emph{Constructors} enable arbitrary initialization of the object during its creation. 
+
+\begin{center}
+\begin{tabular}{|c|l|l|c|}
+\hline
+LO & Topic  & Java Files (.java) & Prerequisites \\\hline
+\ref{con.01} &  What are constructors for? & Constructor01A, B, C &\\\hline
+\ref{con.02} &  Computation within constructors &  Constructor02  & 1\\\hline
+\ref{con.03} &  Overloading constructors  &  Constructor03 &  2\\\hline
+\ref{con.04} &  Invoking another constructor &    Constructor04 &  3\\\hline
+\ref{con.05} &  Explicit default constructors &    Constructor05 &  3\\\hline
+\ref{con.06} &  Constructors for subclasses & Constructor06A, B, C &   3\\\hline
+\ref{con.07} &  Constructors with object parameters & Constructor07  & 3\\\hline
+\ref{con.08} &  Constructors with subclass& & \\
+  & object parameters  & Constructor08 &  6, 7\\\hline
+\end{tabular}
+\end{center}
+
+\textbf{Program} The example used in these LOs is class \texttt{Song} with three fields: the \texttt{name} of the song, the length of the song in \texttt{seconds} and the \texttt{pricePerSecond}. The class is to be used to implement a website which charges for downloading the song; the price is the product of the length of the song in second and the price per second. To focus the discussion on constructors, the fields are not declared private.
+
+\input{constructor/LO01}
+\input{constructor/LO02}
+\input{constructor/LO03}
+\input{constructor/LO04}
+\input{constructor/LO05}
+\input{constructor/LO06}
+\input{constructor/LO07}
+\input{constructor/LO08}

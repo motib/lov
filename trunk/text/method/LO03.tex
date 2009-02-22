@@ -1,0 +1,51 @@
+\subsection{Calling one method from another}\label{method.03}
+
+\textbf{Concept} One method can call another, that is, when executing
+one method, any statement or expression call be a method call. A sequence
+of method calls results in a \emph{stack} of activation records,
+where each method (except the last one that was called) 
+is waiting for the method it called to return. 
+There is no limit on the \emph{depth} of method calls,
+except of course the amount of memory allocated to the program.
+
+\textbf{Note:} The \texttt{main} method is a method like any other. 
+The operating system can be considered as a program which calls the main method.
+This call has a single parameter: an array of strings containing the contents
+of the command line.
+
+\prg{Method03}
+\prgl{method}{Method03}
+
+\begin{itemize}
+\item The \texttt{main} method calls the method \texttt{printMax};
+the actual parameters are two integer literals.
+\item The activation record for \texttt{printMax} is allocated,
+and the actual parameters are used to initialize the formal parameters 
+\texttt{a} and \texttt{b}.
+\item The variable \texttt{max} is allocated but not initialized.
+\item The method \texttt{maximum} is called; the actual parameters are the
+values of \texttt{a} and \texttt{b}, 
+which are the formal variables of method \texttt{printMax}.
+\item An activation record is allocated for \texttt{maximum}. (There are now
+three activation in the stack.) The new activation record includes
+memory for the formal parameters \texttt{a} and \texttt{b}; note that these are
+new parameters not at all related to the formal parameters of the same names
+in the previous method \texttt{printMax} because those parameters are hidden.
+\item The method \texttt{maximum} executes its body and returns a value.
+Just before it returns, select the tab \texttt{Call Tree} above the graphic display;
+the sequence of calls from \texttt{main} 
+to \texttt{printMax} and then \texttt{maximum} is displayed.
+Select \texttt{Theater} to return to the animated display.
+\item When the method returns, its activation record is deallocated, uncovering the
+activation record of \texttt{printMax}. 
+\item The value returned is assigned to the variable \texttt{max} and printed.
+\item When \texttt{printMax} completes its execution, its activation record
+is deallocated.
+\end{itemize}
+\textbf{Note:} In a call to a static method, the name of the 
+class in which it is defined can be given as in the call to \texttt{maximum}.
+Since the method is defined in the same class as the call,
+the class name need not be given, as shown in the call to \texttt{printMax}.
+
+\textbf{Exercise} Write a program to compute the maximum of six values
+using as few statements as possible.

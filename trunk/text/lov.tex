@@ -1,0 +1,45 @@
+\documentclass[11pt]{article}
+%
+%  For html, run: hevea lov and then hacha lov.html
+%
+\usepackage{mathptmx}
+\usepackage{url}
+%HEVEA\usepackage{hevea}
+
+\newcommand{\prg}[1]{\textbf{Program: #1.java}}
+\newcommand{\jel}{\textsc{Jeliot}}
+
+%BEGIN LATEX
+\textwidth=15cm
+\textheight=22cm
+\topmargin=0pt
+\headheight=0pt
+\oddsidemargin=1cm
+\headsep=0pt
+\renewcommand{\baselinestretch}{1.1}
+\setlength{\parskip}{0.20\baselineskip plus 1pt minus 1pt}
+\parindent=0pt
+\newcommand{\prgl}[2]{}
+%END LATEX
+
+%HEVEA\newcommand{\prgl}[2]{, \ahref{src/#1/#2.java}{click to display source}.\\}
+%HEVEA\tocnumber
+%HEVEA\setcounter{cuttingdepth}{0}
+
+\title{Learning Objects for Visualizations\\\bigskip%
+Programming in Java Using Jeliot\\\bigskip%
+Version 1.0}
+\author{Mordechai (Moti) Ben-Ari\\
+Department of Science Teaching\\
+Weizmann Institute of Science\\
+Rehovot 76100 Israel\\
+\url{http://stwww.weizmann.ac.il/g-cs/benari/}}
+%\date{}
+\begin{document}
+\include{intro}
+\include{control/control}
+\include{method/method}
+\include{array/array}
+\include{constructor/constructor}
+\include{inheritance/inheritance}
+\end{document}
