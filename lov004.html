@@ -1,0 +1,287 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+            "http://www.w3.org/TR/REC-html40/loose.dtd">
+<HTML>
+<HEAD>
+
+<META http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+<META name="GENERATOR" content="hevea 1.10">
+<LINK rel="stylesheet" type="text/css" href="lov.css">
+<TITLE>1&#XA0;&#XA0;Learning Objects for Control Statements</TITLE>
+</HEAD>
+<BODY >
+<A HREF="lov003.html"><IMG SRC="previous_motif.gif" ALT="Previous"></A>
+<A HREF="index.html"><IMG SRC="contents_motif.gif" ALT="Up"></A>
+<A HREF="lov005.html"><IMG SRC="next_motif.gif" ALT="Next"></A>
+<HR>
+<H2 CLASS="section"><A NAME="htoc1">1</A>&#XA0;&#XA0;Learning Objects for Control Statements</H2><P><A NAME="s.control"></A></P><P><B>Concept</B> Normally, statements in Java are executed sequentially
+in the order written in the source code. <EM>Control statements</EM> are used
+to modify the order of execution of statements. Most control statements are <EM>conditional</EM>;
+that is, the next statement to be executed depends on the result of evaluating
+an expression, usually, an expression that returns a <EM>boolean</EM> value of true or false.</P><DIV CLASS="center">
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=1><TR><TD ALIGN=center NOWRAP>LO</TD><TD ALIGN=left NOWRAP>Topic</TD><TD ALIGN=left NOWRAP>Java Files (.java)</TD><TD ALIGN=center NOWRAP>Prerequisites</TD></TR>
+<TR><TD ALIGN=center NOWRAP><A HREF="#control.01">1.1</A></TD><TD ALIGN=left NOWRAP>If-statements</TD><TD ALIGN=left NOWRAP>Control01</TD><TD ALIGN=center NOWRAP>&nbsp;</TD></TR>
+<TR><TD ALIGN=center NOWRAP><A HREF="#control.02">1.2</A></TD><TD ALIGN=left NOWRAP>Conditional expressions</TD><TD ALIGN=left NOWRAP>Control02</TD><TD ALIGN=center NOWRAP>1</TD></TR>
+<TR><TD ALIGN=center NOWRAP><A HREF="#control.03">1.3</A></TD><TD ALIGN=left NOWRAP>While loops</TD><TD ALIGN=left NOWRAP>Control03</TD><TD ALIGN=center NOWRAP>&nbsp;</TD></TR>
+<TR><TD ALIGN=center NOWRAP><A HREF="#control.04">1.4</A></TD><TD ALIGN=left NOWRAP>Do-while loops</TD><TD ALIGN=left NOWRAP>Control04</TD><TD ALIGN=center NOWRAP>&nbsp;</TD></TR>
+<TR><TD ALIGN=center NOWRAP><A HREF="#control.05">1.5</A></TD><TD ALIGN=left NOWRAP>Break statements</TD><TD ALIGN=left NOWRAP>Control05</TD><TD ALIGN=center NOWRAP>3</TD></TR>
+<TR><TD ALIGN=center NOWRAP><A HREF="#control.06">1.6</A></TD><TD ALIGN=left NOWRAP>Counting with for statements</TD><TD ALIGN=left NOWRAP>Control06</TD><TD ALIGN=center NOWRAP>&nbsp;</TD></TR>
+<TR><TD ALIGN=center NOWRAP><A HREF="#control.07">1.7</A></TD><TD ALIGN=left NOWRAP>General for statements</TD><TD ALIGN=left NOWRAP>Control07</TD><TD ALIGN=center NOWRAP>6</TD></TR>
+<TR><TD ALIGN=center NOWRAP><A HREF="#control.08">1.8</A></TD><TD ALIGN=left NOWRAP>Continue statements</TD><TD ALIGN=left NOWRAP>Control08</TD><TD ALIGN=center NOWRAP>6</TD></TR>
+<TR><TD ALIGN=center NOWRAP><A HREF="#control.09">1.9</A></TD><TD ALIGN=left NOWRAP>Switch statements</TD><TD ALIGN=left NOWRAP>Control09</TD><TD ALIGN=center NOWRAP>&nbsp;</TD></TR>
+</TABLE>
+</DIV><H3 CLASS="subsection"><A NAME="htoc2">1.1</A>&#XA0;&#XA0;If-statements</H3><P><A NAME="control.01"></A></P><P><B>Concept</B> The execution of an if-statement starts with the evaluation of 
+its boolean-valued expression. If the result is true, the statement written
+after the closing parenthesis of the expression is executed; if the result is
+false, the statement written after the <TT>else</TT> is executed. These statements
+can be single statements or blocks of statements. In particular,
+the statements can themselves be if-statements (<EM>nested if-statements</EM>),
+in which case the inner statement is executed the same way.</P><P><B>Program: Control01.java</B>
+, <A HREF="src/control/Control01.java">click to display source</A>.<BR>
+
+The program computes the number of days in a month taking leap years into account.</P><UL CLASS="itemize"><LI CLASS="li-itemize">
+The variables are allocated and the first two, <TT>year</TT> and <TT>month</TT>, are
+given initial values.
+</LI><LI CLASS="li-itemize">The expression <TT>month == 2</TT> evaluates to false, so the statement
+following the else is executed. <SPAN STYLE="font-variant:small-caps">Jeliot</SPAN> will display <TT>Choosing else-branch</TT> to 
+emphasize this.
+</LI><LI CLASS="li-itemize">The inner statement is itself an if-statement. The expression is evaluated
+and its result is true. Note that once one of the terms of <TT>||</TT> (or) becomes 
+true, there is no need to evaluate the others.
+</LI><LI CLASS="li-itemize">The assignment statement following the statement is executed.
+<SPAN STYLE="font-variant:small-caps">Jeliot</SPAN> will display <TT>Choosing then-branch</TT>. (The 
+terminology <EM>then-branch</EM> orginates from programming
+languages that require the use of the keyword <TT>then</TT> between the expression
+and the statement.)
+</LI><LI CLASS="li-itemize">The value of <TT>days</TT> is printed.
+</LI></UL><P><B>Exercise</B> Complete the program with the correct computation
+for leap years: a year divisible by 100 is not a leap year unless it
+is also divisible by 400.</P><H3 CLASS="subsection"><A NAME="htoc3">1.2</A>&#XA0;&#XA0;Conditional expressions</H3><P><A NAME="control.02"></A></P><P><B>Concept</B> A conditional expression is a shorthand for an if-statement that
+assigns different values to one variable:
+</P><BLOCKQUOTE CLASS="quote">
+<TT>if (expression) var = value1; else var = value2;</TT>
+</BLOCKQUOTE><P>
+This can be rewritten more concisely as:
+</P><BLOCKQUOTE CLASS="quote">
+<TT>var = (expression) ? value1 : value2;</TT>
+</BLOCKQUOTE><P>
+The boolean-valued expression is evaluated: 
+If the result is true, <TT>value1</TT> is assigned to <TT>var</TT>; if not, <TT>value2</TT> is assign to <TT>var</TT>.</P><P><B>Program: Control02.java</B>
+, <A HREF="src/control/Control02.java">click to display source</A>.<BR>
+
+The program computes the number of days in a month taking leap years into account.</P><UL CLASS="itemize"><LI CLASS="li-itemize">
+The variables are allocated and the first two, <TT>year</TT> and <TT>month</TT>, are
+given initial values.
+</LI><LI CLASS="li-itemize">The expression <TT>month == 2</TT> evaluates to true, so the statement
+following the expression is executed. <SPAN STYLE="font-variant:small-caps">Jeliot</SPAN> will display <TT>Choosing then-branch</TT> to 
+emphasize this.
+</LI><LI CLASS="li-itemize">The inner statement is an assignment statement with a conditional expression.
+The expression is evaluated
+and its result is false, so the value after the colon is assigned to the variable.
+<SPAN STYLE="font-variant:small-caps">Jeliot</SPAN> will display <TT>Choosing else-branch</TT>.
+</LI><LI CLASS="li-itemize">The value of <TT>days</TT> is printed.
+</LI></UL><P><B>Exercise</B> Complete the program with the correct computation
+for leap years: a year divisible by 100 is not a leap year unless it
+is divisible by 400.</P><P><B>Exercise</B> Rewrite the entire if-statement as nested conditional expressions.
+
+</P><H3 CLASS="subsection"><A NAME="htoc4">1.3</A>&#XA0;&#XA0;While loops</H3><P><A NAME="control.03"></A></P><P><B>Concept</B> A loop enables the execution of a statement (including a block
+of statements within braces) an arbitrary number of times.
+This statement is called the <EM>loop body</EM>.
+In a while loop, an expression is evaluated <EM>before</EM> each
+execution of the loop body,
+and loop body is executed if and only if the expression evaluates to true.</P><P><B>Program: Control03.java</B>
+, <A HREF="src/control/Control03.java">click to display source</A>.<BR>
+
+This program prints all factorials less than <TT>LIMIT = 100</TT>, namely,
+1!=1, 2!=2, 3!=6, 4!=24.
+</P><UL CLASS="itemize"><LI CLASS="li-itemize">
+The static constant and the two variables are allocated and initialized.
+</LI><LI CLASS="li-itemize">Then, and each time the keyword <TT>while</TT> is reached, the expression
+is evaluated. If it is true, execution proceeds with the loop body, and
+<SPAN STYLE="font-variant:small-caps">Jeliot</SPAN> displays <TT>Entering the while loop</TT> the first time
+and <TT>Continuing the while loop</TT> on subsequent occasions.
+</LI><LI CLASS="li-itemize">The statements of the loop body are executed. 
+They print the value of the current factorial, increment the counter
+and compute the new factorial; then, control returns to the while-expression.
+</LI><LI CLASS="li-itemize">If and when the expression evaluates to false, execution
+proceeds with the statement following the loop body.
+<SPAN STYLE="font-variant:small-caps">Jeliot</SPAN> displays <TT>Exiting the while loop</TT>.
+</LI></UL><P><B>Exercise</B> According to a formula by Euler,
+</P><TABLE CLASS="display dcenter"><TR VALIGN="middle"><TD CLASS="dcell"><TABLE CLASS="display"><TR><TD CLASS="dcell" ALIGN="center">1</TD></TR>
+<TR><TD CLASS="hbar"></TD></TR>
+<TR><TD CLASS="dcell" ALIGN="center">1<SUP>2</SUP></TD></TR>
+</TABLE></TD><TD CLASS="dcell">&#XA0;+&#XA0;</TD><TD CLASS="dcell"><TABLE CLASS="display"><TR><TD CLASS="dcell" ALIGN="center">1</TD></TR>
+<TR><TD CLASS="hbar"></TD></TR>
+<TR><TD CLASS="dcell" ALIGN="center">2<SUP>2</SUP></TD></TR>
+</TABLE></TD><TD CLASS="dcell">&#XA0;+&#XA0;</TD><TD CLASS="dcell"><TABLE CLASS="display"><TR><TD CLASS="dcell" ALIGN="center">1</TD></TR>
+<TR><TD CLASS="hbar"></TD></TR>
+<TR><TD CLASS="dcell" ALIGN="center">3<SUP>2</SUP></TD></TR>
+</TABLE></TD><TD CLASS="dcell">&#XA0;+&#XA0;</TD><TD CLASS="dcell"><TABLE CLASS="display"><TR><TD CLASS="dcell" ALIGN="center">1</TD></TR>
+<TR><TD CLASS="hbar"></TD></TR>
+<TR><TD CLASS="dcell" ALIGN="center">4<SUP>2</SUP></TD></TR>
+</TABLE></TD><TD CLASS="dcell">&#XA0;+&#XA0;&#X22EF;&#XA0;
+=&#XA0;</TD><TD CLASS="dcell"><TABLE CLASS="display"><TR><TD CLASS="dcell" ALIGN="center">&#X3C0;<SUP>2</SUP></TD></TR>
+<TR><TD CLASS="hbar"></TD></TR>
+<TR><TD CLASS="dcell" ALIGN="center">6</TD></TR>
+</TABLE></TD><TD CLASS="dcell">&#XA0;&#XA0;&#XA0;&#XA0;
+</TD></TR>
+</TABLE><P>
+Write a program to compute the series until the difference between the two terms
+is less than 0.1.
+
+</P><H3 CLASS="subsection"><A NAME="htoc5">1.4</A>&#XA0;&#XA0;Do-while loops</H3><P><A NAME="control.04"></A></P><P><B>Concept</B> A loop enables the execution of a statement (including a block
+of statements within braces) an arbitrary number of times.
+This statement is called the <EM>loop body</EM>.
+In a do-while loop, an expression is evaluated <EM>after</EM> each
+execution of the loop body, and
+the loop body continues to execute if and only if the expression evaluates to true.</P><P>The loop body of a do-while loop will execute at least one time.
+This type of statement is particularly appropriate for processing input,
+because you need to input data at least once before you can test it in an expression.</P><P><B>Program: Control04.java</B>
+, <A HREF="src/control/Control04.java">click to display source</A>.<BR>
+
+The program reads interactive input until a positive number is entered.</P><UL CLASS="itemize"><LI CLASS="li-itemize">
+The variable <TT>input</TT> is allocated but not initialized.
+</LI><LI CLASS="li-itemize">The loop body of the do-while loop is executed.
+<SPAN STYLE="font-variant:small-caps">Jeliot</SPAN> displays <TT>Entering the do-while loop</TT>.
+</LI><LI CLASS="li-itemize">A value is read interactively into the variable <TT>input</TT>.
+First, enter a negative integer.
+</LI><LI CLASS="li-itemize">The expression following the <TT>while</TT> is evaluated.
+Since it evaluates to true, the loop body is executed again.
+<SPAN STYLE="font-variant:small-caps">Jeliot</SPAN> displays <TT>Continuing the do-while loop</TT>.
+</LI><LI CLASS="li-itemize">Now enter a positive value into the variable <TT>input</TT>.
+</LI><LI CLASS="li-itemize">The expression following the <TT>while</TT> is evaluated.
+Since it evaluates to false, the execution of the do-while loop is completed.
+<SPAN STYLE="font-variant:small-caps">Jeliot</SPAN> displays <TT>Exiting the do-while loop</TT>.
+</LI></UL><P><B>Exercise</B> Rewrite this program with a while loop.
+Compare it to the do-while loop.
+
+</P><H3 CLASS="subsection"><A NAME="htoc6">1.5</A>&#XA0;&#XA0;Break statements</H3><P><A NAME="control.05"></A></P><P><B>Concept</B> The exit from a while loop occurs <EM>before</EM> the loop body and
+the exit from a do-while loop occurs <EM>after</EM> the loop body. 
+The <TT>break</TT> statement can
+be used to exit from an arbitrary location or locations from within the loop body.</P><P>The <TT>break</TT> statement is useful when the expression that leads to exiting the loop cannot
+be evaluated until some statements from the loop body have been executed,
+and yet there remain statements to be executed after the expression is evaluated.</P><P><B>Program: Control05.java</B>
+, <A HREF="src/control/Control05.java">click to display source</A>.<BR>
+
+The program sums a sequence of nonnegative integers read from the input and terminates when
+a negative value is read.</P><UL CLASS="itemize"><LI CLASS="li-itemize">
+The two variables are allocated and <TT>sum</TT> is initialized with the value zero.
+</LI><LI CLASS="li-itemize">The <TT>while</TT> statement is executed with <TT>true</TT> as the loop expression.
+Of course, <TT>true</TT> will never evaluate to false, so the loop will never be exited
+at the <TT>while</TT>.
+</LI><LI CLASS="li-itemize">An integer value is read from the input. If it is negative the <TT>break</TT> statement
+is executed and <SPAN STYLE="font-variant:small-caps">Jeliot</SPAN> displays <TT>Exiting the while loop because of the break</TT>.
+</LI><LI CLASS="li-itemize">Otherwise, the following assignment statement is executed and
+<SPAN STYLE="font-variant:small-caps">Jeliot</SPAN> displays <TT>Continuing without branching</TT>.
+</LI><LI CLASS="li-itemize">After the assignment statement is executed, the loop starts again.
+</LI></UL><P><B>Exercise</B> Write equivalent programs using a while loop
+and a do-while loop.
+
+</P><H3 CLASS="subsection"><A NAME="htoc7">1.6</A>&#XA0;&#XA0;Counting with for statements</H3><P><A NAME="control.06"></A></P><P><B>Concept</B> Although all loop structures can be programmed as <TT>while</TT> loops,
+one special case is directly supported: writing a loop that executes a predetermined number
+of times. The <TT>for</TT> statement has three parts:
+</P><BLOCKQUOTE CLASS="quote">
+<TT>for (int i = 0; i &lt; N; i++)</TT>
+</BLOCKQUOTE><P>
+The first part declares a loop control variable and gives it an initial value.
+The second part contains the exit condition: the loop body will be executed
+as long as the expression evaluates to true. The third part describes how
+the value of the control variable is modified after executing the loop body.
+The syntax show is the conventional one for executing a loop <TT>N</TT> times.</P><P><B>Program: Control06.java</B>
+, <A HREF="src/control/Control06.java">click to display source</A>.<BR>
+
+This program computes the first six factorials in a <TT>for</TT> loop
+and the last value is printed.</P><UL CLASS="itemize"><LI CLASS="li-itemize">
+The constant <TT>N</TT> and the variable <TT>factorial</TT> are allocated and initialized.
+</LI><LI CLASS="li-itemize">The control variable <TT>i</TT> is allocated and initialized.
+</LI><LI CLASS="li-itemize">The expression <TT>i &lt; N</TT> is evaluated and evaluates to true.
+<SPAN STYLE="font-variant:small-caps">Jeliot</SPAN> displays <TT>Entering the for loop</TT>.
+</LI><LI CLASS="li-itemize">The loop body is executed. 
+</LI><LI CLASS="li-itemize">The control variable is incremented as specified in the third part of the
+<TT>for</TT> statement.
+</LI><LI CLASS="li-itemize">The previous three steps are repeated until the expression evaluates to false;
+this causes the loop to be exited. <SPAN STYLE="font-variant:small-caps">Jeliot</SPAN> displays <TT>Continuing the for loop</TT>
+as long as the expression evaluates to true, and <TT>Exiting the for loop</TT> when
+it evaluates to false.
+</LI><LI CLASS="li-itemize">The final value of <TT>factorial</TT> is printed. 
+</LI><LI CLASS="li-itemize"><B>Important</B>: when the loop is exited, the control variable is
+deallocated and no longer exists.
+</LI></UL><P><B>Exercise</B> Rewrite the program using a <TT>while</TT> loop.</P><H3 CLASS="subsection"><A NAME="htoc8">1.7</A>&#XA0;&#XA0;General for statements</H3><P><A NAME="control.07"></A></P><P><B>Concept</B> Arbitrary expressions can be given for the initial value of the <TT>for</TT> statement, the exit condition, and the modification of the control variable.</P><P><B>Program: Control07.java</B>
+, <A HREF="src/control/Control07.java">click to display source</A>.<BR>
+
+This program computes the sum of multiples of three that are less
+than the square root of <TT>N</TT>.</P><UL CLASS="itemize"><LI CLASS="li-itemize">
+The constant <TT>N</TT> and the variable <TT>sum</TT> are allocated and initialized.
+</LI><LI CLASS="li-itemize">The control variable <TT>i</TT> is allocated and initialized.
+</LI><LI CLASS="li-itemize">The expression <TT>i &lt; Math.sqrt(N)</TT> is evaluated and evaluates to true.
+<SPAN STYLE="font-variant:small-caps">Jeliot</SPAN> displays <TT>Entering the for loop</TT>.
+</LI><LI CLASS="li-itemize">The loop body is executed. 
+</LI><LI CLASS="li-itemize">The control variable is incremented by three as specified in the third part of the
+<TT>for</TT> statement.
+</LI><LI CLASS="li-itemize">The previous three steps are repeated until the expression evaluates to false;
+this causes the loop to be exited. <SPAN STYLE="font-variant:small-caps">Jeliot</SPAN> displays <TT>Continuing the for loop</TT>
+as long as the expression evaluates to true, and <TT>Exiting the for loop</TT> when
+it evaluates to false.
+</LI><LI CLASS="li-itemize">The final value of <TT>sum</TT> is printed. 
+</LI><LI CLASS="li-itemize"><B>Important</B>: when the loop is exited, the control variable is
+deallocated and no longer exists.
+</LI></UL><P><B>Exercise</B> Is <TT>for (;;;)</TT> legal? If so, what does it mean?</P><P><B>Exercise</B> Modify the program so that the square root is computed only once.
+
+</P><H3 CLASS="subsection"><A NAME="htoc9">1.8</A>&#XA0;&#XA0;Continue statements</H3><P><A NAME="control.08"></A></P><P><B>Concept</B> The <TT>break</TT> statement is used to <EM>exit</EM> a loop
+from an arbitrary location in its body; the <TT>continue</TT> statement is used
+to <EM>skip</EM> the rest of a loop body and return to evaluate the condition
+for continuing the loop.</P><P><B>Program: Control08.java</B>
+, <A HREF="src/control/Control08.java">click to display source</A>.<BR>
+
+This program sums all the positive integers less than <TT>N</TT> that are
+divisible by 2 or 3 but not by both. For <TT>N=10</TT>, the result
+is 2+3+4+8+9=26.
+</P><UL CLASS="itemize"><LI CLASS="li-itemize">
+The constant <TT>N</TT> and the variable <TT>sum</TT> are allocated and initialized.
+</LI><LI CLASS="li-itemize">The <TT>for</TT> loop is standard and is executed for the values 0 through <I>N</I>&#X2212;1.
+</LI><LI CLASS="li-itemize">If <TT>i</TT> is divisible by 2 and also by 3 (for example, 6), the 
+<TT>continue</TT> statement is executed and the variable <TT>sum</TT> is not modified.
+</LI><LI CLASS="li-itemize">If <TT>i</TT> is divisible neither by 2 nor by 3 (for example, 5), the 
+<TT>continue</TT> statement is executed and the variable <TT>sum</TT> is not modified.
+</LI><LI CLASS="li-itemize">In all other cases, the value of <TT>i</TT> is added to <TT>sum</TT>.
+</LI><LI CLASS="li-itemize">The final value of <TT>sum</TT> is printed. 
+</LI></UL><P><B>Exercise</B> Modify the program so that it explicitly checks for
+divisibility by 6, instead of checking for divisibility by 2 and 3 in
+separate statements.</P><P><B>Exercise</B> Modify the program so that <TT>continue</TT> is not used.</P><H3 CLASS="subsection"><A NAME="htoc10">1.9</A>&#XA0;&#XA0;Switch statements</H3><P><A NAME="control.09"></A></P><P><B>Concept</B> A <TT>switch</TT> statement is a generalization of an <TT>if</TT> statement.
+Instead of selecting between two alternatives depending on the value 
+of a boolean-valued expression, an integer-valued expression is used and there can be
+multiple alternatives introduced by the keyword <TT>case</TT>.
+Since there are a very large number of 
+integer values, an alternative labeled <TT>default</TT> is executed when the
+value in the expression is not explicitly listed in one of the alternatives.</P><P><B>Important:</B>
+In an <TT>if</TT>-statement, the end of the statement (or block of statements)
+of the first alternative causes a transfer of control 
+to the end of the <TT>if</TT> statement, skipping over the statement (or block
+of statements) in the second (<TT>else</TT>) alternative. This <EM>does not</EM> happen in
+a <TT>switch</TT>: control &#X201C;drops through&#X201D; from the end of one alternative to the beginning
+of the next alternative.
+A <TT>break</TT> statement must be used to transfer control from the end of an alternative
+to the end of the <TT>switch</TT> statement.</P><P><B>Program: Control09.java</B>
+, <A HREF="src/control/Control09.java">click to display source</A>.<BR>
+
+This program computes the number of days in a month.
+</P><UL CLASS="itemize"><LI CLASS="li-itemize">
+The variables are allocated and the first two, <TT>year</TT> and <TT>month</TT>, are
+given initial values.
+</LI><LI CLASS="li-itemize">The switch statement chooses a <TT>case</TT> depending on the value of the variable
+<TT>month</TT>. <SPAN STYLE="font-variant:small-caps">Jeliot</SPAN> displays <TT>Entering a switch statement</TT>.
+</LI><LI CLASS="li-itemize">The <TT>case</TT> associated with <TT>4</TT> is selected.
+<SPAN STYLE="font-variant:small-caps">Jeliot</SPAN> displays <TT>This case is selected</TT>.
+The assignment statement assigns 30 to <TT>days</TT>.
+</LI><LI CLASS="li-itemize">The assignment statement assigns 31 to <TT>days</TT>.
+</LI><LI CLASS="li-itemize">The switch statement terminates and 
+<SPAN STYLE="font-variant:small-caps">Jeliot</SPAN> displays <TT>Exiting a switch statement</TT>.
+</LI><LI CLASS="li-itemize">The value of <TT>days</TT> is printed.
+</LI></UL><P><B>Exercise</B> Explain why the second assignment statement
+is executed; fix the program.</P><P><B>Exercise</B> Explain why the sequence of <TT>case</TT>&#X2019;s for 4,6,9,11 works.</P><P><B>Exercise</B> Modify the program so that the <TT>case</TT>&#X2019;s for the 31-day months
+are given explicitly and so that the days are computed correctly in leap years.
+</P><HR>
+<A HREF="lov003.html"><IMG SRC="previous_motif.gif" ALT="Previous"></A>
+<A HREF="index.html"><IMG SRC="contents_motif.gif" ALT="Up"></A>
+<A HREF="lov005.html"><IMG SRC="next_motif.gif" ALT="Next"></A>
+</BODY>
+</HTML>
