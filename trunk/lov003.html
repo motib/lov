@@ -1,0 +1,62 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+            "http://www.w3.org/TR/REC-html40/loose.dtd">
+<HTML>
+<HEAD>
+
+<META http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+<META name="GENERATOR" content="hevea 1.10">
+<LINK rel="stylesheet" type="text/css" href="lov.css">
+<TITLE>Tips for using Jeliot</TITLE>
+</HEAD>
+<BODY >
+<A HREF="lov002.html"><IMG SRC="previous_motif.gif" ALT="Previous"></A>
+<A HREF="index.html"><IMG SRC="contents_motif.gif" ALT="Up"></A>
+<A HREF="lov004.html"><IMG SRC="next_motif.gif" ALT="Next"></A>
+<HR>
+<H2 CLASS="section">Tips for using <SPAN STYLE="font-variant:small-caps">Jeliot</SPAN></H2><UL CLASS="itemize"><LI CLASS="li-itemize">
+The LOs have been tested with Jeliot Version 3.7.1; please ensure that you
+are not using earlier versions.
+</LI><LI CLASS="li-itemize">Copy the source file directories to a clean directory so that if you make 
+changes you will not modify the original files. 
+Run <SPAN STYLE="font-variant:small-caps">Jeliot</SPAN> and open the source file for the LO you want to work with.
+</LI><LI CLASS="li-itemize">Learn how to use <SPAN STYLE="font-variant:small-caps">Jeliot</SPAN> before studying the LOs.
+In particular, learn how to use <TT>Step</TT>, <TT>Pause</TT>, <TT>Play</TT>,
+and <TT>Rewind</TT> to control the animation.
+</LI><LI CLASS="li-itemize">Select <TT>Animation / Run Until... (ctrl-T)</TT> and enter a line number to begin
+the animation at that line. This is very useful in two situations:
+<UL CLASS="itemize"><LI CLASS="li-itemize">
+	when you are animating a program several times and 
+	wish to skip over the initialization or other parts of the code;
+	</LI><LI CLASS="li-itemize">when you wish to examine the final state after the last line of the
+	main method: enter the line number of the closing brace of the main method.
+</LI></UL>
+</LI><LI CLASS="li-itemize">Select <TT>Options / Show History View</TT> to enable storing of each step
+of the animation; these can be viewed by selecting the <TT>History</TT> tab
+on the right-hand side of the display. Enabling the history may slow Jeliot down,
+especially for large programs.
+</LI><LI CLASS="li-itemize">The programs in the LOs use standard Java 
+with two exceptions that simplify the animations:
+<UL CLASS="itemize"><LI CLASS="li-itemize">
+	None of the programs use the parameter of the <TT>main</TT> method.
+	Since <SPAN STYLE="font-variant:small-caps">Jeliot</SPAN> accepts Java programs without the formal parameter 
+	definition <TT>String[] args</TT>, the parameter has been commented-out in the programs.
+	You can remove the comments to compile the programs with a Java compiler.
+	
+	If you wish to run <SPAN STYLE="font-variant:small-caps">Jeliot</SPAN> with the parameter, you can select <TT>Options /
+	Use Null Parameter to Call Main</TT> to skip over the animation of the parameter.
+	</LI><LI CLASS="li-itemize">Two of the LOs on control structures use the input statement:
+	<DIV CLASS="center">
+	<TT>input = Input.nextInt()</TT>
+	</DIV>
+	To compile these programs with standard Java, 
+	add the following declaration to the <TT>main</TT> method:
+<DIV CLASS="center">
+	<TT>java.util.Scanner Input = new java.util.Scanner(System.in);</TT>
+</DIV>
+</LI></UL>
+</LI></UL><HR>
+<A HREF="lov002.html"><IMG SRC="previous_motif.gif" ALT="Previous"></A>
+<A HREF="index.html"><IMG SRC="contents_motif.gif" ALT="Up"></A>
+<A HREF="lov004.html"><IMG SRC="next_motif.gif" ALT="Next"></A>
+</BODY>
+</HTML>

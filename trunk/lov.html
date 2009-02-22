@@ -1,0 +1,1587 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+            "http://www.w3.org/TR/REC-html40/loose.dtd">
+<HTML>
+<HEAD>
+<TITLE>Learning Objects for Visualizations 
+ 
+ 
+Programming in Java Using Jeliot 
+ 
+ 
+Version 1.0
+</TITLE>
+
+<META http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+<META name="GENERATOR" content="hevea 1.10">
+<STYLE type="text/css">
+.li-itemize{margin:1ex 0ex;}
+.li-enumerate{margin:1ex 0ex;}
+.dd-description{margin:0ex 0ex 1ex 4ex;}
+.dt-description{margin:0ex;}
+.toc{list-style:none;}
+.thefootnotes{text-align:left;margin:0ex;}
+.dt-thefootnotes{margin:0em;}
+.dd-thefootnotes{margin:0em 0em 0em 2em;}
+.footnoterule{margin:1em auto 1em 0px;width:50%;}
+.caption{padding-left:2ex; padding-right:2ex; margin-left:auto; margin-right:auto}
+.title{margin:2ex auto;text-align:center}
+.center{text-align:center;margin-left:auto;margin-right:auto;}
+.flushleft{text-align:left;margin-left:0ex;margin-right:auto;}
+.flushright{text-align:right;margin-left:auto;margin-right:0ex;}
+DIV TABLE{margin-left:inherit;margin-right:inherit;}
+PRE{text-align:left;margin-left:0ex;margin-right:auto;}
+BLOCKQUOTE{margin-left:4ex;margin-right:4ex;text-align:left;}
+TD P{margin:0px;}
+.boxed{border:1px solid black}
+.textboxed{border:1px solid black}
+.vbar{border:none;width:2px;background-color:black;}
+.hbar{border:none;height:2px;width:100%;background-color:black;}
+.hfill{border:none;height:1px;width:200%;background-color:black;}
+.vdisplay{border-collapse:separate;border-spacing:2px;width:auto; empty-cells:show; border:2px solid red;}
+.vdcell{white-space:nowrap;padding:0px;width:auto; border:2px solid green;}
+.display{border-collapse:separate;border-spacing:2px;width:auto; border:none;}
+.dcell{white-space:nowrap;padding:0px;width:auto; border:none;}
+.dcenter{margin:0ex auto;}
+.vdcenter{border:solid #FF8000 2px; margin:0ex auto;}
+.minipage{text-align:left; margin-left:0em; margin-right:auto;}
+.marginpar{border:solid thin black; width:20%; text-align:left;}
+.marginparleft{float:left; margin-left:0ex; margin-right:1ex;}
+.marginparright{float:right; margin-left:1ex; margin-right:0ex;}
+.theorem{text-align:left;margin:1ex auto 1ex 0ex;}
+.part{margin:2ex auto;text-align:center}
+</STYLE>
+</HEAD>
+<BODY >
+<!--HEVEA command line is: c:\hevea\hevea -o ..\html\lov.html lov -->
+<!--CUT DEF section 0 --><TABLE CLASS="title"><TR><TD><H1 CLASS="titlemain">Learning Objects for Visualizations<BR>
+<BR>
+<BR>
+Programming in Java Using Jeliot<BR>
+<BR>
+<BR>
+Version 1.0</H1><H3 CLASS="titlerest">Mordechai (Moti) Ben-Ari<BR>
+Department of Science Teaching<BR>
+Weizmann Institute of Science<BR>
+Rehovot 76100 Israel<BR>
+<TT>http://stwww.weizmann.ac.il/g-cs/benari/</TT></H3></TD></TR>
+</TABLE><P>Copyright &#XA9; 2007 by Mordechai (Moti) Ben-Ari.</P><P>This work is licensed under the Creative Commons
+Attribution-Noncommercial-ShareAlike 3.0 License. 
+To view a copy of this license, 
+visit <TT>http://creativecommons.org/licenses/by-nc-sa/3.0/</TT>; 
+or, (b) send a letter to Creative Commons, 
+543 Howard Street, 5th Floor, San Francisco, California, 94105, USA.</P><!--TOC section Introduction-->
+<H2 CLASS="section"><!--SEC ANCHOR -->Introduction</H2><!--SEC END --><P>
+<EM>Learning objects (LOs)</EM> are small, self-contained, reusable resources for 
+learning. The advantages of LOs include: <EM>flexibility of 
+use</EM> (students can choose to work with LOs at their convenience) and 
+<EM>adaptability</EM> (students can choose to work only with those LOs that 
+address topics they find difficult).</P><P>LOs are usually developed using multimedia authoring tools: see
+the Codewitz project <TT>http://codewitz.net/</TT> and the LOs
+developed by the Learning Technology Research Institute 
+<TT>http://www.londonmet.ac.uk/ltri/learningobjects/</TT>.</P><P>LOV takes another approach for developing LOs for introductory programming:
+the LOs are based on a visualization tool, here, the <SPAN STYLE="font-variant:small-caps">Jeliot</SPAN> system for animating
+introductory programs in Java.</P><P>The LOs are primarily intended for self-study: to learn about a specific
+concept in Java, work through the LO for that concept.</P><!--TOC section Learning objects for <SPAN STYLE="font-variant:small-caps">Jeliot</SPAN>-->
+<H2 CLASS="section"><!--SEC ANCHOR -->Learning objects for <SPAN STYLE="font-variant:small-caps">Jeliot</SPAN></H2><!--SEC END --><P>The learning objects (LOs) described here consist of text and Java 
+programs. Each LO is independent, so if you know the needed background 
+material you can go directly to any LO. The learning objects are designed
+for use with the <SPAN STYLE="font-variant:small-caps">Jeliot</SPAN> system for animating programs in Java:
+</P><DIV CLASS="center">
+<TT>http://cs.joensuu.fi/jeliot/</TT>.
+</DIV><P>For each topic, a table is given that lists the LOs, the associated source 
+files, and the &#X201C;prerequisites&#X201D; for each LO. The prerequisites are the number
+of the LO that introduces <EM>concepts</EM> that are assumed;
+however, there is no need to actually work through the LOs in sequence.</P><P>The text for each LO starts with a description of the concept being presented 
+and an overview of the example program. It is followed by a bulleted list for 
+each program that describes what to observe as you <EM>step</EM> through the 
+program. The text for the LO ends with a programming exercise.</P><P><BR>
+<BR>
+<BR>
+</P><P><B>Acknowledgements:</B> I would like to thank Niko Myller and Andr&#XE9;s Moreno
+for modifying <SPAN STYLE="font-variant:small-caps">Jeliot</SPAN> to accomodate the LOs, and Ronit Ben-Bassat Levy for suggestions
+for improving the LOs.</P><!--TOC section Tips for using <SPAN STYLE="font-variant:small-caps">Jeliot</SPAN>-->
+<H2 CLASS="section"><!--SEC ANCHOR -->Tips for using <SPAN STYLE="font-variant:small-caps">Jeliot</SPAN></H2><!--SEC END --><UL CLASS="itemize"><LI CLASS="li-itemize">
+The LOs have been tested with Jeliot Version 3.7.1; please ensure that you
+are not using earlier versions.
+</LI><LI CLASS="li-itemize">Copy the source file directories to a clean directory so that if you make 
+changes you will not modify the original files. 
+Run <SPAN STYLE="font-variant:small-caps">Jeliot</SPAN> and open the source file for the LO you want to work with.
+</LI><LI CLASS="li-itemize">Learn how to use <SPAN STYLE="font-variant:small-caps">Jeliot</SPAN> before studying the LOs.
+In particular, learn how to use <TT>Step</TT>, <TT>Pause</TT>, <TT>Play</TT>,
+and <TT>Rewind</TT> to control the animation.
+</LI><LI CLASS="li-itemize">Select <TT>Animation / Run Until... (ctrl-T)</TT> and enter a line number to begin
+the animation at that line. This is very useful in two situations:
+<UL CLASS="itemize"><LI CLASS="li-itemize">
+	when you are animating a program several times and 
+	wish to skip over the initialization or other parts of the code;
+	</LI><LI CLASS="li-itemize">when you wish to examine the final state after the last line of the
+	main method: enter the line number of the closing brace of the main method.
+</LI></UL>
+</LI><LI CLASS="li-itemize">Select <TT>Options / Show History View</TT> to enable storing of each step
+of the animation; these can be viewed by selecting the <TT>History</TT> tab
+on the right-hand side of the display. Enabling the history may slow Jeliot down,
+especially for large programs.
+</LI><LI CLASS="li-itemize">The programs in the LOs use standard Java 
+with two exceptions that simplify the animations:
+<UL CLASS="itemize"><LI CLASS="li-itemize">
+	None of the programs use the parameter of the <TT>main</TT> method.
+	Since <SPAN STYLE="font-variant:small-caps">Jeliot</SPAN> accepts Java programs without the formal parameter 
+	definition <TT>String[] args</TT>, the parameter has been commented-out in the programs.
+	You can remove the comments to compile the programs with a Java compiler.
+	
+	If you wish to run <SPAN STYLE="font-variant:small-caps">Jeliot</SPAN> with the parameter, you can select <TT>Options /
+	Use Null Parameter to Call Main</TT> to skip over the animation of the parameter.
+	</LI><LI CLASS="li-itemize">Two of the LOs on control structures use the input statement:
+	<DIV CLASS="center">
+	<TT>input = Input.nextInt()</TT>
+	</DIV>
+	To compile these programs with standard Java, 
+	add the following declaration to the <TT>main</TT> method:
+<DIV CLASS="center">
+	<TT>java.util.Scanner Input = new java.util.Scanner(System.in);</TT>
+</DIV>
+</LI></UL>
+</LI></UL><!--TOC section 1&#XA0;&#XA0;Learning Objects for Control Statements-->
+<H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc1">1</A>&#XA0;&#XA0;Learning Objects for Control Statements</H2><!--SEC END --><P><A NAME="s.control"></A></P><P><B>Concept</B> Normally, statements in Java are executed sequentially
+in the order written in the source code. <EM>Control statements</EM> are used
+to modify the order of execution of statements. Most control statements are <EM>conditional</EM>;
+that is, the next statement to be executed depends on the result of evaluating
+an expression, usually, an expression that returns a <EM>boolean</EM> value of true or false.</P><DIV CLASS="center">
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=1><TR><TD ALIGN=center NOWRAP>LO</TD><TD ALIGN=left NOWRAP>Topic</TD><TD ALIGN=left NOWRAP>Java Files (.java)</TD><TD ALIGN=center NOWRAP>Prerequisites</TD></TR>
+<TR><TD ALIGN=center NOWRAP><A HREF="#control.01">1.1</A></TD><TD ALIGN=left NOWRAP>If-statements</TD><TD ALIGN=left NOWRAP>Control01</TD><TD ALIGN=center NOWRAP>&nbsp;</TD></TR>
+<TR><TD ALIGN=center NOWRAP><A HREF="#control.02">1.2</A></TD><TD ALIGN=left NOWRAP>Conditional expressions</TD><TD ALIGN=left NOWRAP>Control02</TD><TD ALIGN=center NOWRAP>1</TD></TR>
+<TR><TD ALIGN=center NOWRAP><A HREF="#control.03">1.3</A></TD><TD ALIGN=left NOWRAP>While loops</TD><TD ALIGN=left NOWRAP>Control03</TD><TD ALIGN=center NOWRAP>&nbsp;</TD></TR>
+<TR><TD ALIGN=center NOWRAP><A HREF="#control.04">1.4</A></TD><TD ALIGN=left NOWRAP>Do-while loops</TD><TD ALIGN=left NOWRAP>Control04</TD><TD ALIGN=center NOWRAP>&nbsp;</TD></TR>
+<TR><TD ALIGN=center NOWRAP><A HREF="#control.05">1.5</A></TD><TD ALIGN=left NOWRAP>Break statements</TD><TD ALIGN=left NOWRAP>Control05</TD><TD ALIGN=center NOWRAP>3</TD></TR>
+<TR><TD ALIGN=center NOWRAP><A HREF="#control.06">1.6</A></TD><TD ALIGN=left NOWRAP>Counting with for statements</TD><TD ALIGN=left NOWRAP>Control06</TD><TD ALIGN=center NOWRAP>&nbsp;</TD></TR>
+<TR><TD ALIGN=center NOWRAP><A HREF="#control.07">1.7</A></TD><TD ALIGN=left NOWRAP>General for statements</TD><TD ALIGN=left NOWRAP>Control07</TD><TD ALIGN=center NOWRAP>6</TD></TR>
+<TR><TD ALIGN=center NOWRAP><A HREF="#control.08">1.8</A></TD><TD ALIGN=left NOWRAP>Continue statements</TD><TD ALIGN=left NOWRAP>Control08</TD><TD ALIGN=center NOWRAP>6</TD></TR>
+<TR><TD ALIGN=center NOWRAP><A HREF="#control.09">1.9</A></TD><TD ALIGN=left NOWRAP>Switch statements</TD><TD ALIGN=left NOWRAP>Control09</TD><TD ALIGN=center NOWRAP>&nbsp;</TD></TR>
+</TABLE>
+</DIV><!--TOC subsection 1.1&#XA0;&#XA0;If-statements-->
+<H3 CLASS="subsection"><!--SEC ANCHOR --><A NAME="htoc2">1.1</A>&#XA0;&#XA0;If-statements</H3><!--SEC END --><P><A NAME="control.01"></A></P><P><B>Concept</B> The execution of an if-statement starts with the evaluation of 
+its boolean-valued expression. If the result is true, the statement written
+after the closing parenthesis of the expression is executed; if the result is
+false, the statement written after the <TT>else</TT> is executed. These statements
+can be single statements or blocks of statements. In particular,
+the statements can themselves be if-statements (<EM>nested if-statements</EM>),
+in which case the inner statement is executed the same way.</P><P><B>Program: Control01.java</B>
+, <A HREF="src/control/Control01.java">click to display source</A>.<BR>
+
+The program computes the number of days in a month taking leap years into account.</P><UL CLASS="itemize"><LI CLASS="li-itemize">
+The variables are allocated and the first two, <TT>year</TT> and <TT>month</TT>, are
+given initial values.
+</LI><LI CLASS="li-itemize">The expression <TT>month == 2</TT> evaluates to false, so the statement
+following the else is executed. <SPAN STYLE="font-variant:small-caps">Jeliot</SPAN> will display <TT>Choosing else-branch</TT> to 
+emphasize this.
+</LI><LI CLASS="li-itemize">The inner statement is itself an if-statement. The expression is evaluated
+and its result is true. Note that once one of the terms of <TT>||</TT> (or) becomes 
+true, there is no need to evaluate the others.
+</LI><LI CLASS="li-itemize">The assignment statement following the statement is executed.
+<SPAN STYLE="font-variant:small-caps">Jeliot</SPAN> will display <TT>Choosing then-branch</TT>. (The 
+terminology <EM>then-branch</EM> orginates from programming
+languages that require the use of the keyword <TT>then</TT> between the expression
+and the statement.)
+</LI><LI CLASS="li-itemize">The value of <TT>days</TT> is printed.
+</LI></UL><P><B>Exercise</B> Complete the program with the correct computation
+for leap years: a year divisible by 100 is not a leap year unless it
+is also divisible by 400.</P><!--TOC subsection 1.2&#XA0;&#XA0;Conditional expressions-->
+<H3 CLASS="subsection"><!--SEC ANCHOR --><A NAME="htoc3">1.2</A>&#XA0;&#XA0;Conditional expressions</H3><!--SEC END --><P><A NAME="control.02"></A></P><P><B>Concept</B> A conditional expression is a shorthand for an if-statement that
+assigns different values to one variable:
+</P><BLOCKQUOTE CLASS="quote">
+<TT>if (expression) var = value1; else var = value2;</TT>
+</BLOCKQUOTE><P>
+This can be rewritten more concisely as:
+</P><BLOCKQUOTE CLASS="quote">
+<TT>var = (expression) ? value1 : value2;</TT>
+</BLOCKQUOTE><P>
+The boolean-valued expression is evaluated: 
+If the result is true, <TT>value1</TT> is assigned to <TT>var</TT>; if not, <TT>value2</TT> is assign to <TT>var</TT>.</P><P><B>Program: Control02.java</B>
+, <A HREF="src/control/Control02.java">click to display source</A>.<BR>
+
+The program computes the number of days in a month taking leap years into account.</P><UL CLASS="itemize"><LI CLASS="li-itemize">
+The variables are allocated and the first two, <TT>year</TT> and <TT>month</TT>, are
+given initial values.
+</LI><LI CLASS="li-itemize">The expression <TT>month == 2</TT> evaluates to true, so the statement
+following the expression is executed. <SPAN STYLE="font-variant:small-caps">Jeliot</SPAN> will display <TT>Choosing then-branch</TT> to 
+emphasize this.
+</LI><LI CLASS="li-itemize">The inner statement is an assignment statement with a conditional expression.
+The expression is evaluated
+and its result is false, so the value after the colon is assigned to the variable.
+<SPAN STYLE="font-variant:small-caps">Jeliot</SPAN> will display <TT>Choosing else-branch</TT>.
+</LI><LI CLASS="li-itemize">The value of <TT>days</TT> is printed.
+</LI></UL><P><B>Exercise</B> Complete the program with the correct computation
+for leap years: a year divisible by 100 is not a leap year unless it
+is divisible by 400.</P><P><B>Exercise</B> Rewrite the entire if-statement as nested conditional expressions.
+
+</P><!--TOC subsection 1.3&#XA0;&#XA0;While loops-->
+<H3 CLASS="subsection"><!--SEC ANCHOR --><A NAME="htoc4">1.3</A>&#XA0;&#XA0;While loops</H3><!--SEC END --><P><A NAME="control.03"></A></P><P><B>Concept</B> A loop enables the execution of a statement (including a block
+of statements within braces) an arbitrary number of times.
+This statement is called the <EM>loop body</EM>.
+In a while loop, an expression is evaluated <EM>before</EM> each
+execution of the loop body,
+and loop body is executed if and only if the expression evaluates to true.</P><P><B>Program: Control03.java</B>
+, <A HREF="src/control/Control03.java">click to display source</A>.<BR>
+
+This program prints all factorials less than <TT>LIMIT = 100</TT>, namely,
+1!=1, 2!=2, 3!=6, 4!=24.
+</P><UL CLASS="itemize"><LI CLASS="li-itemize">
+The static constant and the two variables are allocated and initialized.
+</LI><LI CLASS="li-itemize">Then, and each time the keyword <TT>while</TT> is reached, the expression
+is evaluated. If it is true, execution proceeds with the loop body, and
+<SPAN STYLE="font-variant:small-caps">Jeliot</SPAN> displays <TT>Entering the while loop</TT> the first time
+and <TT>Continuing the while loop</TT> on subsequent occasions.
+</LI><LI CLASS="li-itemize">The statements of the loop body are executed. 
+They print the value of the current factorial, increment the counter
+and compute the new factorial; then, control returns to the while-expression.
+</LI><LI CLASS="li-itemize">If and when the expression evaluates to false, execution
+proceeds with the statement following the loop body.
+<SPAN STYLE="font-variant:small-caps">Jeliot</SPAN> displays <TT>Exiting the while loop</TT>.
+</LI></UL><P><B>Exercise</B> According to a formula by Euler,
+</P><TABLE CLASS="display dcenter"><TR VALIGN="middle"><TD CLASS="dcell"><TABLE CLASS="display"><TR><TD CLASS="dcell" ALIGN="center">1</TD></TR>
+<TR><TD CLASS="hbar"></TD></TR>
+<TR><TD CLASS="dcell" ALIGN="center">1<SUP>2</SUP></TD></TR>
+</TABLE></TD><TD CLASS="dcell">&#XA0;+&#XA0;</TD><TD CLASS="dcell"><TABLE CLASS="display"><TR><TD CLASS="dcell" ALIGN="center">1</TD></TR>
+<TR><TD CLASS="hbar"></TD></TR>
+<TR><TD CLASS="dcell" ALIGN="center">2<SUP>2</SUP></TD></TR>
+</TABLE></TD><TD CLASS="dcell">&#XA0;+&#XA0;</TD><TD CLASS="dcell"><TABLE CLASS="display"><TR><TD CLASS="dcell" ALIGN="center">1</TD></TR>
+<TR><TD CLASS="hbar"></TD></TR>
+<TR><TD CLASS="dcell" ALIGN="center">3<SUP>2</SUP></TD></TR>
+</TABLE></TD><TD CLASS="dcell">&#XA0;+&#XA0;</TD><TD CLASS="dcell"><TABLE CLASS="display"><TR><TD CLASS="dcell" ALIGN="center">1</TD></TR>
+<TR><TD CLASS="hbar"></TD></TR>
+<TR><TD CLASS="dcell" ALIGN="center">4<SUP>2</SUP></TD></TR>
+</TABLE></TD><TD CLASS="dcell">&#XA0;+&#XA0;&#X22EF;&#XA0;
+=&#XA0;</TD><TD CLASS="dcell"><TABLE CLASS="display"><TR><TD CLASS="dcell" ALIGN="center">&#X3C0;<SUP>2</SUP></TD></TR>
+<TR><TD CLASS="hbar"></TD></TR>
+<TR><TD CLASS="dcell" ALIGN="center">6</TD></TR>
+</TABLE></TD><TD CLASS="dcell">&#XA0;&#XA0;&#XA0;&#XA0;
+</TD></TR>
+</TABLE><P>
+Write a program to compute the series until the difference between the two terms
+is less than 0.1.
+
+</P><!--TOC subsection 1.4&#XA0;&#XA0;Do-while loops-->
+<H3 CLASS="subsection"><!--SEC ANCHOR --><A NAME="htoc5">1.4</A>&#XA0;&#XA0;Do-while loops</H3><!--SEC END --><P><A NAME="control.04"></A></P><P><B>Concept</B> A loop enables the execution of a statement (including a block
+of statements within braces) an arbitrary number of times.
+This statement is called the <EM>loop body</EM>.
+In a do-while loop, an expression is evaluated <EM>after</EM> each
+execution of the loop body, and
+the loop body continues to execute if and only if the expression evaluates to true.</P><P>The loop body of a do-while loop will execute at least one time.
+This type of statement is particularly appropriate for processing input,
+because you need to input data at least once before you can test it in an expression.</P><P><B>Program: Control04.java</B>
+, <A HREF="src/control/Control04.java">click to display source</A>.<BR>
+
+The program reads interactive input until a positive number is entered.</P><UL CLASS="itemize"><LI CLASS="li-itemize">
+The variable <TT>input</TT> is allocated but not initialized.
+</LI><LI CLASS="li-itemize">The loop body of the do-while loop is executed.
+<SPAN STYLE="font-variant:small-caps">Jeliot</SPAN> displays <TT>Entering the do-while loop</TT>.
+</LI><LI CLASS="li-itemize">A value is read interactively into the variable <TT>input</TT>.
+First, enter a negative integer.
+</LI><LI CLASS="li-itemize">The expression following the <TT>while</TT> is evaluated.
+Since it evaluates to true, the loop body is executed again.
+<SPAN STYLE="font-variant:small-caps">Jeliot</SPAN> displays <TT>Continuing the do-while loop</TT>.
+</LI><LI CLASS="li-itemize">Now enter a positive value into the variable <TT>input</TT>.
+</LI><LI CLASS="li-itemize">The expression following the <TT>while</TT> is evaluated.
+Since it evaluates to false, the execution of the do-while loop is completed.
+<SPAN STYLE="font-variant:small-caps">Jeliot</SPAN> displays <TT>Exiting the do-while loop</TT>.
+</LI></UL><P><B>Exercise</B> Rewrite this program with a while loop.
+Compare it to the do-while loop.
+
+</P><!--TOC subsection 1.5&#XA0;&#XA0;Break statements-->
+<H3 CLASS="subsection"><!--SEC ANCHOR --><A NAME="htoc6">1.5</A>&#XA0;&#XA0;Break statements</H3><!--SEC END --><P><A NAME="control.05"></A></P><P><B>Concept</B> The exit from a while loop occurs <EM>before</EM> the loop body and
+the exit from a do-while loop occurs <EM>after</EM> the loop body. 
+The <TT>break</TT> statement can
+be used to exit from an arbitrary location or locations from within the loop body.</P><P>The <TT>break</TT> statement is useful when the expression that leads to exiting the loop cannot
+be evaluated until some statements from the loop body have been executed,
+and yet there remain statements to be executed after the expression is evaluated.</P><P><B>Program: Control05.java</B>
+, <A HREF="src/control/Control05.java">click to display source</A>.<BR>
+
+The program sums a sequence of nonnegative integers read from the input and terminates when
+a negative value is read.</P><UL CLASS="itemize"><LI CLASS="li-itemize">
+The two variables are allocated and <TT>sum</TT> is initialized with the value zero.
+</LI><LI CLASS="li-itemize">The <TT>while</TT> statement is executed with <TT>true</TT> as the loop expression.
+Of course, <TT>true</TT> will never evaluate to false, so the loop will never be exited
+at the <TT>while</TT>.
+</LI><LI CLASS="li-itemize">An integer value is read from the input. If it is negative the <TT>break</TT> statement
+is executed and <SPAN STYLE="font-variant:small-caps">Jeliot</SPAN> displays <TT>Exiting the while loop because of the break</TT>.
+</LI><LI CLASS="li-itemize">Otherwise, the following assignment statement is executed and
+<SPAN STYLE="font-variant:small-caps">Jeliot</SPAN> displays <TT>Continuing without branching</TT>.
+</LI><LI CLASS="li-itemize">After the assignment statement is executed, the loop starts again.
+</LI></UL><P><B>Exercise</B> Write equivalent programs using a while loop
+and a do-while loop.
+
+</P><!--TOC subsection 1.6&#XA0;&#XA0;Counting with for statements-->
+<H3 CLASS="subsection"><!--SEC ANCHOR --><A NAME="htoc7">1.6</A>&#XA0;&#XA0;Counting with for statements</H3><!--SEC END --><P><A NAME="control.06"></A></P><P><B>Concept</B> Although all loop structures can be programmed as <TT>while</TT> loops,
+one special case is directly supported: writing a loop that executes a predetermined number
+of times. The <TT>for</TT> statement has three parts:
+</P><BLOCKQUOTE CLASS="quote">
+<TT>for (int i = 0; i &lt; N; i++)</TT>
+</BLOCKQUOTE><P>
+The first part declares a loop control variable and gives it an initial value.
+The second part contains the exit condition: the loop body will be executed
+as long as the expression evaluates to true. The third part describes how
+the value of the control variable is modified after executing the loop body.
+The syntax show is the conventional one for executing a loop <TT>N</TT> times.</P><P><B>Program: Control06.java</B>
+, <A HREF="src/control/Control06.java">click to display source</A>.<BR>
+
+This program computes the first six factorials in a <TT>for</TT> loop
+and the last value is printed.</P><UL CLASS="itemize"><LI CLASS="li-itemize">
+The constant <TT>N</TT> and the variable <TT>factorial</TT> are allocated and initialized.
+</LI><LI CLASS="li-itemize">The control variable <TT>i</TT> is allocated and initialized.
+</LI><LI CLASS="li-itemize">The expression <TT>i &lt; N</TT> is evaluated and evaluates to true.
+<SPAN STYLE="font-variant:small-caps">Jeliot</SPAN> displays <TT>Entering the for loop</TT>.
+</LI><LI CLASS="li-itemize">The loop body is executed. 
+</LI><LI CLASS="li-itemize">The control variable is incremented as specified in the third part of the
+<TT>for</TT> statement.
+</LI><LI CLASS="li-itemize">The previous three steps are repeated until the expression evaluates to false;
+this causes the loop to be exited. <SPAN STYLE="font-variant:small-caps">Jeliot</SPAN> displays <TT>Continuing the for loop</TT>
+as long as the expression evaluates to true, and <TT>Exiting the for loop</TT> when
+it evaluates to false.
+</LI><LI CLASS="li-itemize">The final value of <TT>factorial</TT> is printed. 
+</LI><LI CLASS="li-itemize"><B>Important</B>: when the loop is exited, the control variable is
+deallocated and no longer exists.
+</LI></UL><P><B>Exercise</B> Rewrite the program using a <TT>while</TT> loop.</P><!--TOC subsection 1.7&#XA0;&#XA0;General for statements-->
+<H3 CLASS="subsection"><!--SEC ANCHOR --><A NAME="htoc8">1.7</A>&#XA0;&#XA0;General for statements</H3><!--SEC END --><P><A NAME="control.07"></A></P><P><B>Concept</B> Arbitrary expressions can be given for the initial value of the <TT>for</TT> statement, the exit condition, and the modification of the control variable.</P><P><B>Program: Control07.java</B>
+, <A HREF="src/control/Control07.java">click to display source</A>.<BR>
+
+This program computes the sum of multiples of three that are less
+than the square root of <TT>N</TT>.</P><UL CLASS="itemize"><LI CLASS="li-itemize">
+The constant <TT>N</TT> and the variable <TT>sum</TT> are allocated and initialized.
+</LI><LI CLASS="li-itemize">The control variable <TT>i</TT> is allocated and initialized.
+</LI><LI CLASS="li-itemize">The expression <TT>i &lt; Math.sqrt(N)</TT> is evaluated and evaluates to true.
+<SPAN STYLE="font-variant:small-caps">Jeliot</SPAN> displays <TT>Entering the for loop</TT>.
+</LI><LI CLASS="li-itemize">The loop body is executed. 
+</LI><LI CLASS="li-itemize">The control variable is incremented by three as specified in the third part of the
+<TT>for</TT> statement.
+</LI><LI CLASS="li-itemize">The previous three steps are repeated until the expression evaluates to false;
+this causes the loop to be exited. <SPAN STYLE="font-variant:small-caps">Jeliot</SPAN> displays <TT>Continuing the for loop</TT>
+as long as the expression evaluates to true, and <TT>Exiting the for loop</TT> when
+it evaluates to false.
+</LI><LI CLASS="li-itemize">The final value of <TT>sum</TT> is printed. 
+</LI><LI CLASS="li-itemize"><B>Important</B>: when the loop is exited, the control variable is
+deallocated and no longer exists.
+</LI></UL><P><B>Exercise</B> Is <TT>for (;;;)</TT> legal? If so, what does it mean?</P><P><B>Exercise</B> Modify the program so that the square root is computed only once.
+
+</P><!--TOC subsection 1.8&#XA0;&#XA0;Continue statements-->
+<H3 CLASS="subsection"><!--SEC ANCHOR --><A NAME="htoc9">1.8</A>&#XA0;&#XA0;Continue statements</H3><!--SEC END --><P><A NAME="control.08"></A></P><P><B>Concept</B> The <TT>break</TT> statement is used to <EM>exit</EM> a loop
+from an arbitrary location in its body; the <TT>continue</TT> statement is used
+to <EM>skip</EM> the rest of a loop body and return to evaluate the condition
+for continuing the loop.</P><P><B>Program: Control08.java</B>
+, <A HREF="src/control/Control08.java">click to display source</A>.<BR>
+
+This program sums all the positive integers less than <TT>N</TT> that are
+divisible by 2 or 3 but not by both. For <TT>N=10</TT>, the result
+is 2+3+4+8+9=26.
+</P><UL CLASS="itemize"><LI CLASS="li-itemize">
+The constant <TT>N</TT> and the variable <TT>sum</TT> are allocated and initialized.
+</LI><LI CLASS="li-itemize">The <TT>for</TT> loop is standard and is executed for the values 0 through <I>N</I>&#X2212;1.
+</LI><LI CLASS="li-itemize">If <TT>i</TT> is divisible by 2 and also by 3 (for example, 6), the 
+<TT>continue</TT> statement is executed and the variable <TT>sum</TT> is not modified.
+</LI><LI CLASS="li-itemize">If <TT>i</TT> is divisible neither by 2 nor by 3 (for example, 5), the 
+<TT>continue</TT> statement is executed and the variable <TT>sum</TT> is not modified.
+</LI><LI CLASS="li-itemize">In all other cases, the value of <TT>i</TT> is added to <TT>sum</TT>.
+</LI><LI CLASS="li-itemize">The final value of <TT>sum</TT> is printed. 
+</LI></UL><P><B>Exercise</B> Modify the program so that it explicitly checks for
+divisibility by 6, instead of checking for divisibility by 2 and 3 in
+separate statements.</P><P><B>Exercise</B> Modify the program so that <TT>continue</TT> is not used.</P><!--TOC subsection 1.9&#XA0;&#XA0;Switch statements-->
+<H3 CLASS="subsection"><!--SEC ANCHOR --><A NAME="htoc10">1.9</A>&#XA0;&#XA0;Switch statements</H3><!--SEC END --><P><A NAME="control.09"></A></P><P><B>Concept</B> A <TT>switch</TT> statement is a generalization of an <TT>if</TT> statement.
+Instead of selecting between two alternatives depending on the value 
+of a boolean-valued expression, an integer-valued expression is used and there can be
+multiple alternatives introduced by the keyword <TT>case</TT>.
+Since there are a very large number of 
+integer values, an alternative labeled <TT>default</TT> is executed when the
+value in the expression is not explicitly listed in one of the alternatives.</P><P><B>Important:</B>
+In an <TT>if</TT>-statement, the end of the statement (or block of statements)
+of the first alternative causes a transfer of control 
+to the end of the <TT>if</TT> statement, skipping over the statement (or block
+of statements) in the second (<TT>else</TT>) alternative. This <EM>does not</EM> happen in
+a <TT>switch</TT>: control &#X201C;drops through&#X201D; from the end of one alternative to the beginning
+of the next alternative.
+A <TT>break</TT> statement must be used to transfer control from the end of an alternative
+to the end of the <TT>switch</TT> statement.</P><P><B>Program: Control09.java</B>
+, <A HREF="src/control/Control09.java">click to display source</A>.<BR>
+
+This program computes the number of days in a month.
+</P><UL CLASS="itemize"><LI CLASS="li-itemize">
+The variables are allocated and the first two, <TT>year</TT> and <TT>month</TT>, are
+given initial values.
+</LI><LI CLASS="li-itemize">The switch statement chooses a <TT>case</TT> depending on the value of the variable
+<TT>month</TT>. <SPAN STYLE="font-variant:small-caps">Jeliot</SPAN> displays <TT>Entering a switch statement</TT>.
+</LI><LI CLASS="li-itemize">The <TT>case</TT> associated with <TT>4</TT> is selected.
+<SPAN STYLE="font-variant:small-caps">Jeliot</SPAN> displays <TT>This case is selected</TT>.
+The assignment statement assigns 30 to <TT>days</TT>.
+</LI><LI CLASS="li-itemize">The assignment statement assigns 31 to <TT>days</TT>.
+</LI><LI CLASS="li-itemize">The switch statement terminates and 
+<SPAN STYLE="font-variant:small-caps">Jeliot</SPAN> displays <TT>Exiting a switch statement</TT>.
+</LI><LI CLASS="li-itemize">The value of <TT>days</TT> is printed.
+</LI></UL><P><B>Exercise</B> Explain why the second assignment statement
+is executed; fix the program.</P><P><B>Exercise</B> Explain why the sequence of <TT>case</TT>&#X2019;s for 4,6,9,11 works.</P><P><B>Exercise</B> Modify the program so that the <TT>case</TT>&#X2019;s for the 31-day months
+are given explicitly and so that the days are computed correctly in leap years.
+</P><!--TOC section 2&#XA0;&#XA0;Learning Objects for Methods-->
+<H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc11">2</A>&#XA0;&#XA0;Learning Objects for Methods</H2><!--SEC END --><P><A NAME="s.method"></A></P><P><B>Concept</B> <EM>Methods</EM> are the simplest construct for abstraction
+in Java. A method starts with a declaration that defines its <EM>signature</EM>:
+the name of the method, the number and types of the <EM>formal parameters</EM> 
+and the <EM>return type</EM>.
+The body of the method consists of local variable declarations and of statements.
+A method is <EM>called</EM> or <EM>invoked</EM> by writing the name of the method
+followed by a list of values, called <EM>actual parameters</EM>, one for
+each formal parameter. A method can return a value or it can be declared
+as <TT>void</TT> if no value is returned.</P><DIV CLASS="center">
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=1><TR><TD ALIGN=center NOWRAP>LO</TD><TD ALIGN=left NOWRAP>Topic</TD><TD ALIGN=left NOWRAP>Java Files (.java)</TD><TD ALIGN=center NOWRAP>Prerequisites</TD></TR>
+<TR><TD ALIGN=center NOWRAP><A HREF="#method.01">2.1</A></TD><TD ALIGN=left NOWRAP>A void method</TD><TD ALIGN=left NOWRAP>Method01</TD><TD ALIGN=center NOWRAP>&nbsp;</TD></TR>
+<TR><TD ALIGN=center NOWRAP><A HREF="#method.02">2.2</A></TD><TD ALIGN=left NOWRAP>A method returning a value</TD><TD ALIGN=left NOWRAP>Method02</TD><TD ALIGN=center NOWRAP>&nbsp;</TD></TR>
+<TR><TD ALIGN=center NOWRAP><A HREF="#method.03">2.3</A></TD><TD ALIGN=left NOWRAP>Calling one method from another</TD><TD ALIGN=left NOWRAP>Method03</TD><TD ALIGN=center NOWRAP>1, 2</TD></TR>
+<TR><TD ALIGN=center NOWRAP><A HREF="#method.04">2.4</A></TD><TD ALIGN=left NOWRAP>Recursion</TD><TD ALIGN=left NOWRAP>Method04</TD><TD ALIGN=center NOWRAP>2</TD></TR>
+<TR><TD ALIGN=center NOWRAP><A HREF="#method.05">2.5</A></TD><TD ALIGN=left NOWRAP>Calling methods on an object</TD><TD ALIGN=left NOWRAP>Method05</TD><TD ALIGN=center NOWRAP>2, *</TD></TR>
+<TR><TD ALIGN=center NOWRAP><A HREF="#method.06">2.6</A></TD><TD ALIGN=left NOWRAP>Calling a method on the same object</TD><TD ALIGN=left NOWRAP>Method06</TD><TD ALIGN=center NOWRAP>5, *</TD></TR>
+<TR><TD ALIGN=center NOWRAP><A HREF="#method.07">2.7</A></TD><TD ALIGN=left NOWRAP>Objects as parameters</TD><TD ALIGN=left NOWRAP>Method07</TD><TD ALIGN=center NOWRAP>5, *</TD></TR>
+<TR><TD ALIGN=center NOWRAP><A HREF="#method.08">2.8</A></TD><TD ALIGN=left NOWRAP>Returning objects</TD><TD ALIGN=left NOWRAP>Method08</TD><TD ALIGN=center NOWRAP>7, *</TD></TR>
+<TR><TD ALIGN=center NOWRAP><A HREF="#method.09">2.9</A></TD><TD ALIGN=left NOWRAP>Returning locally instantiated objects</TD><TD ALIGN=left NOWRAP>Method09</TD><TD ALIGN=center NOWRAP>8, *</TD></TR>
+</TABLE>
+</DIV><P>
+* This LO assumes knowledge of the declaration of
+classes and the instantiation of objects.</P><!--TOC subsection 2.1&#XA0;&#XA0;A void method-->
+<H3 CLASS="subsection"><!--SEC ANCHOR --><A NAME="htoc12">2.1</A>&#XA0;&#XA0;A void method</H3><!--SEC END --><P><A NAME="method.01"></A></P><P><B>Concept</B> When a method that is declared <TT>void</TT> is called,
+it allocates memory for its parameters and local variables, executes
+its statements and then returns. The call is a statement constructed
+from the name of the method followed by a list of actual parameters.</P><P><B>Program: Method01.java</B>
+, <A HREF="src/method/Method01.java">click to display source</A>.<BR>
+
+The program computes the maximum of two integer values.</P><UL CLASS="itemize"><LI CLASS="li-itemize">
+The variables <TT>x</TT> and <TT>y</TT> are allocated and initialized.
+</LI><LI CLASS="li-itemize">The method is called with the values of the actual parameters <TT>x</TT> and <TT>y</TT>.
+</LI><LI CLASS="li-itemize">Memory is allocated for the formal parameters of the method and the local variables.
+This is called an <EM>activation record</EM> and is displayed by <SPAN STYLE="font-variant:small-caps">Jeliot</SPAN> in the upper left
+hand part of the screen labeled <TT>Method Area</TT>. The new activation record hides
+the previous ones which are no longer accessible.
+</LI><LI CLASS="li-itemize">The actual parameters are used to initialize the formal parameters in the activation
+record.
+</LI><LI CLASS="li-itemize">The local variable <TT>max</TT> is allocated within the activation record.
+</LI><LI CLASS="li-itemize">The statements of the method are executed.
+</LI><LI CLASS="li-itemize">After the last statement has been executed, the method <EM>returns</EM>
+and the activation record is deallocated.
+</LI><LI CLASS="li-itemize">Execution continues with the statement after the method call.
+Here, the method is called again, this time with an integer literal
+as an actual parameter instead of a variable. 
+</LI></UL><P>
+<B>Note:</B> In a call to a static method, the name of the 
+class in which it is defined can be given as in the second call.
+Since the method is defined in the <EM>same</EM> class as the call,
+the class name need not be given, as shown in the first call.</P><P><B>Exercise</B> Trace the execution of a call of the following method and
+explain why it doesn&#X2019;t swap the values of the actual parameters.
+</P><BLOCKQUOTE CLASS="quote">
+<TT>void swap(int a, int b) {</TT><BR>
+&#XA0;&#XA0;<TT>int temp = a; a = b; b = temp;</TT><BR>
+<TT>}</TT>
+</BLOCKQUOTE><P>
+Can you write a method to swap two integer values?
+</P><!--TOC subsection 2.2&#XA0;&#XA0;A method returning a value-->
+<H3 CLASS="subsection"><!--SEC ANCHOR --><A NAME="htoc13">2.2</A>&#XA0;&#XA0;A method returning a value</H3><!--SEC END --><P><A NAME="method.02"></A></P><P><B>Concept</B> When a method that is declared with a return type is called,
+it allocates memory for its parameters and local variables, executes
+its statements and then returns a value of the type. 
+The call is a statement constructed
+from the name of the method followed by a list of actual parameters;
+the call is an expression and can appear wherever an expression is allowed.</P><P><B>Program: Method02.java</B>
+, <A HREF="src/method/Method02.java">click to display source</A>.<BR>
+
+</P><UL CLASS="itemize"><LI CLASS="li-itemize">
+The variables <TT>x</TT> and <TT>y</TT> are allocated and initialized;
+the variable <TT>max</TT> is allocated but not initialized.
+</LI><LI CLASS="li-itemize">An assignment statement is executed: the expression on the right hand side is
+a method call including the values of the actual parameters <TT>x</TT> and <TT>y</TT>.
+</LI><LI CLASS="li-itemize">Memory is allocated for the formal parameters of the method and the local variables.
+This is called an <EM>activation record</EM> and is displayed by <SPAN STYLE="font-variant:small-caps">Jeliot</SPAN> in the upper left
+hand part of the screen labeled <TT>Method Area</TT>. The new activation record hides
+the previous ones which are no longer accessible.
+</LI><LI CLASS="li-itemize">The actual parameters are used to initialize the formal parameters in the activation
+record.
+</LI><LI CLASS="li-itemize">The statements of the method are executed.
+</LI><LI CLASS="li-itemize">When the statement <TT>return b</TT> is executed, the value of <TT>b</TT> is used
+for the value to be returned.
+</LI><LI CLASS="li-itemize">The method <EM>returns</EM> and the activation record is deallocated.
+</LI><LI CLASS="li-itemize">The value returned becomes the value of the expression assigned to the
+variable <TT>max</TT>.
+</LI><LI CLASS="li-itemize">The value of <TT>max</TT> is printed.
+</LI></UL><P><B>Exercise</B> Write the body of the main method as one statement.
+
+</P><!--TOC subsection 2.3&#XA0;&#XA0;Calling one method from another-->
+<H3 CLASS="subsection"><!--SEC ANCHOR --><A NAME="htoc14">2.3</A>&#XA0;&#XA0;Calling one method from another</H3><!--SEC END --><P><A NAME="method.03"></A></P><P><B>Concept</B> One method can call another, that is, when executing
+one method, any statement or expression call be a method call. A sequence
+of method calls results in a <EM>stack</EM> of activation records,
+where each method (except the last one that was called) 
+is waiting for the method it called to return. 
+There is no limit on the <EM>depth</EM> of method calls,
+except of course the amount of memory allocated to the program.</P><P><B>Note:</B> The <TT>main</TT> method is a method like any other. 
+The operating system can be considered as a program which calls the main method.
+This call has a single parameter: an array of strings containing the contents
+of the command line.</P><P><B>Program: Method03.java</B>
+, <A HREF="src/method/Method03.java">click to display source</A>.<BR>
+
+</P><UL CLASS="itemize"><LI CLASS="li-itemize">
+The <TT>main</TT> method calls the method <TT>printMax</TT>;
+the actual parameters are two integer literals.
+</LI><LI CLASS="li-itemize">The activation record for <TT>printMax</TT> is allocated,
+and the actual parameters are used to initialize the formal parameters 
+<TT>a</TT> and <TT>b</TT>.
+</LI><LI CLASS="li-itemize">The variable <TT>max</TT> is allocated but not initialized.
+</LI><LI CLASS="li-itemize">The method <TT>maximum</TT> is called; the actual parameters are the
+values of <TT>a</TT> and <TT>b</TT>, 
+which are the formal variables of method <TT>printMax</TT>.
+</LI><LI CLASS="li-itemize">An activation record is allocated for <TT>maximum</TT>. (There are now
+three activation in the stack.) The new activation record includes
+memory for the formal parameters <TT>a</TT> and <TT>b</TT>; note that these are
+new parameters not at all related to the formal parameters of the same names
+in the previous method <TT>printMax</TT> because those parameters are hidden.
+</LI><LI CLASS="li-itemize">The method <TT>maximum</TT> executes its body and returns a value.
+Just before it returns, select the tab <TT>Call Tree</TT> above the graphic display;
+the sequence of calls from <TT>main</TT> 
+to <TT>printMax</TT> and then <TT>maximum</TT> is displayed.
+Select <TT>Theater</TT> to return to the animated display.
+</LI><LI CLASS="li-itemize">When the method returns, its activation record is deallocated, uncovering the
+activation record of <TT>printMax</TT>. 
+</LI><LI CLASS="li-itemize">The value returned is assigned to the variable <TT>max</TT> and printed.
+</LI><LI CLASS="li-itemize">When <TT>printMax</TT> completes its execution, its activation record
+is deallocated.
+</LI></UL><P>
+<B>Note:</B> In a call to a static method, the name of the 
+class in which it is defined can be given as in the call to <TT>maximum</TT>.
+Since the method is defined in the same class as the call,
+the class name need not be given, as shown in the call to <TT>printMax</TT>.</P><P><B>Exercise</B> Write a program to compute the maximum of six values
+using as few statements as possible.
+
+</P><!--TOC subsection 2.4&#XA0;&#XA0;Recursion-->
+<H3 CLASS="subsection"><!--SEC ANCHOR --><A NAME="htoc15">2.4</A>&#XA0;&#XA0;Recursion</H3><!--SEC END --><P><A NAME="method.04"></A></P><P><B>Concept</B> <EM>Recursion</EM> occurs when method calls itself.
+There is nothing at all mysterious about recursion!
+Each call simply creates a new activation record on the stack.
+However, to ensure that the recursive calls terminate,
+eventually, some call of the method should return without
+invoking itself once again.</P><P><B>Program: Method04.java</B>
+, <A HREF="src/method/Method04.java">click to display source</A>.<BR>
+
+The standard example of a recursive method is one
+that computes the factorial function:
+</P><TABLE CLASS="display dcenter"><TR VALIGN="middle"><TD CLASS="dcell"><I>n</I>!&#XA0;=&#XA0;<I>n</I>&#XB7;&#XA0;(<I>n</I>&#X2212;1)&#XA0;&#XB7;&#XA0;&#X22EF;&#XA0;&#XB7;&#XA0;2&#XA0;&#XB7;&#XA0;1&#XA0;=&#XA0;<I>n</I>&#XA0;&#XB7;&#XA0;(<I>n</I>&#X2212;1)!
+</TD></TR>
+</TABLE><P>
+The recursion is terminated by defining <I>n</I>!=1 for <I>n</I>&#X2264; 1.</P><UL CLASS="itemize"><LI CLASS="li-itemize">
+The <TT>main</TT> method calls the method <TT>factorial</TT>
+with the actual parameter 5. This creates an activation record with
+the formal parameter <TT>n</TT> initialized to 5.
+</LI><LI CLASS="li-itemize">To compute the expression in the second return statement,
+the method <TT>factorial</TT> is called again, this time with the actual
+parameter equal to 5&#X2212;1=4.
+</LI><LI CLASS="li-itemize">The sequence of recursive calls continues five times,
+each one allocating a new activation record with a new variable <TT>n</TT>.
+</LI><LI CLASS="li-itemize">Finally, <TT>factorial</TT> is called with actual parameter 1.
+This call creates a new activation record as usual, but does not
+cause <TT>factorial</TT> to be invoked again. Instead,
+the value 1 is returned and the activation record is deallocated.
+Just before the method returns, select the tab <TT>Call Tree</TT> above the graphic display;
+the sequence of calls from <TT>main</TT> to the sequence of recursive calls is displayed.
+Select <TT>Theater</TT> to return to the animated display.
+</LI><LI CLASS="li-itemize">The recursive sequence <EM>unfolds</EM>: each returned value
+is used to compute a new value to be returned by that call of <TT>factorial</TT>.
+</LI><LI CLASS="li-itemize">Finally, the value 120 is returned to the <TT>main</TT> method and printed.
+</LI></UL><P><B>Exercise</B> Write a recursive method to compute the n&#X2019;th Fibonacci number: 
+</P><TABLE CLASS="display dcenter"><TR VALIGN="middle"><TD CLASS="dcell"><I>fib</I>(0)&#XA0;=&#XA0;0,&#XA0;<I>fib</I>(1)&#XA0;=&#XA0;1,&#XA0;<I>fib</I>(<I>n</I>)&#XA0;=&#XA0;<I>fib</I>(<I>n</I>&#X2212;1)&#XA0;+&#XA0;<I>fib</I>(<I>n</I>&#X2212;2)&#XA0;&#XA0;&#XA0;<I><I>for</I></I>&#XA0;&#XA0;&#XA0;<I>n</I>&#XA0;&gt;&#XA0;1.	
+</TD></TR>
+</TABLE><P><B>Exercise</B> Write a more efficient nonrecursive method for the same function.
+
+</P><!--TOC subsection 2.5&#XA0;&#XA0;Calling methods on an object-->
+<H3 CLASS="subsection"><!--SEC ANCHOR --><A NAME="htoc16">2.5</A>&#XA0;&#XA0;Calling methods on an object</H3><!--SEC END --><P><A NAME="method.05"></A></P><P><B>Concept</B> Nonstatic methods defined in a class must be invoked
+<EM>on</EM> an object of the class. A reference to the object becomes
+an <EM>implicit</EM> actual parameter that initializes a formal variable called
+<TT>this</TT> in the method. The variable <TT>this</TT> need not be 
+explicitly mentioned when accessing fields of the object unless there is an ambiguity.</P><P><B>Program: Method05.java</B>
+, <A HREF="src/method/Method05.java">click to display source</A>.<BR>
+
+This program computes the cost of a song as the product of its length
+in seconds and the price per second. A class <TT>Song</TT> is defined
+to encapsulate the field <TT>seconds</TT> and the method <TT>computePrice</TT>.</P><UL CLASS="itemize"><LI CLASS="li-itemize">
+Two objects of class Song are instantiated and references to them
+are assigned to the variables <TT>song1</TT> and <TT>song2</TT>.
+</LI><LI CLASS="li-itemize">The method <TT>computePrice</TT> is called <EM>on</EM> the object referenced by <TT>song1</TT>. In <SPAN STYLE="font-variant:small-caps">Jeliot</SPAN> this is visualized by an arrow to the object
+placed in the <TT>Expression Evaluation Area</TT> followed by a period and
+the method name and parameters.
+</LI><LI CLASS="li-itemize">An activation record is allocated containing two formal parameters:
+<TT>this</TT> is initialized by the implicit reference and <TT>pricePerSecond</TT>
+is initialized from the actual parameter.
+</LI><LI CLASS="li-itemize">The reference in the parameter <TT>this</TT> is used to obtain 
+the value of the field <TT>seconds</TT>. An expression is evaluated and
+its value returned.
+</LI><LI CLASS="li-itemize">The activation record is deallocated and the value returned is stored in the variable <TT>price1</TT>.
+</LI><LI CLASS="li-itemize">A second call to the method is executed in exactly the same way,
+except that it is called <EM>on</EM> the object referenced by <TT>song2</TT>.
+</LI><LI CLASS="li-itemize">The values of <TT>price1</TT> and <TT>price2</TT> are printed.
+</LI></UL><P><B>Exercise</B> Modify the method so that the formal parameter is <EM>also</EM> 
+named <TT>seconds</TT>. Yes, it can be done! 
+(Hint: read the <B>Concept</B> paragraph above.)
+
+</P><!--TOC subsection 2.6&#XA0;&#XA0;Calling a method on the same object-->
+<H3 CLASS="subsection"><!--SEC ANCHOR --><A NAME="htoc17">2.6</A>&#XA0;&#XA0;Calling a method on the same object</H3><!--SEC END --><P><A NAME="method.06"></A></P><P><B>Concept</B> A nonstatic method defined in a class that is invoked
+<EM>on</EM> an object of the class can invoke another such method on the same object.
+The object for the second call is the same as the one on the first call,
+namely, the only referenced by <TT>this</TT>.
+There is no need to explicitly write <TT>this</TT> and the object may be accessed implicitly.</P><P><B>Program: Method06A.java</B>
+, <A HREF="src/method/Method06A.java">click to display source</A>.<BR>
+
+This program computes the cost of a song as the product of its length
+in seconds and the price per second. A discount is applied
+to &#X201C;long&#X201D; songs. A class <TT>Song</TT> is defined
+to encapsulate the field <TT>seconds</TT> and the methods <TT>computePrice</TT>
+and <TT>discount</TT>.</P><UL CLASS="itemize"><LI CLASS="li-itemize">
+Two objects of class Song are instantiated and references to them
+are assigned to the variables <TT>song1</TT> and <TT>song2</TT>.
+</LI><LI CLASS="li-itemize">The method <TT>computePrice</TT> is called <EM>on</EM> the object referenced by <TT>song1</TT>. In <SPAN STYLE="font-variant:small-caps">Jeliot</SPAN> this is visualized by an arrow to the object
+placed in the <TT>Expression Evaluation Area</TT> followed by a period and
+the method name and parameters.
+</LI><LI CLASS="li-itemize">An activation record is allocated containing two formal parameters:
+<TT>this</TT> is initialized by the implicit reference and <TT>pricePerSecond</TT>
+is initialized from the actual parameter.
+</LI><LI CLASS="li-itemize">The local variable <TT>price</TT> is declared and initialized by the
+expression calculated from the formal parameter <TT>pricePerSecond</TT> and
+the field of the object <TT>seconds</TT> that is implicitly accessed through <TT>this</TT>.
+</LI><LI CLASS="li-itemize">The method <TT>discount</TT>, 
+declared in the same class, is invoked and returns a boolean value.
+A new activation is allocated for this method and deallocated when it terminates.
+The implicit actual parameter is <TT>this</TT> and it is used to initialize the 
+implicit formal parameter <TT>this</TT> of the method <TT>discount</TT>.
+</LI><LI CLASS="li-itemize">The activation record for <TT>computePrice</TT> is deallocated 
+and the value returned is stored in the variable <TT>price1</TT>.
+</LI><LI CLASS="li-itemize">A second call to the method is executed exactly the same way,
+except that it is called <EM>on</EM> the object referenced by <TT>song2</TT>.
+</LI><LI CLASS="li-itemize">The values of <TT>price1</TT> and <TT>price2</TT> are printed.
+</LI></UL><P><B>Exercise</B> Modify the program so that discount does not use the explicit
+parameter <TT>s</TT>.</P><P><BR>
+<BR>
+</P><P><B>Program: Method06B.java</B>
+, <A HREF="src/method/Method06B.java">click to display source</A>.<BR>
+
+Given a call to a method <TT>m2</TT> within a method <TT>m1</TT>:
+</P><BLOCKQUOTE CLASS="quote">
+<TT>void m1() {</TT><BR>
+&#XA0;&#XA0;<TT>m2();</TT><BR>
+<TT>}</TT>
+</BLOCKQUOTE><P>
+it is impossible to tell from the call if m2 is being implicitly called <EM>on</EM>
+the same object or if it is a static method defined in the class.</P><UL CLASS="itemize"><LI CLASS="li-itemize">
+	This program is a modification of the previous one: instead of comparing
+	<TT>s</TT> with 300 in the method <TT>discount</TT>, it is compared with
+	the value returned by the method <TT>level</TT>. It is impossible to tell
+	from the calls alone to <TT>discount</TT> and <TT>level</TT> that the first is
+	a call on an object while the second is a call to a static method.
+</LI></UL><P><B>Exercise</B> Modify the calls to <TT>discount</TT> and <TT>level</TT>
+so that it is immediately apparent which is definitely a call on an object and which
+is definitely a call to a static method.
+
+</P><!--TOC subsection 2.7&#XA0;&#XA0;Objects as parameters-->
+<H3 CLASS="subsection"><!--SEC ANCHOR --><A NAME="htoc18">2.7</A>&#XA0;&#XA0;Objects as parameters</H3><!--SEC END --><P><A NAME="method.07"></A></P><P><B>Concept</B> A reference to an object can be an actual parameter whose
+corresponding formal parameter is declared to be of the same class.
+As with all parameters, the <EM>value</EM> of actual parameter is used
+to initialize the formal parameter, but since it is a reference that is
+passed, the method that is called can access fields and methods of the
+object. This is called <EM>reference semantics</EM>.</P><P><B>Program: Method07.java</B>
+, <A HREF="src/method/Method07.java">click to display source</A>.<BR>
+
+This program computes the cost of a song as the product of its length
+in seconds and the price per second. A class <TT>Song</TT> is defined
+to encapsulate the field <TT>seconds</TT> and the method <TT>computePrice</TT>.
+The method <TT>getPrice</TT> in the <TT>main</TT> method receives an object of class
+<TT>Song</TT> as a parameter and calls <TT>computePrice</TT>.</P><UL CLASS="itemize"><LI CLASS="li-itemize">
+Two objects of class Song are instantiated and references to them
+are assigned to the variables <TT>song1</TT> and <TT>song2</TT>.
+</LI><LI CLASS="li-itemize">The method <TT>getPrice</TT> is called with two parameters:
+the first is a reference <TT>song1</TT> to an object of class <TT>Song</TT>, while the second
+is a value of type double. The actual parameters are used to initialize the formal
+parameters; check that <TT>song1</TT> and <TT>s</TT> reference the same object.
+</LI><LI CLASS="li-itemize">Since the formal parameter <TT>s</TT> receives a reference to an object
+of class <TT>Song</TT> (in this case <TT>song1</TT>), it can be used to call
+the method <TT>computePrice</TT> declared in the class.
+</LI><LI CLASS="li-itemize">The method returns a value that is assigned to <TT>price1</TT>.
+</LI><LI CLASS="li-itemize">A second call to the method is executed exactly the same way,
+except that the actual parameter is the reference contained in <TT>song2</TT>.
+</LI><LI CLASS="li-itemize">The values of <TT>price1</TT> and <TT>price2</TT> are printed.
+</LI></UL><P><B>Exercise</B> Modify the program so that discount does not use the explicit
+parameter <TT>s</TT>.
+
+</P><!--TOC subsection 2.8&#XA0;&#XA0;Returning objects-->
+<H3 CLASS="subsection"><!--SEC ANCHOR --><A NAME="htoc19">2.8</A>&#XA0;&#XA0;Returning objects</H3><!--SEC END --><P><A NAME="method.08"></A></P><P><B>Concept</B> A return value can be a reference to an object.</P><P><B>Program: Method08.java</B>
+, <A HREF="src/method/Method08.java">click to display source</A>.<BR>
+
+This program computes the cost of a song as the product of its length
+in seconds and the price per second. A class <TT>Song</TT> is defined
+to encapsulate the field <TT>seconds</TT> and the method <TT>computePrice</TT>.
+The method <TT>longer</TT> in the <TT>main</TT> method receives references
+to two objects of class <TT>Song</TT> as parameters and returns a reference
+to the one with the larger value of the field <TT>seconds</TT>.</P><UL CLASS="itemize"><LI CLASS="li-itemize">
+Two objects of class Song are instantiated and references to them
+are assigned to the variables <TT>song1</TT> and <TT>song2</TT>.
+</LI><LI CLASS="li-itemize">The method <TT>longer</TT> is called with two parameters
+that are references to objects of class <TT>Song</TT>.
+The actual parameters are used to initialize the formal
+parameters; check that <TT>song1</TT> and <TT>s1</TT> reference the same object,
+as do <TT>song2</TT> and <TT>s2</TT>.
+</LI><LI CLASS="li-itemize">Since the formal parameters <TT>s1</TT> and <TT>s2</TT> receive references to objects
+of class <TT>Song</TT>, they can be used to access the fields <TT>seconds</TT> of each object.
+</LI><LI CLASS="li-itemize">The method returns the reference to the object whose field <TT>seconds</TT>
+has the larger value. The reference is assigned to the variable <TT>longerSong</TT>;
+check that this reference is to the same object as the reference in <TT>song1</TT>.
+</LI><LI CLASS="li-itemize">The reference in <TT>longerSong</TT> is used to call the method <TT>computePrice</TT>
+and the value returned is assigned to the variable <TT>price2</TT>.
+</LI><LI CLASS="li-itemize">The value <TT>price2</TT> is printed.
+</LI></UL><P><B>Exercise</B> Modify the program so that discount does not use the explicit
+parameter <TT>s</TT>.</P><P><B>Exercise</B> Replace the last declaration and statements of the program by one
+declaration.</P><P><B>Exercise</B> Write a method to swap two integer values.
+
+</P><!--TOC subsection 2.9&#XA0;&#XA0;Returning locally instantiated objects-->
+<H3 CLASS="subsection"><!--SEC ANCHOR --><A NAME="htoc20">2.9</A>&#XA0;&#XA0;Returning locally instantiated objects</H3><!--SEC END --><P><A NAME="method.09"></A></P><P><B>Concept</B> When a method terminates, its activation record is deallocated.
+However, if an object has been instantiated <EM>within the method</EM>,
+a reference to the object can be returned to the calling method.</P><P><B>Program: Method09.java</B>
+, <A HREF="src/method/Method09.java">click to display source</A>.<BR>
+
+This program computes the cost of a song as the product of its length
+in seconds and the price per second. A class <TT>Song</TT> is defined
+to encapsulate the field <TT>seconds</TT> and the method <TT>computePrice</TT>.
+The method <TT>double</TT> in the <TT>main</TT> method receives a reference
+to an object of class <TT>Song</TT> as a parameter and returns a reference
+to an new object of class <TT>Song</TT> whose field <TT>seconds</TT> is twice as large.</P><UL CLASS="itemize"><LI CLASS="li-itemize">
+Two objects of class Song are instantiated and references to them
+are assigned to the variables <TT>song1</TT> and <TT>song2</TT>.
+</LI><LI CLASS="li-itemize">The method <TT>doubleSong</TT> is called with an actual parameter
+that is a reference <TT>song1</TT> to an object of class <TT>Song</TT>.
+The actual parameter is used to initialize the formal
+parameter; check that <TT>song1</TT> and <TT>s1</TT> reference the same object.
+</LI><LI CLASS="li-itemize"><EM>Within the method</EM>, the <TT>seconds</TT> field of the object referenced
+by <TT>s1</TT> is used to instantiate a new object whose reference is assigned
+to the variable <TT>d</TT> of class <TT>Song</TT>.
+</LI><LI CLASS="li-itemize">The method returns the reference to the object contained in <TT>d</TT>;
+although <TT>d</TT> disappears when the activation record is deallocated,
+the object still exists as does the reference that is returned.
+</LI><LI CLASS="li-itemize">The returned reference is assigned to the variable <TT>longSong</TT>;
+check that <TT>song1</TT> and <TT>longSong</TT> reference <EM>different</EM> objects!
+</LI></UL><P><B>Exercise</B> Replace the last line of the program by:
+</P><BLOCKQUOTE CLASS="quote">
+<TT>song1 = doubleSong(song1);</TT>
+</BLOCKQUOTE><P>
+and explain precisely what happens.</P><!--TOC section 3&#XA0;&#XA0;Learning Objects for Arrays-->
+<H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc21">3</A>&#XA0;&#XA0;Learning Objects for Arrays</H2><!--SEC END --><P><A NAME="s.arrays"></A></P><P><B>Concept</B> An array is a sequence of elements of the same type;
+the type of the elements can be a primitive types such as <TT>int</TT>,
+or a predefined or user-defined class type. To access an element of an array, an index is given; this may be any expression of type 
+<TT>int</TT>, including an integer literal or a variable.</P><DIV CLASS="center">
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=1><TR><TD ALIGN=center NOWRAP>LO</TD><TD ALIGN=left NOWRAP>Topic</TD><TD ALIGN=left NOWRAP>Java Files (.java)</TD><TD ALIGN=center NOWRAP>Prerequisites</TD></TR>
+<TR><TD ALIGN=center NOWRAP><A HREF="#array.01">3.1</A></TD><TD ALIGN=left NOWRAP>Array objects</TD><TD ALIGN=left NOWRAP>Array01A, B</TD><TD ALIGN=center NOWRAP>&nbsp;</TD></TR>
+<TR><TD ALIGN=center NOWRAP><A HREF="#array.02">3.2</A></TD><TD ALIGN=left NOWRAP>Array initializers</TD><TD ALIGN=left NOWRAP>Array02</TD><TD ALIGN=center NOWRAP>1</TD></TR>
+<TR><TD ALIGN=center NOWRAP><A HREF="#array.03">3.3</A></TD><TD ALIGN=left NOWRAP>Passing arrays as parameters</TD><TD ALIGN=left NOWRAP>Array03</TD><TD ALIGN=center NOWRAP>2</TD></TR>
+<TR><TD ALIGN=center NOWRAP><A HREF="#array.04">3.4</A></TD><TD ALIGN=left NOWRAP>Returning an array from a method</TD><TD ALIGN=left NOWRAP>Array04</TD><TD ALIGN=center NOWRAP>2</TD></TR>
+<TR><TD ALIGN=center NOWRAP><A HREF="#array.05">3.5</A></TD><TD ALIGN=left NOWRAP>Array assignment can create garbage</TD><TD ALIGN=left NOWRAP>Array05</TD><TD ALIGN=center NOWRAP>4</TD></TR>
+<TR><TD ALIGN=center NOWRAP><A HREF="#array.06">3.6</A></TD><TD ALIGN=left NOWRAP>Two-dimensional arrays</TD><TD ALIGN=left NOWRAP>Array06</TD><TD ALIGN=center NOWRAP>3</TD></TR>
+<TR><TD ALIGN=center NOWRAP><A HREF="#array.07">3.7</A></TD><TD ALIGN=left NOWRAP>Arrays of arrays</TD><TD ALIGN=left NOWRAP>Array07</TD><TD ALIGN=center NOWRAP>6</TD></TR>
+<TR><TD ALIGN=center NOWRAP><A HREF="#array.08">3.8</A></TD><TD ALIGN=left NOWRAP>Ragged arrays</TD><TD ALIGN=left NOWRAP>Array08</TD><TD ALIGN=center NOWRAP>6</TD></TR>
+<TR><TD ALIGN=center NOWRAP><A HREF="#array.09">3.9</A></TD><TD ALIGN=left NOWRAP>Arrays of objects</TD><TD ALIGN=left NOWRAP>Array09</TD><TD ALIGN=center NOWRAP>3</TD></TR>
+</TABLE>
+</DIV><P>The example used in LO&#XA0;<A HREF="#array.01">3.1</A> through LO&#XA0;<A HREF="#array.01">3.1</A> is to fill an array 
+with a sequence of fibonacci numbers (0,1,1,2,3,5,8). The programs for 
+LO&#XA0;<A HREF="#array.05">3.5</A> through LO&#XA0;<A HREF="#array.08">3.8</A> concern matrices. 
+The program for LO&#XA0;<A HREF="#array.09">3.9</A> is explained there.</P><!--TOC subsection 3.1&#XA0;&#XA0;Array objects-->
+<H3 CLASS="subsection"><!--SEC ANCHOR --><A NAME="htoc22">3.1</A>&#XA0;&#XA0;Array objects</H3><!--SEC END --><P><A NAME="array.01"></A></P><P><B>Concept</B> An array is created in three steps: first a variable of 
+an array type is declared; then the array is allocated; finally, the 
+elements of the array are given values. The syntax for accessing an array 
+<TT>a</TT> is <TT>a[i]</TT>, and the field <TT>a.length</TT> gives the 
+length of the array, so that if we modify the program by changing the size 
+of the array the rest of the program need not change.</P><P><B>Program: Array01A.java</B>
+, <A HREF="src/array/Array01A.java">click to display source</A>.<BR>
+
+The program creates an array in the three steps described above.</P><UL CLASS="itemize"><LI CLASS="li-itemize">
+Initially, the variable <TT>fib</TT> of type integer array (denoted 
+<TT>int[]</TT>) is allocated and contains the null value.
+</LI><LI CLASS="li-itemize"><TT>new fib[7]</TT> creates an array object with its seven fields having the default 
+integer value zero; then the reference to the object is returned and 
+stored in the variable <TT>fib</TT>.
+</LI><LI CLASS="li-itemize">The length field of the array is displayed above the cells for the elements.
+</LI><LI CLASS="li-itemize">A <TT>for</TT> loop is used to assign values to each element of the 
+array.
+</LI><LI CLASS="li-itemize">The thin white lines show the constants and expressions that are used
+as indices into the array.
+</LI><LI CLASS="li-itemize"><EM>Automatic dereferencing</EM>: 
+Although expressions like <TT>fib[i-2]</TT> seem to indicate that 
+<TT>fib</TT> is being indexed, <TT>fib</TT> contains a reference to an array;
+an implicit operation of dereferencing is carried out to obtain the
+array itself from the reference and the index <TT>[i-2]</TT> is then
+applied to that array.
+</LI></UL><P><B>Concept</B> It is possible to combine the first two steps in creating an array: 
+declaring the array field and allocating the array object.</P><P><B>Program: Array01B.java</B>
+, <A HREF="src/array/Array01B.java">click to display source</A>.<BR>
+
+This program combines the declaration of the
+array field with its allocator. We have used the constant <TT>SIZE</TT> to 
+specify the size of the array; this makes it easier to modify 
+the program; nevertheless, <TT>fib.length</TT> is still used in the 
+executable statements.
+</P><UL CLASS="itemize"><LI CLASS="li-itemize">
+Initially, the static variable <TT>SIZE</TT> is created in the constant
+area and given its value.
+</LI><LI CLASS="li-itemize">The execution of the program is as before.
+</LI></UL><P><B>Exercise</B> Modify the program so that the fibonacci sequence appears in
+reverse order.
+
+</P><!--TOC subsection 3.2&#XA0;&#XA0;Array initializers-->
+<H3 CLASS="subsection"><!--SEC ANCHOR --><A NAME="htoc23">3.2</A>&#XA0;&#XA0;Array initializers</H3><!--SEC END --><P><A NAME="array.02"></A></P><P><B>Concept</B> An array object can be created implicitly by giving a list of values 
+within braces.</P><P><B>Program: Array02.java</B>, <A HREF="src/array/Array02.java">click to display source</A>.<BR>
+
+The program initializes an array with values of the fibonacci sequence.
+</P><UL CLASS="itemize"><LI CLASS="li-itemize">
+Initially, the variable <TT>fib</TT> of type integer array (denoted <TT>int[]</TT>) is allocated. 
+</LI><LI CLASS="li-itemize"><EM>As part of the same statement</EM>, the array object is created and 
+its seven fields contain the values from the initializer.
+</LI><LI CLASS="li-itemize">Only then is the reference to the object returned and stored in the variable <TT>fib</TT>.
+</LI></UL><P><B>Exercise</B> Can an element of an array initializer be the value of
+an expression containing variables previously declared? Modify this program
+accordingly and try to compile and run it. Explain what happens.
+
+</P><!--TOC subsection 3.3&#XA0;&#XA0;Passing arrays as parameters-->
+<H3 CLASS="subsection"><!--SEC ANCHOR --><A NAME="htoc24">3.3</A>&#XA0;&#XA0;Passing arrays as parameters</H3><!--SEC END --><P><A NAME="array.03"></A></P><P><B>Concept</B> An array is an object. Since the array variable itself 
+contains a reference, it can be passed as an actual paramter to a method
+and the reference is used to initialize the formal parameter.</P><P><B>Program: Array03.java</B>, <A HREF="src/array/Array03.java">click to display source</A>.<BR>
+
+This program passes an array as a parameter to a method 
+that reverses the elements of the array.
+</P><UL CLASS="itemize"><LI CLASS="li-itemize">
+Initially, the variable <TT>fib</TT> of type integer array is 
+allocated. As part of the same statement, the array object is created with 
+its seven fields having the values in the initializer; the reference to 
+the object is returned and stored in the variable <TT>fib</TT>.
+</LI><LI CLASS="li-itemize">The array (that is, a <EM>reference</EM> to the array) is passed as a parameter to the method <TT>reverse</TT>. There are now two arrows pointing to the array: the reference from the <TT>main</TT> method and the reference from the parameter <TT>a</TT> of the method <TT>reverse</TT>.
+</LI><LI CLASS="li-itemize">The method scans the first half of the array, exchanging each element with the corresponding one in the second half. Variables <TT>i</TT> and <TT>j</TT> contain the indices of the two elements that are exchanged.
+</LI><LI CLASS="li-itemize">Upon return from the method, the variable <TT>fib</TT> still 
+contains a reference to the array, which has had its sequence of values 
+reversed.
+</LI></UL><P><B>Exercise</B> Instead of declaring the variable <TT>j</TT> outside the for-loop,
+declare it just inside the for-loop as follows:
+</P><BLOCKQUOTE CLASS="quote">
+<TT>int j = a.length-i-1;</TT>
+</BLOCKQUOTE><P>
+Trace the execution and explain what happens.
+
+</P><!--TOC subsection 3.4&#XA0;&#XA0;Returning an array from a method-->
+<H3 CLASS="subsection"><!--SEC ANCHOR --><A NAME="htoc25">3.4</A>&#XA0;&#XA0;Returning an array from a method</H3><!--SEC END --><P><A NAME="array.04"></A></P><P><B>Concept</B> An array can be allocated within a method. Although the variable 
+containing the reference to the array is local to the method, the array 
+itself is global and the reference can be returned from the method.</P><P><B>Program: Array04.java</B>, <A HREF="src/array/Array04.java">click to display source</A>.<BR>
+
+This program passes an array as a parameter to a method that reverses the elements of the array. The array is reversed into a new array <TT>b</TT> that is allocated in the method <TT>reverse</TT>. It is then returned to the main method and assigned to <TT>reversedFib</TT>, a different variable of the same array type <TT>int[]</TT>.
+</P><UL CLASS="itemize"><LI CLASS="li-itemize">
+Initially, the variable <TT>fib</TT> of type integer array is 
+allocated. As part of the same statement, the array object is created with 
+its seven fields having the values in the initializer; the reference to 
+the object is returned and stored in the variable <TT>fib</TT>.
+</LI><LI CLASS="li-itemize">A reference to the array is passed as a parameter to the method 
+<TT>reverse</TT>. The formal parameter <TT>a</TT> contains a reference to the same array pointeed to by the actual parameter <TT>fib</TT>.
+</LI><LI CLASS="li-itemize">A new array <TT>b</TT> of the same type and length as the parameter <TT>a</TT> is declared and allocated.
+</LI><LI CLASS="li-itemize">Each iteration of the for-loop moves one element from the first half of <TT>a</TT> to the second half of <TT>b</TT> and one element from the second half of <TT>a</TT> to the first half of <TT>b</TT>. Variables <TT>i</TT> and <TT>j</TT> contain the indices of the two elements that are moved.
+</LI><LI CLASS="li-itemize">The reference to array <TT>b</TT> is returned.
+Although array referenced by <TT>b</TT> was allocated <EM>within</EM> the method call, it still exists after returning. 
+</LI><LI CLASS="li-itemize">The reference that is returned is assigned to <TT>reversedFib</TT>.
+</LI></UL><P><B>Exercise</B> The program has a bug. Fix it!
+
+</P><!--TOC subsection 3.5&#XA0;&#XA0;Array assignment can create garbage-->
+<H3 CLASS="subsection"><!--SEC ANCHOR --><A NAME="htoc26">3.5</A>&#XA0;&#XA0;Array assignment can create garbage</H3><!--SEC END --><P><A NAME="array.05"></A></P><P><B>Concept</B> Since an array variable contains a reference to the array itself, if 
+<TT>null</TT> or another value (another array of the same type) is assigned to the 
+variable, the first array may no longer be accessible. Inaccessible memory 
+is called <EM>garbage</EM>. The Java runtime system includes a <EM>garbage 
+collector</EM> whose task is to return garbage to the pool of memory that can 
+be allocated.</P><P><B>Program: Array05.java</B>, <A HREF="src/array/Array05.java">click to display source</A>.<BR>
+
+An array referenced by the variable <TT>fib</TT> is passed as a parameter to a method that moves the values of the elements in the first half of the array <TT>fib</TT> into a new array <TT>b</TT> which is allocated in the method. The new array is returned to the main method and assigned to the variable <TT>fib</TT>, destroying the reference to the original array.</P><UL CLASS="itemize"><LI CLASS="li-itemize">
+Initially, the variable <TT>fib</TT> of type integer array is allocated. As part of the same statement, the array object is created with its seven fields having the values in the initializer; the reference to the object is returned and stored in the variable <TT>fib</TT>.
+</LI><LI CLASS="li-itemize">A reference to the array is passed as a parameter to the method <TT>first</TT>. The formal parameter <TT>a</TT> contains a reference to the same array pointed to by the actual parameter <TT>fib</TT>.
+</LI><LI CLASS="li-itemize">A new array <TT>b</TT> of the same type as the parameter <TT>a</TT> but half the length is declared and allocated.
+</LI><LI CLASS="li-itemize">Each iteration of the for-loop moves one element from the first half of <TT>a</TT> to the corresponding element in the array <TT>b</TT>.
+</LI><LI CLASS="li-itemize">The reference to array <TT>b</TT> is returned. Although array referenced by <TT>b</TT> was allocated <EM>within</EM> the method call, it still exists after returning. 
+</LI><LI CLASS="li-itemize">There are no references to the original array so it is inaccessible. <SPAN STYLE="font-variant:small-caps">Jeliot</SPAN> does not visualize garbage collection so the array remains visualized in the Instance and Array Area until the end of the program.
+</LI></UL><P><B>Exercise</B> Modify the program so that the original array remains accessible
+in a different field.
+
+</P><!--TOC subsection 3.6&#XA0;&#XA0;Two-dimensional arrays-->
+<H3 CLASS="subsection"><!--SEC ANCHOR --><A NAME="htoc27">3.6</A>&#XA0;&#XA0;Two-dimensional arrays</H3><!--SEC END --><P><A NAME="array.06"></A></P><P><B>Concept</B> A matrix can be stored in a two-dimensional array. The syntax is 
+<TT>int[][]</TT> with two indices, the first for rows and the second for 
+columns. To access an element of the array, expressions for the two 
+indices must be givien.</P><P><B>Program: Array06.java</B>, <A HREF="src/array/Array06.java">click to display source</A>.<BR>
+
+This program creates a 2 &#XD7; 2 matrix and computes 
+the sum of its elements.
+</P><UL CLASS="itemize"><LI CLASS="li-itemize">
+A two-dimensional array is allocated, the reference to it is 
+assigned to the variable <TT>matrix</TT>.
+The variable <TT>matrix</TT> contains one reference for each row,
+and the rows are allocated as separate objects.
+Note that <SPAN STYLE="font-variant:small-caps">Jeliot</SPAN> displays each row from top to bottom as it does for all objects!
+</LI><LI CLASS="li-itemize">The elements of the array are initialized to (0,1,2,3) in a nested for-loop.
+The outside loop iterates over the rows and the inner loop iterates over the
+columns within an array.
+</LI><LI CLASS="li-itemize"><TT>matrix.length</TT> is used to get the number of rows and 
+<TT>matrix[i].length</TT> to get the number of columns in row <TT>i</TT>, which 
+is the same for all rows in this program.
+</LI><LI CLASS="li-itemize">The reference to the array is passed as a parameter to the method 
+<TT>addElements</TT>, which adds the values of all the elements.
+</LI><LI CLASS="li-itemize">The sum is returned from the method and assigned to the variable <TT>sum</TT>.
+</LI></UL><P><B>Exercise</B> Modify the program perform the same computation on a 2 &#XD7; 3
+matrix and on a 3 &#XD7; 2 matrix.</P><!--TOC subsection 3.7&#XA0;&#XA0;Arrays of arrays-->
+<H3 CLASS="subsection"><!--SEC ANCHOR --><A NAME="htoc28">3.7</A>&#XA0;&#XA0;Arrays of arrays</H3><!--SEC END --><P><A NAME="array.07"></A></P><P><B>Concept</B> A two-dimensional array is really an array of arrays; that is, each 
+element of the array contains a reference to another array. Therefore, by
+using only one index a one-dimensional array is obtained.</P><P><B>Program: Array07.java</B>
+, <A HREF="src/array/Array07.java">click to display source</A>.<BR>
+
+This program creates a 2 &#XD7; 2 matrix and then assigns the second row to a variable of type <EM>one-dimensional</EM> array.
+</P><UL CLASS="itemize"><LI CLASS="li-itemize">
+A two-dimensional array is allocated, the reference to it is assigned to the variable <TT>matrix</TT>.
+The variable <TT>matrix</TT> contains one reference for each row and the rows are allocated as separate objects. Note that <SPAN STYLE="font-variant:small-caps">Jeliot</SPAN> displays rows from top to bottom as it does for all objects!
+</LI><LI CLASS="li-itemize">The elements of the array are initialized to (0,1,2,3) in a nested for-loop.
+The outside loop iterates over the rows and the inner loop iterates over the
+columns within an array.
+</LI><LI CLASS="li-itemize"><TT>matrix.length</TT> is used to get the number of rows and 
+<TT>matrix[i].length</TT> to get the number of columns in row <TT>i</TT>, which 
+is the same for all rows in this program.
+</LI><LI CLASS="li-itemize">A variable <TT>vector</TT> of type one-dimensional array is declared and initialized
+with the second row of the matrix, <TT>matrix[1]</TT>.
+</LI></UL><P><B>Exercise</B> Write a program to rotate the rows of the array <TT>matrix</TT>. That is, row 0 becomes row 1 and row 1 becomes row 0. Now do this for an array of size 3 &#XD7; 3: row 0 becomes row 1, row 1 becomes row 2 and row 2 becomes row 0.
+
+</P><!--TOC subsection 3.8&#XA0;&#XA0;Ragged Arrays-->
+<H3 CLASS="subsection"><!--SEC ANCHOR --><A NAME="htoc29">3.8</A>&#XA0;&#XA0;Ragged Arrays</H3><!--SEC END --><P><A NAME="array.08"></A></P><P><B>Concept</B> A two-dimensional array is really an array of arrays; that is, each element of the array contains a reference to another array. However, the two-dimensional array need not be a square matrix, and each row can have a different number of elements. By using only one index a one-dimensional array is obtained and these arrays need not all be of the same size.</P><P><B>Program: Array08.java</B>
+, <A HREF="src/array/Array08.java">click to display source</A>.<BR>
+
+Here we create the upper-left triangle of a 3 &#XD7; 3 matrix: row 0 of length 3, row 1 of length 2 and row 2 of length 1. Then we add the elements of the &#X201C;ragged&#X201D; array.
+</P><UL CLASS="itemize"><LI CLASS="li-itemize">
+The variable <TT>matrix</TT> is allocated, but since the size of the rows is not given, it is allocated as a one-dimensional array whose elements are references to one-dimensional arrays of integers. The default value for the elements is <TT>null</TT>.
+</LI><LI CLASS="li-itemize">Three rows of different size are allocated with initializers and assigned to the elements of the array <TT>matrix</TT>.
+</LI><LI CLASS="li-itemize">A reference to <TT>matrix</TT> is passed to the method <TT>addElements</TT> which adds the elements of the array and returns the value.
+</LI><LI CLASS="li-itemize"><TT>matrix.length</TT> is used to get the number of rows and 
+<TT>matrix[i].length</TT> to get the number of columns in row <TT>i</TT>; these
+are different for each row.
+</LI></UL><P><B>Exercise</B> Simplify the allocation of the array <TT>matrix</TT>. First, show how the variables <TT>row</TT> can be eliminated. Then find out how to write an initializer for a two-dimensional array so that the array can be initialized in one declaration. (Note: initializers for two-dimensional arrays are not supported in <SPAN STYLE="font-variant:small-caps">Jeliot</SPAN>.)
+
+</P><!--TOC subsection 3.9&#XA0;&#XA0;Arrays of objects-->
+<H3 CLASS="subsection"><!--SEC ANCHOR --><A NAME="htoc30">3.9</A>&#XA0;&#XA0;Arrays of objects</H3><!--SEC END --><P><A NAME="array.09"></A></P><P><B>Concept</B> Arrays can contain references to arbitrary objects. There is no difference between these arrays and arrays whose values are of primitive type, except that an individual element can be of any type.</P><P><B>Program: Array09.java</B> 
+, <A HREF="src/array/Array09.java">click to display source</A>.<BR>
+
+Objects of class <TT>Access</TT> contain name of a bank customer and the access level permitted for that customer. This program creates two objects, assigns the their references to elements of the <TT>Access</TT> and then swaps the elements of the array.
+</P><UL CLASS="itemize"><LI CLASS="li-itemize">
+The array <TT>accessess</TT> of type <TT>Access[]</TT> 
+is allocated and contains null references.
+</LI><LI CLASS="li-itemize">An object of type <TT>Access</TT> are allocated and initialized by its constructor; a reference to the object is stored in the first element of the array <TT>accessess</TT>.
+</LI><LI CLASS="li-itemize">Similarly, another object is created and stored in the second element.
+</LI><LI CLASS="li-itemize">The array <TT>accessess</TT> is passed to the method <TT>swap</TT> along with the 
+indices 0 and 1.
+</LI><LI CLASS="li-itemize">The two elements of the array are swapped. 
+Note that after executing <TT>a[i] = a[j]</TT>, 
+both elements of the array point to the second object (<TT>Alice,4</TT>), 
+while a reference to the first object (<TT>Bob,3</TT>) is saved in the variable <TT>temp</TT>.
+</LI></UL><P><B>Exercise</B> Modify the program so that the initialization of the array
+<TT>accessess</TT> is done in one statement instead of three.</P><P><B>Exericse</B> Explain what happens if the method <TT>swap</TT> is replaced by: </P><P>&#XA0;&#XA0;&#XA0;<TT>static void swap(Access a, Access b) {</TT><BR>
+&#XA0;&#XA0;&#XA0;&#XA0;&#XA0;&#XA0;<TT>Access temp = a;</TT><BR>
+&#XA0;&#XA0;&#XA0;&#XA0;&#XA0;&#XA0;<TT>a = b;</TT><BR>
+&#XA0;&#XA0;&#XA0;&#XA0;&#XA0;&#XA0;<TT>b = temp;</TT><BR>
+&#XA0;&#XA0;&#XA0;<TT>}</TT></P><P>and the call by:</P><P>&#XA0;&#XA0;&#XA0;<TT>swap(accesses[0], accesses[1]);</TT>
+
+
+</P><!--TOC section 4&#XA0;&#XA0;Learning Objects for Constructors-->
+<H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc31">4</A>&#XA0;&#XA0;Learning Objects for Constructors</H2><!--SEC END --><P><A NAME="s.constructors"></A></P><P><B>Concept</B> The process of creating an object involves allocating memory for the object and assigning the reference to this block of memory to a variable. <EM>Constructors</EM> enable arbitrary initialization of the object during its creation. </P><DIV CLASS="center">
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=1><TR><TD ALIGN=center NOWRAP>LO</TD><TD ALIGN=left NOWRAP>Topic</TD><TD ALIGN=left NOWRAP>Java Files (.java)</TD><TD ALIGN=center NOWRAP>Prerequisites</TD></TR>
+<TR><TD ALIGN=center NOWRAP><A HREF="#con.01">4.1</A></TD><TD ALIGN=left NOWRAP>What are constructors for?</TD><TD ALIGN=left NOWRAP>Constructor01A, B, C</TD><TD ALIGN=center NOWRAP>&nbsp;</TD></TR>
+<TR><TD ALIGN=center NOWRAP><A HREF="#con.02">4.2</A></TD><TD ALIGN=left NOWRAP>Computation within constructors</TD><TD ALIGN=left NOWRAP>Constructor02</TD><TD ALIGN=center NOWRAP>1</TD></TR>
+<TR><TD ALIGN=center NOWRAP><A HREF="#con.03">4.3</A></TD><TD ALIGN=left NOWRAP>Overloading constructors</TD><TD ALIGN=left NOWRAP>Constructor03</TD><TD ALIGN=center NOWRAP>2</TD></TR>
+<TR><TD ALIGN=center NOWRAP><A HREF="#con.04">4.4</A></TD><TD ALIGN=left NOWRAP>Invoking another constructor</TD><TD ALIGN=left NOWRAP>Constructor04</TD><TD ALIGN=center NOWRAP>3</TD></TR>
+<TR><TD ALIGN=center NOWRAP><A HREF="#con.05">4.5</A></TD><TD ALIGN=left NOWRAP>Explicit default constructors</TD><TD ALIGN=left NOWRAP>Constructor05</TD><TD ALIGN=center NOWRAP>3</TD></TR>
+<TR><TD ALIGN=center NOWRAP><A HREF="#con.06">4.6</A></TD><TD ALIGN=left NOWRAP>Constructors for subclasses</TD><TD ALIGN=left NOWRAP>Constructor06A, B, C</TD><TD ALIGN=center NOWRAP>3</TD></TR>
+<TR><TD ALIGN=center NOWRAP><A HREF="#con.07">4.7</A></TD><TD ALIGN=left NOWRAP>Constructors with object parameters</TD><TD ALIGN=left NOWRAP>Constructor07</TD><TD ALIGN=center NOWRAP>3</TD></TR>
+<TR><TD ALIGN=center NOWRAP><A HREF="#con.08">4.8</A></TD><TD ALIGN=left NOWRAP>Constructors with subclass</TD><TD ALIGN=left NOWRAP>&nbsp;</TD><TD ALIGN=center NOWRAP>&nbsp;</TD></TR>
+<TR><TD ALIGN=center NOWRAP>&nbsp;</TD><TD ALIGN=left NOWRAP>object parameters</TD><TD ALIGN=left NOWRAP>Constructor08</TD><TD ALIGN=center NOWRAP>6, 7</TD></TR>
+</TABLE>
+</DIV><P><B>Program</B> The example used in these LOs is class <TT>Song</TT> with three fields: the <TT>name</TT> of the song, the length of the song in <TT>seconds</TT> and the <TT>pricePerSecond</TT>. The class is to be used to implement a website which charges for downloading the song; the price is the product of the length of the song in second and the price per second. To focus the discussion on constructors, the fields are not declared private.</P><!--TOC subsection 4.1&#XA0;&#XA0;What are constructors for?-->
+<H3 CLASS="subsection"><!--SEC ANCHOR --><A NAME="htoc32">4.1</A>&#XA0;&#XA0;What are constructors for?</H3><!--SEC END --><P><A NAME="con.01"></A></P><P><B>Concept</B> An object is created by allocating memory for its fields. The fields are given the default values for their types. A reference to the object is returned and assigned to a variable; the reference can be used to access the fields and methods of the object.</P><P><B>Program: Constructor01A.java</B>
+, <A HREF="src/constructor/Constructor01A.java">click to display source</A>.<BR>
+
+If a constructor is not explicitly declared a default constructor is called.
+</P><UL CLASS="itemize"><LI CLASS="li-itemize">
+The variable <TT>song1</TT> is allocated and contains the null value.
+</LI><LI CLASS="li-itemize">Memory is allocated for the fields of the object; this is displayed in the Instance and Array Area. Default values are assigned to the three fields.
+</LI><LI CLASS="li-itemize">The default constructor is called 
+but does nothing except return a reference to the object.
+</LI><LI CLASS="li-itemize">The reference is stored in the variable <TT>song1</TT>.
+</LI><LI CLASS="li-itemize">The reference in <TT>song1</TT> is used to assign values to the fields of the object.
+</LI><LI CLASS="li-itemize">The reference in <TT>song1</TT> is used to call the method <TT>computePrice</TT> on the object; the method computes and returns the price, 
+which is assigned to the variable <TT>price</TT>.
+</LI></UL><P><BR>
+<BR>
+</P><P><B>Concept</B> An explicit constructor method can be declared and used 
+to initialize each object. 
+The constructor method is identified by a special syntax: the name of the method is the same as the name of the class and <EM>there is no return type</EM> (because the value returned is of the type of the class itself).</P><P><B>Program: Constructor01B.java</B>
+, <A HREF="src/constructor/Constructor01B.java">click to display source</A>.<BR>
+
+This program is the same as the previous one except that the assignment of nondefault values to the fields of the object is moved to an explicit constructor.
+</P><UL CLASS="itemize"><LI CLASS="li-itemize">
+The variable <TT>song1</TT> is allocated and contains the null value.
+</LI><LI CLASS="li-itemize">Memory is allocated for the fields of the object; this is displayed in the Instance and Array Area. Default values are assigned to the three fields.
+</LI><LI CLASS="li-itemize">The constructor is called and assigns values to the three fields; 
+then it returns a reference to the object.
+</LI><LI CLASS="li-itemize">The reference is stored in the variable <TT>song1</TT>.
+</LI><LI CLASS="li-itemize">The reference in <TT>song1</TT> is used to call the method <TT>computePrice</TT> on the object; the method computes and returns the price,
+which is assigned to the variable <TT>price</TT>.
+</LI></UL><P><B>Exercise</B> Add the creation of a second object <TT>song2</TT> to the
+program and verify that it is initialized to the same values.</P><P><BR>
+<BR>
+</P><P><B>Concept</B> Of course, it is highly unlikely that all objects created from a class will be initialized with the same values. A constructor can have formal parameters like any other method and is called with actual parameters.</P><P><B>Program: Constructor01C.java</B>, <A HREF="src/constructor/Constructor01C.java">click to display source</A>.<BR>
+
+This program is the same as the previous one except that the constructor has formal parameters and the actual parameters passed to the constructor are assigned to the fields of the object.
+</P><UL CLASS="itemize"><LI CLASS="li-itemize">
+The variable <TT>song1</TT> is allocated and contains the null value.
+</LI><LI CLASS="li-itemize">Memory is allocated for the fields of the object; this is displayed in the Instance and Array Area. Default values are assigned to the three fields.
+</LI><LI CLASS="li-itemize">The constructor is called with three actual parameters; these values are assigned to the formal parameters of the constructor method.
+</LI><LI CLASS="li-itemize">The values of the formal parameters are assigned to the three fields; then the constructor returns a reference to the object.
+</LI><LI CLASS="li-itemize">The reference is stored in the variable <TT>song1</TT>.
+</LI><LI CLASS="li-itemize">The reference in <TT>song1</TT> is used to call the method <TT>computePrice</TT> on the object; the method computes and returns the price,
+which is assigned to the variable <TT>price</TT>.
+</LI></UL><P><B>Exercise</B> Modify the class so that the second parameter passes
+the number of minutes; the value of the field <TT>seconds</TT> will have
+to be computed in the constructor.
+
+</P><!--TOC subsection 4.2&#XA0;&#XA0;Computation within constructors-->
+<H3 CLASS="subsection"><!--SEC ANCHOR --><A NAME="htoc33">4.2</A>&#XA0;&#XA0;Computation within constructors</H3><!--SEC END --><P><A NAME="con.02"></A></P><P><B>Concept</B> Constructors are often used simply for assigning initial values to fields of an object; however, an arbitrary initializing computation can be carried out within the constructor.</P><P><B>Program: Constructor02.java</B>, <A HREF="src/constructor/Constructor02.java">click to display source</A>.<BR>
+
+The price of a song will not change as long as the fields <TT>second</TT> and
+<TT>pricePerSecond</TT> do not change; to avoid recomputing the price each time it is needed,
+the class contains a field <TT>price</TT> whose value is computed <EM>within</EM> the
+constructor. The method <TT>computePrice</TT> is declared to be <TT>private</TT> 
+because it is needed only by the constructor.
+</P><UL CLASS="itemize"><LI CLASS="li-itemize">
+The variable <TT>song1</TT> is allocated and contains the null value.
+</LI><LI CLASS="li-itemize">Memory is allocated for the fields of the object and default values are assigned to the three fields.
+</LI><LI CLASS="li-itemize">The constructor is called with three actual parameters; these values are assigned to the formal parameters of the constructor method and the values of the formal parameters are assigned to the three fields.
+</LI><LI CLASS="li-itemize">The method <TT>computePrice</TT> is called; it returns a value which stored in the field <TT>price</TT>.
+</LI><LI CLASS="li-itemize">The constructor returns a reference to the object, which is stored in the variable <TT>song1</TT>. The field <TT>price</TT> can be accessed to obtain the price of a song.
+</LI></UL><P><B>Exercise</B> Modify the class so that no song has a price greater than two 
+currency units.
+
+</P><!--TOC subsection 4.3&#XA0;&#XA0;Overloading constructors-->
+<H3 CLASS="subsection"><!--SEC ANCHOR --><A NAME="htoc34">4.3</A>&#XA0;&#XA0;Overloading constructors</H3><!--SEC END --><P><A NAME="con.03"></A></P><P><B>Concept</B> Constructors can be <EM>overloaded</EM> like other methods. A method is overloaded when there is more than one method with the same name; the parameter signature is used to decide which method to call. For constructors, overloading is usually done when some of the fields of an object can be initialized with default values, although we want to retain 
+the possibility of explicitly supplying all the initial values.</P><P><B>Program: Constructor03.java</B>, <A HREF="src/constructor/Constructor03.java">click to display source</A>.<BR>
+
+The website charges a uniform price per second for all songs, except for special offers. We define two constructors, one that specifies a price for special offers and another that uses a default price for ordinary songs.
+</P><UL CLASS="itemize"><LI CLASS="li-itemize">
+The value of the static constant <TT>DEFAULT_PRICE</TT> is set as soon as the class is loaded and is displayed in the Constant area.
+</LI><LI CLASS="li-itemize">The variable <TT>song1</TT> is allocated and contains the null value.
+</LI><LI CLASS="li-itemize">Memory is allocated for the <EM>four</EM> fields of the object and default values are assigned to the fields. 
+</LI><LI CLASS="li-itemize">The constructor is called with <EM>three</EM> actual parameters; the call is resolved so that the first constructor is executed. These values are assigned to the formal parameters of the constructor method and the values of the formal parameters are assigned to the three fields. 
+</LI><LI CLASS="li-itemize">The method <TT>computePrice</TT> is called; it returns a value which stored in the field <TT>price</TT>.
+</LI><LI CLASS="li-itemize">The constructor returns a reference to the object, which is stored in the variable <TT>song1</TT>.
+</LI><LI CLASS="li-itemize">The computation is then repeated for <TT>song2</TT>.
+Since the constructor is called with just two parameters (for <TT>name</TT> and <TT>seconds</TT>),
+the second constructor is executed. 
+The value of the field <TT>pricePerSecond</TT> is assigned from the constant, not from a parameter.
+</LI></UL><P><B>Exercise</B> Modify the class to include a constructor with one parameter for the <TT>name</TT> and with a default song length of three minutes.</P><P><B>Exercise</B> Modify the class to include a constructor with no parameters, so that all fields receive default values. Is there any meaning to the following constructor?</P><P>&#XA0;&#XA0;&#XA0;<TT>Song() {</TT><BR>
+&#XA0;&#XA0;&#XA0;<TT>}</TT>
+
+</P><!--TOC subsection 4.4&#XA0;&#XA0;Invoking an overloaded constructor from within a constructor-->
+<H3 CLASS="subsection"><!--SEC ANCHOR --><A NAME="htoc35">4.4</A>&#XA0;&#XA0;Invoking an overloaded constructor from within a constructor</H3><!--SEC END --><P><A NAME="con.04"></A></P><P><B>Concept</B> Constructors can be <EM>overloaded</EM> like other methods. A method is overloaded when there is more than one method with the same name; the parameter signature is used to decide which method to call. For constructors, overloading is usually done when some of the fields of an object can be initialized with default values, although we want to retain 
+the possibility of explicitly supplying all the initial values. In such cases, it is convenient to invoke one constructor from within another in order to avoid duplicating code. Invoking the method <TT>this</TT> within one constructor calls another constructor
+with the appropriate parameter signature.</P><P><B>Program: Constructor04.java</B>, <A HREF="src/constructor/Constructor04.java">click to display source</A>.<BR>
+
+The website charges a uniform price per second for all songs, except for special offers. We define two constructors, one that specifies a price for special offers and another that uses a default price for ordinary songs.
+</P><UL CLASS="itemize"><LI CLASS="li-itemize">
+The value of the static constant <TT>DEFAULT_PRICE</TT> is set as soon as the class is loaded and is displayed in the Constant area.
+</LI><LI CLASS="li-itemize">The variable <TT>song1</TT> is allocated and contains the null value.
+</LI><LI CLASS="li-itemize">Memory is allocated for the <EM>four</EM> fields of the object and default values are assigned to the fields. 
+</LI><LI CLASS="li-itemize">The constructor is called with <EM>two</EM> actual parameters; the call is resolved so that it is the second constructor that is executed. 
+</LI><LI CLASS="li-itemize">The two parameters, together with the default price, are immediately used to call the 
+first constructor that has three parameters. The method name <TT>this</TT> means: call a
+constructor from <EM>this</EM> class. This constructor initializes the first three fields from the parameters, and the value of the fourth field is computed by calling the method <TT>computePrice</TT>.
+</LI><LI CLASS="li-itemize">The constructor returns a reference to the object, which is stored in the variable <TT>song1</TT>.
+</LI></UL><P><B>Exercise</B> Modify the class to include a constructor with one parameter, the name, and with a default song length of three minutes. Can this constructor call the two-parameter constructor which in turn calls the three-parameter constructor? Can a constructor call <EM>two</EM> other constructors, one after another?
+
+</P><!--TOC subsection 4.5&#XA0;&#XA0;Explicit default constructors-->
+<H3 CLASS="subsection"><!--SEC ANCHOR --><A NAME="htoc36">4.5</A>&#XA0;&#XA0;Explicit default constructors</H3><!--SEC END --><P><A NAME="con.05"></A></P><P><B>Concept</B> When no constructor is explicitly written in a class, a default implicit constructor with no parameters exists; this constructor does nothing. If, however, one or more explicit constructors are given, there is no longer a constructor with no parameters.
+Should you want one, you have to write it explicitly.</P><P><B>Program: Constructor05.java</B>
+, <A HREF="src/constructor/Constructor05.java">click to display source</A>.<BR>
+
+This program includes an explicit constructor with no parameters that calls the constructor with three parameters to perform initialization.</P><UL CLASS="itemize"><LI CLASS="li-itemize">
+The variable <TT>song1</TT> is allocated and contains the null value.
+</LI><LI CLASS="li-itemize">Memory is allocated for the <EM>four</EM> fields of the object and default values are assigned to the fields. 
+</LI><LI CLASS="li-itemize">The constructor is called with <EM>no</EM> actual parameters; the call is resolved so that it is the second constructor that is executed. 
+</LI><LI CLASS="li-itemize">Three constant values are used to call the first constructor. The method name <TT>this</TT> means: call a constructor from <EM>this</EM> class. 
+This constructor initializes the first three fields from the parameters, and the value of the fourth field is computed by calling the method <TT>computePrice</TT>.
+</LI><LI CLASS="li-itemize">The constructor returns a reference to the object, which is stored in the variable <TT>song1</TT>.
+</LI></UL><P><B>Exercise</B> Modify the class so that the constructor without parameters 
+obtains initial values from the input.
+
+</P><!--TOC subsection 4.6&#XA0;&#XA0;Constructors for subclasses-->
+<H3 CLASS="subsection"><!--SEC ANCHOR --><A NAME="htoc37">4.6</A>&#XA0;&#XA0;Constructors for subclasses</H3><!--SEC END --><P><A NAME="con.06"></A></P><P><B>Concept</B> Constructors are <EM>not</EM> inherited. You must 
+explicitly define a constructor for a subclass (with or without 
+parameters). As its first statement, the constructor for the subclass must 
+call a constructor for the superclass using the method <TT>super</TT>.</P><P><B>Program: Constructor06A.java</B>
+, <A HREF="src/constructor/Constructor06A.java">click to display source</A>.<BR>
+
+The website wants to sell certain songs at a discount.
+The subclass <TT>DiscountSong</TT> inherits from class 
+<TT>Song</TT>, adds a field <TT>discount</TT> and overrides 
+<TT>computePrice</TT> to include <TT>discount</TT> in the computation. 
+The constructor for the subclass calls the three-parameter constructor for 
+the superclass, passing it the three parameters that it expects. The 
+fourth parameter is used directly in the constructor <TT>DiscountSong</TT> 
+to initialize the field <TT>discount</TT>.
+</P><UL CLASS="itemize"><LI CLASS="li-itemize">
+The variable <TT>song1</TT> is allocated and contains the null value.
+</LI><LI CLASS="li-itemize">Memory is allocated for the <EM>five</EM> fields of the object of the subclass <TT>DiscountSong</TT> and default values are assigned to the fields. 
+Four fields inherited from the superclass and one field <TT>discount</TT> 
+added by the subclass.
+</LI><LI CLASS="li-itemize">The constructor for the subclass <TT>DiscountSong</TT> is called 
+with four parameters. It calls the constructor for the superclass 
+<TT>Song</TT> which assigns values to three fields from the parameters and 
+the fourth by calling <TT>computePrice</TT>.
+</LI><LI CLASS="li-itemize">The superclass constructor returns and then the fourth parameter of 
+the subclass constructor is assigned to the field <TT>discount</TT>.
+</LI><LI CLASS="li-itemize">The reference to the subclass object is returned and assigned to a 
+variable <TT>song1</TT> of that type.
+</LI></UL><P>
+Unfortunately, this does not do what we intended, because the superclass 
+method for <TT>computePrice</TT> is used to compute <TT>price</TT> 
+instead of the method from the subclass.</P><P><B>Exercise</B> Could <TT>song1</TT> be declared to be of type
+<TT>Song</TT>? Explain your answer.</P><P><BR>
+<BR>
+</P><P><B>Program: Constructor06B.java</B>
+, <A HREF="src/constructor/Constructor06B.java">click to display source</A>.<BR>
+
+The problem can be solved by adding a call to 
+<TT>computePrice</TT> in the constructor for the subclass. </P><P>Check this by executing the code and ensuring that the discounted price is computed.</P><P>The disadvantage of this solution is that we are calling 
+<TT>computePrice</TT> twice.</P><P><BR>
+<BR>
+</P><P><B>Program: Constructor06C.java</B>
+, <A HREF="src/constructor/Constructor06C.java">click to display source</A>.<BR>
+
+Normally in an object-oriented program, all the 
+fields of an object are private and an accessor method like 
+<TT>getPrice()</TT> is used to access the values of the fields.
+If this is done, the computation of the price can be placed in 
+the accessor for the superclass and overridden in accessor for the 
+subclass. </P><P>Check this by executing the code and ensuring that the discounted price is computed.</P><P>The disadvantage of this solution is that the computation is 
+performed for each access of the field <TT>price</TT>.</P><P><B>Exercise</B> Develop other solutions for this problem: (a) Call
+<TT>computePrice</TT> explicitly after the call to the constructor; (b)
+Modify <TT>getPrice</TT> to compute the value of <TT>price</TT> on the first
+call and save it for future calls. Summarize the advantages and
+disadvantages of all the solutions for this problem.
+
+</P><!--TOC subsection 4.7&#XA0;&#XA0;Constructors with object parameters-->
+<H3 CLASS="subsection"><!--SEC ANCHOR --><A NAME="htoc38">4.7</A>&#XA0;&#XA0;Constructors with object parameters</H3><!--SEC END --><P><A NAME="con.07"></A></P><P><B>Concept</B> An object can contain fields of other user-defined 
+objects, not just of primitive and predefined types. There is no 
+difference in the constructors, except that references to objects are
+passed as actual parameters and assigned to fields of the object.</P><P><B>Program: Constructor07.java</B>
+, <A HREF="src/constructor/Constructor07.java">click to display source</A>.<BR>
+
+Two objects of type <TT>Song</TT> are allocated and 
+assigned to fields of another object of type 
+<TT>SongSet</TT> which has two fields of type <TT>Song</TT>.
+</P><UL CLASS="itemize"><LI CLASS="li-itemize">
+Execute the program until the two objects of type <TT>Song</TT> are 
+allocated and their references assigned to the variables <TT>song1</TT> and <TT>song2</TT>.
+(You may want to select <TT>Animation / Run Until (ctrl-T)</TT> to skip the 
+animation of these declarations.)
+</LI><LI CLASS="li-itemize">A variable <TT>set</TT> is allocated. An object of type 
+<TT>SongSet</TT> is allocated with default null fields.
+</LI><LI CLASS="li-itemize">The constructor for <TT>SongSet</TT> is called and the references in the two variables
+<TT>song1</TT> and <TT>song2</TT> are passed as actual parameters. These references 
+are stored in the two fields <TT>track1</TT> and <TT>track2</TT>.
+</LI><LI CLASS="li-itemize">The reference to the object of class <TT>SongSet</TT> 
+is returned and stored in <TT>set</TT>. 
+</LI><LI CLASS="li-itemize">The prices of the two objects are obtained and stored in the variables
+<TT>price1</TT> and <TT>price2</TT>. <TT>set</TT> is an object 
+of type <TT>Songset</TT>, while <TT>set.track1</TT> is an object of type 
+<TT>Song</TT> and thus can be used to call the method 
+<TT>computePrice</TT>.
+</LI></UL><P><B>Exercise</B> Modify the program so that the variables <TT>song1</TT> and
+<TT>song2</TT> are not used; instead, the constructors for the songs are
+embedded within the constructor call for <TT>SongSet</TT>.</P><P><B>Exercise</B> Modify the program so the constructors for the songs are
+call within the constructor for <TT>SongSet</TT>. Under what circumstances
+would this be done?
+
+</P><!--TOC subsection 4.8&#XA0;&#XA0;Constructors with subclass object parameters-->
+<H3 CLASS="subsection"><!--SEC ANCHOR --><A NAME="htoc39">4.8</A>&#XA0;&#XA0;Constructors with subclass object parameters</H3><!--SEC END --><P><A NAME="con.08"></A></P><P><B>Concept</B> An object of a subclass is also an object of the type of the 
+superclass. Therefore, it can be used when an actual parameter is expected.</P><P><B>Program: Constructor08.java</B>
+, <A HREF="src/constructor/Constructor08.java">click to display source</A>.<BR>
+
+We allocate two objects, one of type <TT>Song</TT> and 
+one of type <TT>DiscountSong</TT>, and use them as actual parameters in 
+the constructor for an object of type <TT>SongSet</TT> that expects two 
+parameters of type <TT>Song</TT>.
+</P><UL CLASS="itemize"><LI CLASS="li-itemize">
+Execute the program until the two objects one of type <TT>Song</TT> 
+the other of type <TT>DiscountSong</TT> are 
+allocated and their references assigned to the variables <TT>song1</TT> and <TT>song2</TT>,
+respectively.
+(You may want to select <TT>Animation / Run Until (ctrl-T)</TT> to skip the 
+animation of these declarations.)
+</LI><LI CLASS="li-itemize">The variable <TT>set</TT> is allocated, and an object of type 
+<TT>SongSet</TT> is allocated with default null fields.
+</LI><LI CLASS="li-itemize">The constructor for <TT>SongSet</TT> is called and the references in the two variables
+<TT>song1</TT> and <TT>song2</TT> are passed as actual parameters. These references 
+are stored in the two fields <TT>track1</TT> and <TT>track2</TT>.
+</LI><LI CLASS="li-itemize">The reference to the object of class <TT>SongSet</TT> 
+is returned and stored in <TT>set</TT>. 
+</LI><LI CLASS="li-itemize">The prices of the two objects are obtained and stored in the variables
+<TT>price1</TT> and <TT>price2</TT>. <TT>set</TT> is an object 
+of type <TT>Songset</TT>, while <TT>set.track1</TT> is an object of type 
+<TT>Song</TT> and thus can be used to call the method 
+<TT>computePrice</TT> of that class. Similarly for <TT>price2</TT>,
+except that <TT>set.track2</TT> is an object of type 
+<TT>DiscountSong</TT>; check that the method <TT>computePrice</TT> of this
+class is called.
+</LI></UL><P><B>Exercise</B> Can <TT>s2</TT> in the main method be declared to be of type
+<TT>Song</TT>? Explain.</P><!--TOC section 5&#XA0;&#XA0;Learning Objects for Inheritance-->
+<H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc40">5</A>&#XA0;&#XA0;Learning Objects for Inheritance</H2><!--SEC END --><P><A NAME="s.inheritance"></A></P><P><B>Concept</B> <EM>Inheritance</EM> is an important technique for 
+structuring object-oriented programs. Given a class (called a 
+<EM>superclass</EM>) it can be extended to a <EM>subclass</EM>. The 
+subclass inherits all the fields of the superclass and it can add 
+additional fields. The subclass inherits methods of the superclass and it can 
+add new methods or override the inherited methods with its own versions.</P><DIV CLASS="center">
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=1><TR><TD ALIGN=center NOWRAP>LO</TD><TD ALIGN=left NOWRAP>Topic</TD><TD ALIGN=left NOWRAP>Java Files (.java)</TD><TD ALIGN=center NOWRAP>Prerequisites</TD></TR>
+<TR><TD ALIGN=center NOWRAP><A HREF="#inher.01">5.1</A></TD><TD ALIGN=left NOWRAP>Inheriting fields</TD><TD ALIGN=left NOWRAP>Inheritance01</TD><TD ALIGN=center NOWRAP>&nbsp;</TD></TR>
+<TR><TD ALIGN=center NOWRAP><A HREF="#inher.02">5.2</A></TD><TD ALIGN=left NOWRAP>Inheriting and overriding methods</TD><TD ALIGN=left NOWRAP>Inheritance02</TD><TD ALIGN=center NOWRAP>1</TD></TR>
+<TR><TD ALIGN=center NOWRAP><A HREF="#inher.03">5.3</A></TD><TD ALIGN=left NOWRAP>Dynamic dispatching</TD><TD ALIGN=left NOWRAP>Inheritance03</TD><TD ALIGN=center NOWRAP>2</TD></TR>
+<TR><TD ALIGN=center NOWRAP><A HREF="#inher.04">5.4</A></TD><TD ALIGN=left NOWRAP>Downcasting</TD><TD ALIGN=left NOWRAP>Inheritance04</TD><TD ALIGN=center NOWRAP>3</TD></TR>
+<TR><TD ALIGN=center NOWRAP><A HREF="#inher.05">5.5</A></TD><TD ALIGN=left NOWRAP>Heterogeneous data structures</TD><TD ALIGN=left NOWRAP>Inheritance05</TD><TD ALIGN=center NOWRAP>4</TD></TR>
+<TR><TD ALIGN=center NOWRAP><A HREF="#inher.06">5.6</A></TD><TD ALIGN=left NOWRAP>Abstract classes</TD><TD ALIGN=left NOWRAP>Inheritance06</TD><TD ALIGN=center NOWRAP>5</TD></TR>
+<TR><TD ALIGN=center NOWRAP><A HREF="#inher.07">5.7</A></TD><TD ALIGN=left NOWRAP>Equals</TD><TD ALIGN=left NOWRAP>Inheritance07A, B, C</TD><TD ALIGN=center NOWRAP>2</TD></TR>
+<TR><TD ALIGN=center NOWRAP><A HREF="#inher.08">5.8</A></TD><TD ALIGN=left NOWRAP>Clone</TD><TD ALIGN=left NOWRAP>Inheritance08</TD><TD ALIGN=center NOWRAP>2</TD></TR>
+<TR><TD ALIGN=center NOWRAP><A HREF="#inher.09">5.9</A></TD><TD ALIGN=left NOWRAP>Overloading vs. overriding</TD><TD ALIGN=left NOWRAP>Inheritance09</TD><TD ALIGN=center NOWRAP>3</TD></TR>
+</TABLE>
+</DIV><P><B>Program</B> The running example is a framework for the simulation of 
+moving particles. There is a class <TT>Particle</TT> with a field 
+<TT>position</TT> that is updated by the method <TT>newPosition</TT>. 
+There are three subclasses:
+</P><UL CLASS="itemize"><LI CLASS="li-itemize">
+	<TT>AParticle</TT> is derived directly from <TT>Particle</TT> and adds the field
+	<TT>spin</TT>.<BR>
+The method <TT>newPosition</TT> is overridden.
+	</LI><LI CLASS="li-itemize"><TT>BParticle</TT> is derived directly from <TT>Particle</TT> and adds the field
+	<TT>charge</TT>.<BR>
+The method <TT>newPosition</TT> is <EM>not</EM> overridden.
+	</LI><LI CLASS="li-itemize"><TT>CParticle</TT> is derived directly from <TT>BParticle</TT> and thus
+	indirectly from <TT>AParticle</TT>.<BR>
+It adds the field
+	<TT>strange</TT>; the method <TT>newPosition</TT> is overridden.
+</LI></UL><P>For each program the following initialization is performed and will not
+be explicitly mentioned for each learning object; instead, the step 
+&#X201C;the objects are created&#X201D; will be listed:
+</P><UL CLASS="itemize"><LI CLASS="li-itemize">
+Variable are declared and assigned the null value.
+</LI><LI CLASS="li-itemize">Memory is allocated for each object&#X2019;s fields and are given default
+values. For a subclass, these fields include all fields of its superclasses.
+</LI><LI CLASS="li-itemize">In the constructors, a subclass calls <TT>super</TT> to initialize
+the fields declared by the superclasses and then initializes its own fields.
+</LI></UL><P><B>Tip:</B> Use <TT>Animation / Run Until ...</TT> to skip over the animation
+of the initialization.</P><P><B>Tip:</B> Several of the LOs will ask you to check that a certain version
+of a method is called. This can be done by looking at the source code in the left panel:
+the method called is highlighted in blue.</P><!--TOC subsection 5.1&#XA0;&#XA0;Inheriting fields-->
+<H3 CLASS="subsection"><!--SEC ANCHOR --><A NAME="htoc41">5.1</A>&#XA0;&#XA0;Inheriting fields</H3><!--SEC END --><P><A NAME="inher.01"></A></P><P><B>Concept</B> 
+Subclasses inherit all the fields of its superclasses; they can also add
+fields of their own.</P><P><B>Program: Inheritance01.java</B>
+, <A HREF="src/inheritance/Inheritance01.java">click to display source</A>.<BR>
+
+In this simple program objects of all four classes are created and their fields
+are read.
+</P><UL CLASS="itemize"><LI CLASS="li-itemize">
+The objects are created.
+</LI><LI CLASS="li-itemize">For each field of each object, a variable is declared in the main method
+and the value of the field is assigned to it. Check that each value originates
+from the correct field.
+</LI></UL><P><B>Exercise</B> In <TT>CParticle</TT>, add the declaration <TT>int
+charge = -1;</TT>. Compile and run the program. Is the output different?
+Explain what happens.
+
+</P><!--TOC subsection 5.2&#XA0;&#XA0;Inheriting methods-->
+<H3 CLASS="subsection"><!--SEC ANCHOR --><A NAME="htoc42">5.2</A>&#XA0;&#XA0;Inheriting methods</H3><!--SEC END --><P><A NAME="inher.02"></A></P><P><B>Concept</B> 
+Subclasses inherit the methods of its superclasses and can add new methods 
+of its own. You can override an inherited method by writing a new method 
+with <EM>the same signature</EM> as the inherited method.</P><P><B>Program: Inheritance02.java</B>
+, <A HREF="src/inheritance/Inheritance02.java">click to display source</A>.<BR>
+
+This program calls the method <TT>newPosition</TT>, which 
+is overridden in <TT>AParticle</TT> and <TT>CParticle</TT> but not in 
+<TT>BParticle</TT>.
+</P><UL CLASS="itemize"><LI CLASS="li-itemize">
+The objects are created.
+</LI><LI CLASS="li-itemize">Method <TT>newPosition</TT> is invoked for each object and the modified
+value of <TT>position</TT> is assigned to a variable.
+</LI><LI CLASS="li-itemize">Check that the call on <TT>p</TT> calls the method defined in class 
+<TT>Particle</TT>.
+</LI><LI CLASS="li-itemize">Check that the call on <TT>a</TT> calls the method defined 
+in the class <TT>AParticle</TT>; this method overrides the method declared 
+in class <TT>Particle</TT>.
+</LI><LI CLASS="li-itemize">Check that the call on <TT>b</TT> calls the method defined 
+in the superclass <TT>Particle</TT>; since the method was <EM>not</EM> overridden
+in <TT>BParticle</TT>, the method called is the one inherited from the superclass.
+</LI><LI CLASS="li-itemize">Check that the call on <TT>c</TT> calls the method defined 
+in the class <TT>BParticle</TT>; this method overrides the method declared 
+in class <TT>Particle</TT>.
+</LI></UL><P><B>Exercise</B> Remove the method <TT>newPosition</TT> from
+<TT>CParticle</TT>. Which method is invoked for <TT>c.newPosition</TT>?</P><P><B>Exercise</B> Remove the method <TT>newPosition</TT> from
+<TT>CParticle</TT> and add a method with the same signature to
+<TT>BParticle</TT>. Which method is invoked for <TT>c.newPosition</TT>?
+
+</P><!--TOC subsection 5.3&#XA0;&#XA0;Dynamic dispatching-->
+<H3 CLASS="subsection"><!--SEC ANCHOR --><A NAME="htoc43">5.3</A>&#XA0;&#XA0;Dynamic dispatching</H3><!--SEC END --><P><A NAME="inher.03"></A></P><P><B>Concept</B> A variable <TT>v</TT> of type <TT>T</TT> can contain a 
+reference to an object of type <TT>T</TT> or of the type of any subclass of 
+<TT>T</TT>. When invoking <TT>v.m</TT> for some method <TT>m</TT> that is 
+overridden in a subclass, it is the type of the <EM>object</EM> currently 
+referenced by <TT>v</TT> (not the type of the <EM>variable</EM> <TT>v</TT>) that determines which method is called. This is 
+called <EM>dynamic dispatching</EM> because the call is dispatched at 
+runtime.</P><P><B>Program: Inheritance03.java</B>
+, <A HREF="src/inheritance/Inheritance03.java">click to display source</A>.<BR>
+
+</P><UL CLASS="itemize"><LI CLASS="li-itemize">
+The objects are created.
+</LI><LI CLASS="li-itemize">The references to the objects are assigned one-by-one to the variable <TT>p</TT>,
+and then the method <TT>newPosition</TT> is invoked using <TT>p</TT>. The modified
+value of <TT>position</TT> is assigned to a variable.
+</LI><LI CLASS="li-itemize">Check that the call on <TT>p</TT> invokes the method defined in class 
+<TT>Particle</TT>.
+</LI><LI CLASS="li-itemize">After assigning <TT>a</TT> to <TT>p</TT>, check that the call invokes the
+method defined in the class <TT>AParticle</TT>; this method overrides the method declared 
+in class <TT>Particle</TT>. Although the type of <TT>p</TT> is class
+<TT>Particle</TT>, it holds a reference to an object whose type is 
+class <TT>AParticle</TT> so the method of that class is called.
+</LI><LI CLASS="li-itemize">Note that as a result of the assignment, the object of type <TT>Particle</TT>
+has become garbage.
+</LI><LI CLASS="li-itemize">After assigning <TT>b</TT> to <TT>p</TT>, check that the call invokes the
+method defined in the superclass <TT>Particle</TT>; since the method was <EM>not</EM>
+overridden in <TT>BParticle</TT>, the method called is the one inherited from the
+superclass.
+</LI><LI CLASS="li-itemize">After assigning <TT>c</TT> to <TT>p</TT>, check that the call invokes the
+method defined in the class <TT>CParticle</TT>; this method overrides the method declared 
+in class <TT>Particle</TT>. Although the type of <TT>p</TT> is class
+<TT>Particle</TT>, it holds a reference to an object whose type is
+class <TT>CParticle</TT> so the method of that class is called.
+</LI></UL><P><B>Exercise</B> Add an assignment of <TT>c</TT> to <TT>b</TT> and call
+<TT>b.newPosition(10)</TT>. What is the value now of <TT>b.position</TT>?
+
+</P><!--TOC subsection 5.4&#XA0;&#XA0;Downcasting-->
+<H3 CLASS="subsection"><!--SEC ANCHOR --><A NAME="htoc44">5.4</A>&#XA0;&#XA0;Downcasting</H3><!--SEC END --><P><A NAME="inher.04"></A></P><P><B>Concept</B> A variable of the type of a class can reference an object 
+of the type of a <EM>subclass</EM>, but this variable cannot be used to access fields 
+declared in the subclass.
+Nevertheless, the object &#X201C;remembers&#X201D; its type, even if it is assigned 
+to a variable of the type of its superclass, and the type can be &#X201C;recovered&#X201D;
+by casting to a variable of the type of the subclass. 
+This is called 
+<EM>downcasting</EM> because the cast is &#X201C;down&#X201D; the derivation hierarchy.</P><P><B>Program: Inheritance04.java</B>, <A HREF="src/inheritance/Inheritance04.java">click to display source</A>.<BR>
+
+In this program, we take an object of the type of the 
+subclass <TT>AParticle</TT> and assign its reference to the variable 
+<TT>p</TT> of the type of the superclass <TT>Particle</TT>. The object&#X2019;s 
+actual type is recovered by downcasting from <TT>p</TT> to <TT>a</TT>.
+</P><UL CLASS="itemize"><LI CLASS="li-itemize">
+The objects are created.
+</LI><LI CLASS="li-itemize">The value of <TT>p.position</TT> is stored in a variable.
+</LI><LI CLASS="li-itemize">The reference in the variable <TT>a</TT> is assigned to <TT>p</TT>.
+Note that the arrows from the representation of both variables point to
+the same object of type <TT>AParticle</TT>, and that the other object
+is garbage.
+</LI><LI CLASS="li-itemize">When the value of <TT>p.position</TT> is accessed, it refers to the value that 
+is in <TT>a.position</TT>.
+</LI><LI CLASS="li-itemize">The reference in <TT>p</TT> can be cast to the type <TT>AParticle</TT>
+and assigned to <TT>a</TT>. Although <TT>p</TT> is declared to hold references to objects of
+type <TT>Particle</TT>, the object was really of the subclass <TT>AParticle</TT>.
+</LI><LI CLASS="li-itemize">Both the fields <TT>position</TT> and <TT>spin</TT> can be accessed 
+through <TT>a</TT>.
+</LI></UL><P><B>Exercise</B> What happens if you try to access <TT>p.spin</TT> after
+<TT>a</TT> has been assigned to <TT>p</TT>?</P><P><B>Exercise</B> Add the statement <TT>BParticle b = (BParticle) p</TT>
+after the assignment of <TT>a</TT> to <TT>p</TT>. Does the program compile
+successfully? Does it run successfully? Explain the results.
+
+</P><!--TOC subsection 5.5&#XA0;&#XA0;Heterogeneous data structures-->
+<H3 CLASS="subsection"><!--SEC ANCHOR --><A NAME="htoc45">5.5</A>&#XA0;&#XA0;Heterogeneous data structures</H3><!--SEC END --><P><A NAME="inher.05"></A></P><P><B>Concept</B> 
+A heterogeneous data structure is one that can hold elements of different types. 
+A data structure whose elements are of the type of a class can hold
+references to objects of any subclass of that class.</P><P><B>Program: Inheritance05.java</B>
+, <A HREF="src/inheritance/Inheritance05.java">click to display source</A>.<BR>
+
+An array whose elements are of class <TT>Particle</TT> 
+can store references to objects of any of its subclasses.
+</P><UL CLASS="itemize"><LI CLASS="li-itemize">
+The objects are created and references to them assigned to elements
+of the elements of the array <TT>p</TT>.
+</LI><LI CLASS="li-itemize">Method <TT>newPosition</TT> is invoked for the object referenced 
+by each element of the array <TT>p</TT>. 
+Check that the fields accessed are those of the object referenced by the
+array element and that the calls are dynamically dispatched to the method
+appropriate for the type of the object.
+</LI></UL><P><B>Exercise</B> Every object in Java is a subclass of the class 
+<TT>Object</TT>. Modify the program so that the variable <TT>p</TT> is of 
+type array of <TT>Object</TT>.
+
+</P><!--TOC subsection 5.6&#XA0;&#XA0;Abstract classes-->
+<H3 CLASS="subsection"><!--SEC ANCHOR --><A NAME="htoc46">5.6</A>&#XA0;&#XA0;Abstract classes</H3><!--SEC END --><P><A NAME="inher.06"></A></P><P><B>Concept</B> Very often the &#X201C;root&#X201D; of a set of derived types has no 
+meaning itself, in the sense that objects of that type would never be 
+declared. For example, in a realistic simulation program, the would be no 
+real particles that are just &#X201C;particles,&#X201D; only particles with names like 
+&#X3B1;-particles and &#X3B2;-particles.
+An <EM>abstract</EM> class can be declared which serves only as a root from 
+which to derive a hierarchy of subclasses. 
+It is not legal to declare <EM>objects</EM> of an abstract class, 
+although <EM>variables</EM> of its type may be declared and used to 
+reference objects of any type within the hierarchy. A method may also be 
+declared abstract; this indicates that it <EM>must</EM> be overridden in 
+subclasses.</P><P><B>Program: Inheritance06.java</B>
+, <A HREF="src/inheritance/Inheritance06.java">click to display source</A>.<BR>
+
+The follow program declares <TT>Particle</TT> to
+be <TT>abstract</TT> and no objects of that class can be declared. The
+method <TT>newPosition</TT> is also declared abstrct because it doesn&#X2019;t
+make sense to have a particle that you can&#X2019;t move.</P><P><B>Exercise</B> The program does not compile successfully. Why? (Note that
+in <SPAN STYLE="font-variant:small-caps">Jeliot</SPAN>, the problem is only found at when animating the program.)
+Modify the program so that it compiles and executes.</P><UL CLASS="itemize"><LI CLASS="li-itemize">
+The objects are created and references to them assigned to 
+elements of the array.
+</LI><LI CLASS="li-itemize">Method <TT>newPosition</TT> is invoked for the object referenced 
+by each element of the array <TT>p</TT>. 
+Check that the fields accessed are those of the object referenced by the
+array element and that the calls are dynamically dispatched to the method
+appropriate for the type of the object.
+</LI></UL><P><B>Exercise</B> It is possible to declare a nonabsract method in an 
+abstract class. Give an example for this program, and explain why it is a 
+reasonable thing to do.
+
+</P><!--TOC subsection 5.7&#XA0;&#XA0;Equals-->
+<H3 CLASS="subsection"><!--SEC ANCHOR --><A NAME="htoc47">5.7</A>&#XA0;&#XA0;Equals</H3><!--SEC END --><P><A NAME="inher.07"></A></P><P><B>Concept</B> There are two concepts of equality in Java: the <EM>operator</EM> 
+<TT>==</TT> compares primitives types and references, while the <EM>method</EM>
+<TT>equals</TT> compares objects. The default implementation of 
+<TT>equals</TT> is like <TT>==</TT>, but it can be overridden in any class.</P><P><B>Program: Inheritance07A.java</B> 
+, <A HREF="src/inheritance/Inheritance07A.java">click to display source</A>.<BR>
+
+</P><UL CLASS="itemize"><LI CLASS="li-itemize">
+Object <TT>a1</TT> of type <TT>AParticle</TT> is created.
+</LI><LI CLASS="li-itemize"><TT>a1</TT> is assigned to <TT>a2</TT> using <TT>==</TT>.
+</LI><LI CLASS="li-itemize">Object <TT>a3</TT> of type <TT>AParticle</TT> is created with the 
+same values for its fields as the object referenced by <TT>a1</TT>.
+</LI><LI CLASS="li-itemize">Evaluating <TT>a1==a2</TT> returns <EM>true</EM> because they both reference the same object.
+</LI><LI CLASS="li-itemize">Evaluating <TT>a1==a3</TT> returns <EM>false</EM> because they reference different objects.
+</LI><LI CLASS="li-itemize">Strangely enough, evaluating <TT>a1.equals(a3)</TT> returns <EM>false</EM>.
+Although their fields are equal, the default implementation of <TT>equals</TT> is
+the same as <TT>==</TT>!
+</LI></UL><P><B>Exercise</B> Add the follow method to <TT>AParticle</TT> and run the
+program again. What happens now?
+</P><PRE CLASS="verbatim">   public boolean equals(AParticle a) {
+        return this.position == a.position &amp;&amp; this.spin == a.spin;
+   }
+</PRE><P><BR>
+<BR>
+</P><P><B>Program: Inheritance07B.java</B>
+, <A HREF="src/inheritance/Inheritance07B.java">click to display source</A>.<BR>
+
+Let us try to override the method <TT>equals</TT> in classes <TT>BParticle</TT>
+and <TT>CParticle</TT>; the method returns true if the all fields of the
+two objects are equal.
+</P><UL CLASS="itemize"><LI CLASS="li-itemize">
+Four objects are created: two equal objects <TT>b1</TT> and <TT>b2</TT>
+of type <TT>BParticle</TT> and two unequal objects <TT>c1</TT> and <TT>c2</TT>
+of type <TT>CParticle</TT>.
+</LI><LI CLASS="li-itemize">As expected, <TT>b1.equals(b2)</TT> returns <EM>true</EM> and <TT>c1.equals(c2)</TT> returns <EM>false</EM>.
+</LI><LI CLASS="li-itemize"><TT>b1.equals(c1)</TT> returns <EM>true</EM>: since <TT>CParticle</TT>
+is a subclass of <TT>BParticle</TT>, the variable <TT>c1</TT> is acceptable
+as a parameter to the method <TT>equals</TT> declared in <TT>BParticle</TT>.
+<TT>c1</TT> <EM>is</EM> equal to <TT>b1</TT>, because we are only comparing 
+the first two fields inherited from <TT>BParticle</TT> and these are equal.
+</LI></UL><P><B>Exercise</B> Explain what happens if you try to evaluate <TT>c1.equals(b1)</TT>.</P><P><BR>
+<BR>
+</P><P><B>Program: Inheritance07C.java</B>
+, <A HREF="src/inheritance/Inheritance07C.java">click to display source</A>.<BR>
+
+It would be unusual for two objects to be considered equal if they
+are of different types, even if one type is a subclass of another.
+In fact, 
+</P><BLOCKQUOTE CLASS="quote">
+<TT>public boolean equals(CParticle c)</TT>
+</BLOCKQUOTE><P>
+does not override the method <TT>equals</TT> in <TT>BParticle</TT>,
+because an overriding method must have the <EM>same signature</EM> as the overridden
+method.</P><P>The method <TT>equals</TT> is declared in the root class <TT>Object</TT> as:
+</P><BLOCKQUOTE CLASS="quote">
+<TT>public boolean equals(Object obj)</TT>
+</BLOCKQUOTE><P>
+and this is the method that must be overridden.
+This program shows the correct technique:
+</P><UL CLASS="itemize"><LI CLASS="li-itemize">
+	Since the parameter can now be any object, a check is first made that
+	the parameter is not <TT>null</TT>.
+	</LI><LI CLASS="li-itemize">Similarly, a check is made that the parameter is of the same
+	type as this object.
+	</LI><LI CLASS="li-itemize">Now that we know that the parameter is actually of this type,
+	it can be cast from <TT>Object</TT> to the type.
+	</LI><LI CLASS="li-itemize">Only then is class-specific code performed&#X2014;usually a field-by-field comparison.
+</LI></UL><P>Trace the execution of the program:
+</P><UL CLASS="itemize"><LI CLASS="li-itemize">
+Four objects are created: one object <TT>b1</TT> of type <TT>BParticle</TT> 
+and three objects <TT>c1</TT>, <TT>c2</TT> and <TT>c3</TT> of type <TT>CParticle</TT>.
+</LI><LI CLASS="li-itemize">Clearly, comparing <TT>c1</TT> to <TT>null</TT> or <TT>b1</TT> returns <EM>false</EM>.
+</LI><LI CLASS="li-itemize">Field-by-field comparisons are used if the parameter is of type <TT>CParticle</TT>: <TT>c1.equals(c2)</TT> returns <EM>false</EM> and <TT>c1.equals(c3)</TT> returns <EM>true</EM>.
+</LI></UL><P><B>Exercise</B> Move the declaration of <TT>equals</TT> to class
+<TT>BParticle</TT>, changing the code as needed. What now is the value of
+<TT>c1.equals(b1)</TT>? Explain.
+
+</P><!--TOC subsection 5.8&#XA0;&#XA0;Clone-->
+<H3 CLASS="subsection"><!--SEC ANCHOR --><A NAME="htoc48">5.8</A>&#XA0;&#XA0;Clone</H3><!--SEC END --><P><A NAME="inher.08"></A></P><P><B>Concept</B> Assigning a variable containing a reference to another
+of the same type merely copies the 
+reference so that two fields refer to the same object. The method 
+<TT>clone</TT> is used to copy the content of an object into a new one. 
+<TT>clone</TT> is defined in class <TT>Object</TT> and can be
+overridden in any class definition.</P><P><B>Program: Inheritance08.java</B>
+, <A HREF="src/inheritance/Inheritance09.java">click to display source</A>.<BR>
+
+<TT>clone</TT> is overridden in class <TT>Particle</TT>. 
+The class must implement the interface <TT>Cloneable</TT>, the 
+method of the superclass should be called, and we have to take into 
+account that the method might raise an exception. The method returns
+the object returned by superclass method after calling <TT>newPosition</TT>.
+</P><UL CLASS="itemize"><LI CLASS="li-itemize">
+An object of class <TT>Particle</TT> is allocated and its reference 
+assigned to the field <TT>p1</TT>. 
+</LI><LI CLASS="li-itemize">An assignment statement copies this reference to the field <TT>p2</TT>. 
+Check that they have the same value.
+</LI><LI CLASS="li-itemize">The method <TT>newPosition</TT> is called on <TT>p1</TT>, but the 
+value of <TT>p2.position</TT> is also changed, showing that the two fields 
+point to the same object.
+</LI><LI CLASS="li-itemize">An object of class <TT>Particle</TT> is obtained by calling <TT>p1.clone()</TT> and its reference assigned to the field <TT>p3</TT>. Since <TT>clone</TT> returns a value of type
+<TT>Object</TT>, it must be cast to type <TT>Particle</TT> before the assignment.
+Check that the objects referenced by <TT>p1</TT> and <TT>p3</TT> have different values.
+</LI><LI CLASS="li-itemize">Calling <TT>p3.newPosition</TT> changes only the field in the object
+referenced by <TT>p3</TT> and not the separate object referenced by <TT>p1</TT>.
+</LI></UL><P><B>Exercise</B> The method <TT>clone</TT> can perform arbitrary 
+computation. Modify the program so that new objects are initialized with 
+the absolute value of the field of the object that is being cloned.
+
+</P><!--TOC subsection 5.9&#XA0;&#XA0;Overloading vs. overriding-->
+<H3 CLASS="subsection"><!--SEC ANCHOR --><A NAME="htoc49">5.9</A>&#XA0;&#XA0;Overloading vs. overriding</H3><!--SEC END --><P><A NAME="inher.09"></A></P><P><B>Concept</B> <EM>Overloading</EM> is the use of the same method name with a 
+<EM>different</EM> parameter signature. <EM>Overriding</EM> is the use in a subclass 
+of the same method name with the <EM>same</EM> parameter signature as a method 
+of the superclass.</P><P><B>Program: Inheritance09.java</B>
+, <A HREF="src/inheritance/Inheritance09.java">click to display source</A>.<BR>
+
+The method <TT>newPosition(int delta)</TT> is declared in <TT>Particle</TT> and
+<EM>overridden</EM> in <TT>AParticle</TT>. It is also <EM>overloaded</EM> by a method
+with the same name takes a parameter of type <TT>double</TT>.
+</P><UL CLASS="itemize"><LI CLASS="li-itemize">
+After allocating three objects <TT>p</TT>, <TT>a1</TT> and <TT>a2</TT>, <TT>newPosition</TT> is called on each one. 
+</LI><LI CLASS="li-itemize"><TT>p.newPosition</TT> calls the method declared in class 
+<TT>Particle</TT>.
+</LI><LI CLASS="li-itemize"><TT>a1.newPosition</TT> calls the method declared 
+in class <TT>AParticle</TT> that overrides the method in 
+<TT>Particle</TT>. 
+</LI><LI CLASS="li-itemize"><TT>a2.newPosition</TT> calls the overloaded method 
+because the actual parameter is of type <TT>double</TT>.
+</LI></UL><P><B>Exercise</B> At the end of the program add an assignment <TT>p = 
+a1</TT>. Add the method invocations <TT>p.newPosition(10)</TT> and 
+<TT>p.newPosition(10.0)</TT> in the main method. Explain what happens.
+
+
+</P><!--CUT END -->
+<!--HTMLFOOT-->
+<!--ENDHTML-->
+<!--FOOTER-->
+<HR SIZE=2><BLOCKQUOTE CLASS="quote"><EM>This document was translated from L<sup>A</sup>T<sub>E</sub>X by
+</EM><A HREF="http://hevea.inria.fr/index.html"><EM>H</EM><EM><FONT SIZE=2><sup>E</sup></FONT></EM><EM>V</EM><EM><FONT SIZE=2><sup>E</sup></FONT></EM><EM>A</EM></A><EM>.</EM></BLOCKQUOTE></BODY>
+</HTML>
