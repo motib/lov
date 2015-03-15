@@ -1,0 +1,4 @@
+Learning Objects (LO) are small, self-contained and reusable
+resources for learning. LOV is a set of learning objects for introductory Java programming. There are 8-9 LOs for each of five topics: arrays, control structures, methods, inheritance and constructors. The LOs are based on the Jeliot program animation system http://www.cs.joensuu.fi/jeliot/. They consist of Java code for each LO together with text describing the concept, the animation of the program that demonstrates the concept and exercises.
+
+The text is available as a single PDF file, a single HTML file, or a linked set of HTML files. The LaTeX source of the text is also included.
